@@ -1,0 +1,10 @@
+.env
+.env.*
+.DS_Store
+tmp/
+data/raw/x/*.json
+data/raw/**/*.pdf
+data/raw/**/*.xlsx
+data/raw/**/*.xls
+data/raw/**/*.csv
+*.log
