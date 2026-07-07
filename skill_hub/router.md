@@ -6,23 +6,29 @@ After Step 1 produces classified external data, use this file to decide which Sk
 
 The router does not generate analysis. It only selects:
 
-1. industry framework files
-2. analysis method files
-3. report template file
+1. core skill files when the input is a research case
+2. industry framework files
+3. analysis method files
+4. report template file
 
 ## Full Workflow Position
 
 ```text
-Information Collection
--> Information Classification
--> skill_hub/router.md
--> Selected industry frameworks + analysis methods + report template
--> Chinese buy-side report
--> Validation questions
--> Back to information collection
+Data / Case
+-> Skill 001 白毛女蒸馏
+-> Industry Frameworks
+-> Analysis Methods
+-> Report Templates
+-> Buy-side Report
 ```
 
 The router should only receive classified packets. It should not read raw X posts, raw filings, raw PDFs, or unstructured notes directly.
+
+If the input is a high-quality research case rather than a normal data packet, route it first to:
+
+- `skill_hub/core_skills/skill_001_baimaonv_distillation.md`
+
+This extracts reusable thinking patterns before selecting an industry framework.
 
 ## Input
 
@@ -49,7 +55,19 @@ Every input packet should preserve:
 
 ## Routing Logic
 
-### 1. Identify Industry
+### 1. Identify Whether Core Skill Distillation Is Needed
+
+Use `skill_hub/core_skills/skill_001_baimaonv_distillation.md` when the input is:
+
+- an X thread with a strong reasoning pattern
+- a research note
+- a long-form article
+- a chart / case summary
+- a prior research case that should improve the Skill Hub
+
+Do not use this core skill to generate a report. Use it to decide which thinking skills, industry frameworks, and validation methods should be used later.
+
+### 2. Identify Industry
 
 Select one or more industry frameworks.
 
@@ -74,7 +92,7 @@ Examples:
 - AI device upgrade cycle: `ai.md` + `consumer_electronics.md` + `semiconductor.md`
 - Fintech software platform: `financials.md` + `software_saas.md`
 
-### 2. Identify Analysis Needs
+### 3. Identify Analysis Needs
 
 Select the analysis method files required by the research question.
 
@@ -97,7 +115,7 @@ Default method set for PM-facing work:
 
 Add `valuation.md` whenever the question asks whether something is priced in, undervalued, overvalued, mispriced, crowded, or actionable.
 
-### 3. Select Output Type
+### 4. Select Output Type
 
 Select exactly one report template.
 
@@ -174,6 +192,8 @@ Files to read:
 
 - Topic:
 - Research question:
+- Core skill needed:
+- Selected core skill files:
 - Classified industry:
 - Selected industry framework files:
 - Selected analysis method files:
