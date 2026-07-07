@@ -1,5 +1,13 @@
 # Financials Fintech Framework
 
+## Boundary of this framework
+
+- This industry framework defines the industry map, value chain, business models, core metrics, and key risks.
+- It should not determine the final reasoning path.
+- The final reasoning path should be selected from `skill_hub/research_methodologies/`.
+- Industry framework answers "what to look at".
+- Research methodology answers "how to think".
+
 ## Industry Essence
 
 Financials and fintech monetize money movement, credit intermediation, risk pooling, transactions, assets, and financial infrastructure.

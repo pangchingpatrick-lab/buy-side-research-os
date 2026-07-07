@@ -7,15 +7,17 @@ After Step 1 produces classified external data, use this file to decide which Sk
 The router does not generate analysis. It only selects:
 
 1. core skill files when the input is a research case
-2. industry framework files
-3. analysis method files
-4. report template file
+2. thinking skill and research methodology files
+3. industry framework files
+4. analysis method files
+5. report template file
 
 ## Full Workflow Position
 
 ```text
 Data / Case
 -> Skill 001 白毛女蒸馏
+-> Thinking Skills / Research Methodologies
 -> Industry Frameworks
 -> Analysis Methods
 -> Report Templates
@@ -29,6 +31,15 @@ If the input is a high-quality research case rather than a normal data packet, r
 - `skill_hub/core_skills/skill_001_baimaonv_distillation.md`
 
 This extracts reusable thinking patterns before selecting an industry framework.
+
+The key ordering rule is:
+
+```text
+how to think
+-> what to inspect
+-> how to validate
+-> how to communicate
+```
 
 ## Input
 
@@ -65,9 +76,25 @@ Use `skill_hub/core_skills/skill_001_baimaonv_distillation.md` when the input is
 - a chart / case summary
 - a prior research case that should improve the Skill Hub
 
-Do not use this core skill to generate a report. Use it to decide which thinking skills, industry frameworks, and validation methods should be used later.
+Do not use this core skill to generate a report. Use it to decide which thinking skills, research methodologies, industry frameworks, and validation methods should be used later.
 
-### 2. Identify Industry
+### 2. Select Thinking Skills Or Research Methodologies
+
+Select thinking skills and research methodologies before selecting the industry framework.
+
+Use:
+
+- `skill_hub/thinking_skills/thinking_skill_router.md` for small reusable reasoning units.
+- `skill_hub/research_methodologies/methodology_evaluator.md` when comparing larger reasoning styles.
+- `skill_hub/research_methodologies/serenity.md` when the packet starts from early signals and needs signal-to-thesis reasoning.
+
+Examples:
+
+- hidden upstream bottleneck: `skill_001_find_blind_spot.md` + `skill_003_reverse_value_chain_mapping.md` + `skill_004_constraint_discovery.md`
+- broad narrative that needs sharpening: `skill_005_narrative_reframing.md` + `skill_002_industry_causal_chain.md`
+- "is it priced in?" question: `skill_007_consensus_detection.md` + `skill_008_financial_validation_bridge.md`
+
+### 3. Identify Industry
 
 Select one or more industry frameworks.
 
@@ -92,7 +119,7 @@ Examples:
 - AI device upgrade cycle: `ai.md` + `consumer_electronics.md` + `semiconductor.md`
 - Fintech software platform: `financials.md` + `software_saas.md`
 
-### 3. Identify Analysis Needs
+### 4. Identify Analysis Needs
 
 Select the analysis method files required by the research question.
 
@@ -115,7 +142,7 @@ Default method set for PM-facing work:
 
 Add `valuation.md` whenever the question asks whether something is priced in, undervalued, overvalued, mispriced, crowded, or actionable.
 
-### 4. Select Output Type
+### 5. Select Output Type
 
 Select exactly one report template.
 
@@ -144,6 +171,12 @@ Input cues:
 
 Files to read:
 
+- `skill_hub/thinking_skills/skill_001_find_blind_spot.md`
+- `skill_hub/thinking_skills/skill_002_industry_causal_chain.md`
+- `skill_hub/thinking_skills/skill_003_reverse_value_chain_mapping.md`
+- `skill_hub/thinking_skills/skill_004_constraint_discovery.md`
+- `skill_hub/thinking_skills/skill_007_consensus_detection.md`
+- `skill_hub/thinking_skills/skill_008_financial_validation_bridge.md`
 - `skill_hub/industry_frameworks/ai.md`
 - `skill_hub/industry_frameworks/semiconductor.md`
 - `skill_hub/analysis_methods/company_mapping.md`
@@ -163,6 +196,10 @@ Input cues:
 
 Files to read:
 
+- `skill_hub/thinking_skills/skill_003_reverse_value_chain_mapping.md`
+- `skill_hub/thinking_skills/skill_004_constraint_discovery.md`
+- `skill_hub/thinking_skills/skill_006_alpha_migration.md`
+- `skill_hub/thinking_skills/skill_008_financial_validation_bridge.md`
 - `skill_hub/industry_frameworks/semiconductor.md`
 - `skill_hub/analysis_methods/company_mapping.md`
 - `skill_hub/analysis_methods/financial_validation.md`
@@ -179,6 +216,9 @@ Input cues:
 
 Files to read:
 
+- `skill_hub/research_methodologies/methodology_evaluator.md`
+- `skill_hub/thinking_skills/skill_007_consensus_detection.md`
+- `skill_hub/thinking_skills/skill_008_financial_validation_bridge.md`
 - `skill_hub/industry_frameworks/software_saas.md`
 - `skill_hub/analysis_methods/financial_validation.md`
 - `skill_hub/analysis_methods/consensus_gap.md`
@@ -194,6 +234,8 @@ Files to read:
 - Research question:
 - Core skill needed:
 - Selected core skill files:
+- Selected thinking skill files:
+- Selected research methodology files:
 - Classified industry:
 - Selected industry framework files:
 - Selected analysis method files:

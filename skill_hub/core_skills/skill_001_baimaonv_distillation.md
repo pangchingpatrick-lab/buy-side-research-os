@@ -9,6 +9,7 @@ It should extract how a strong research case thinks. It should not copy the case
 ```text
 External Data / Research Case
 -> Skill 001 白毛女蒸馏
+-> Thinking Skills / Research Methodologies
 -> Industry Framework Selection
 -> Analysis Methods
 -> Report Template
@@ -23,6 +24,7 @@ The output should help the system decide:
 
 - which thinking style should be used
 - which existing thinking skills should be updated
+- which research methodology may fit
 - which industry framework may be relevant
 - which validation methods should be combined later
 
@@ -143,6 +145,7 @@ Do not force a case into an industry framework too early. The case may reveal th
 
 - Industry Frameworks answer: what to look at.
 - Skill 001 白毛女蒸馏 answers: how to think.
+- Thinking Skills / Research Methodologies answer: how to reason.
 - Analysis Methods answer: how to validate.
 - Report Templates answer: how to communicate.
 

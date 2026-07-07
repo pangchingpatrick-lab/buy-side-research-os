@@ -4,6 +4,14 @@ This is a buy-side healthcare industry framework. It is designed for biotech, ph
 
 Use it after external data has already been collected, classified, and source-tagged. Do not use this framework to create generic healthcare industry summaries.
 
+## Boundary of this framework
+
+- This industry framework defines the industry map, value chain, business models, core metrics, and key risks.
+- It should not determine the final reasoning path.
+- The final reasoning path should be selected from `skill_hub/research_methodologies/`.
+- Industry framework answers "what to look at".
+- Research methodology answers "how to think".
+
 ## 1. Industry Essence
 
 Healthcare is driven by clinical efficacy, regulatory approval, reimbursement, patient volume, pricing power, pipeline quality, and commercialization capability.

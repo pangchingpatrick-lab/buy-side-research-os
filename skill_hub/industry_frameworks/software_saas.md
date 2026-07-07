@@ -4,6 +4,14 @@ This is a buy-side software and SaaS industry framework. It is designed for SaaS
 
 Use it after external data has already been collected, classified, and source-tagged.
 
+## Boundary of this framework
+
+- This industry framework defines the industry map, value chain, business models, core metrics, and key risks.
+- It should not determine the final reasoning path.
+- The final reasoning path should be selected from `skill_hub/research_methodologies/`.
+- Industry framework answers "what to look at".
+- Research methodology answers "how to think".
+
 ## 1. Industry Essence
 
 Software and SaaS businesses are driven by recurring revenue, customer retention, pricing power, product adoption, sales efficiency, and operating leverage.

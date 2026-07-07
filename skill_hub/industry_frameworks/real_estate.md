@@ -4,6 +4,14 @@ This is a buy-side real estate industry framework. It is designed for developers
 
 Use it after external data has already been collected, classified, and source-tagged. Do not use this framework to create generic property-market commentary.
 
+## Boundary of this framework
+
+- This industry framework defines the industry map, value chain, business models, core metrics, and key risks.
+- It should not determine the final reasoning path.
+- The final reasoning path should be selected from `skill_hub/research_methodologies/`.
+- Industry framework answers "what to look at".
+- Research methodology answers "how to think".
+
 ## 1. Industry Essence
 
 Real estate is driven by asset value, rental income, occupancy, interest rates, leverage, financing conditions, property cycles, and policy.

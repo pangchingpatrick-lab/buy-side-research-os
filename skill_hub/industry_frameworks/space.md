@@ -4,6 +4,14 @@ This is a buy-side space economy framework. It is designed for AST SpaceMobile, 
 
 Use it after external data has already been collected, classified, and source-tagged.
 
+## Boundary of this framework
+
+- This industry framework defines the industry map, value chain, business models, core metrics, and key risks.
+- It should not determine the final reasoning path.
+- The final reasoning path should be selected from `skill_hub/research_methodologies/`.
+- Industry framework answers "what to look at".
+- Research methodology answers "how to think".
+
 ## 1. Industry Essence
 
 Space economy is driven by launch capability, satellite network deployment, spectrum/regulatory approval, government contracts, commercial adoption, and capital intensity.

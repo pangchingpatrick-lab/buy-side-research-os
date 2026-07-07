@@ -4,8 +4,10 @@ This repository is the GitHub Skill Hub for the buy-side research system.
 
 It serves only:
 
-- Step 2: reusable industry frameworks and analysis methods
-- Step 3: report templates and generation logic
+- reusable core skills
+- reusable thinking skills and research methodologies
+- reusable industry frameworks and analysis methods
+- report templates and generation logic
 
 It does not store the primary external data layer.
 
@@ -21,15 +23,16 @@ External data comes from Step 1 outside GitHub:
 - news and reputable media
 - Wind / Choice / iFinD / Bloomberg / Refinitiv / other databases
 
-GitHub is only the Skill Hub. AI reads relevant frameworks and templates from this repository after classifying incoming data.
+GitHub is only the Skill Hub. AI reads relevant thinking skills, methodologies, frameworks, validation methods, and templates from this repository after classifying incoming data.
 
 ## Core Flow
 
 ```text
 Information Collection
 -> Information Classification
--> GitHub Skill Hub Routing
--> Framework-Guided Analysis
+-> Core Skill / Thinking Method Selection
+-> Industry Framework Selection
+-> Analysis Method Selection
 -> Chinese Buy-side Report
 -> Validation Questions
 -> Next Information Collection
@@ -41,15 +44,19 @@ The workflow is:
 
 1. Collect information outside GitHub.
 2. Classify the information by source type, industry, related company, signal/evidence type, credibility, and verification status.
-3. Send the classified research packet to `skill_hub/router.md`.
-4. Let the router decide which GitHub framework files, analysis methods, and report template should be read.
-5. Generate the Chinese buy-side report from the classified packet and selected Skill Hub files.
-6. Generate validation questions for the next research loop.
+3. If the input is a strong research case, run `skill_hub/core_skills/skill_001_baimaonv_distillation.md` to distill reusable thinking patterns.
+4. Select the relevant thinking skills or research methodologies before selecting the industry framework.
+5. Select the industry framework to define what to inspect.
+6. Select analysis methods to validate the reasoning.
+7. Select the report template to communicate the output.
+8. Generate validation questions for the next research loop.
 
 GitHub should be treated as the stable framework and template library, not as the raw data store.
 
 ## What Belongs In This Repo
 
+- reusable core skills
+- reusable thinking skills and research methodologies
 - reusable industry frameworks
 - reusable analysis methods
 - report templates
