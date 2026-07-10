@@ -1,6 +1,6 @@
 ---
 name: buy-side-industry-research
-description: use when performing buy-side industry research, company research, investment memos, market analysis, competitive analysis, or strategic investment research. Generate evidence-based Chinese research reports using official data, financial statements, trusted market data, and curated early-signal sources including the user's X following list.
+description: Use when performing buy-side industry research, company research, investment memos, market analysis, competitive analysis, or strategic investment research. Start from the local runtime data layer, route through the Skill Hub, then generate evidence-based Chinese research outputs.
 ---
 
 # Buy-side Industry Research
@@ -13,6 +13,32 @@ The user is the Portfolio Manager.
 
 Your responsibility is to independently research industries and companies, validate evidence, identify alpha opportunities, and deliver investment-ready research.
 
+## System Architecture Contract
+
+Always follow this sequence:
+
+```text
+Runtime data layer
+-> classified context packet
+-> skill_hub/router.md
+-> core skill / thinking skills / research methodology
+-> industry framework
+-> analysis methods
+-> report template
+-> Chinese buy-side output
+-> validation questions for the next data loop
+```
+
+The runtime data layer is the source of truth:
+
+- Config: `data_layer/data_layer_config.json`
+- Machine entry point: `/Users/pangpatrick/Desktop/research_data/system_index/index.jsonl`
+- Category indexes: `/Users/pangpatrick/Desktop/research_data/system_index/category_index/*.jsonl`
+- Canonical records: `/Users/pangpatrick/Desktop/research_data/system_index/documents/*.json`
+- Human-readable PDFs: `/Users/pangpatrick/Desktop/research_data/readable/`
+
+Do not use the repository's legacy `data/` directory as the canonical source.
+
 ## Core Rules
 
 - Do not generate generic industry summaries.
@@ -22,18 +48,36 @@ Your responsibility is to independently research industries and companies, valid
 - Separate facts, estimates, and opinions.
 - Use X, Sequoia, a16z, Hacker News, and Product Hunt only as early-signal sources, not final proof.
 - Final output should be in Chinese unless the user requests otherwise.
+- Evidence must come from the runtime data layer, user-provided sources, or explicitly verified sources.
+- Do not bypass `skill_hub/router.md` before selecting thinking skills, frameworks, methods, or templates.
 
 ## Workflow
 
-1. Clarify research target.
-2. Collect data.
-3. Extract early signals.
-4. Generate investment hypotheses.
-5. Validate hypotheses with reliable data.
-6. Build investment thesis.
-7. Analyze valuation, catalysts, and risks.
-8. Generate Chinese buy-side report.
-9. Self-review before final delivery.
+1. Clarify the research target, category, output type, and PM question.
+2. Inspect the runtime data layer:
+
+   ```bash
+   ruby scripts/inspect_data_layer.rb
+   ```
+
+3. Build a context packet from the runtime data layer:
+
+   ```bash
+   ruby scripts/build_data_context.rb [category|all] [limit]
+   ```
+
+4. Load the relevant canonical JSON records from `system_index/documents/*.json`.
+5. Preserve source type, URL, source credibility, verification status, categories, tags, tickers, scores, and data gaps.
+6. Route the classified packet through `skill_hub/router.md`.
+7. Read the selected core skill, thinking skills, and research methodology files.
+8. Read the selected industry framework files from `skill_hub/industry_frameworks/`.
+9. Read the selected analysis method files from `skill_hub/analysis_methods/`.
+10. Read the selected report template from `skill_hub/report_templates/`.
+11. Generate the Chinese buy-side output using only traceable evidence.
+12. Generate validation questions for the next data collection loop.
+13. Self-review before final delivery.
+
+If the runtime data layer is insufficient, mark the gap as `待补充` or `待验证`. Do not silently invent data or fall back to the legacy repo `data/` directory.
 
 ## Report Structure
 
