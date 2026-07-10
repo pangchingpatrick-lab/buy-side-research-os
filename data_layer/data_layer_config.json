@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "name": "buy_side_research_os_runtime_data_layer",
+  "runtime_data_root": "/Users/pangpatrick/Desktop/research_data",
+  "raw_data_root": "/Users/pangpatrick/Desktop/research_data/raw_data",
+  "human_readable_root": "/Users/pangpatrick/Desktop/research_data/readable",
+  "machine_index_root": "/Users/pangpatrick/Desktop/research_data/system_index",
+  "global_index_path": "/Users/pangpatrick/Desktop/research_data/system_index/index.jsonl",
+  "documents_root": "/Users/pangpatrick/Desktop/research_data/system_index/documents",
+  "category_index_root": "/Users/pangpatrick/Desktop/research_data/system_index/category_index",
+  "legacy_data_policy": "repo_data_directory_is_legacy_sample_only",
+  "reader_priority": [
+    "system_index/index.jsonl",
+    "system_index/category_index/*.jsonl",
+    "system_index/documents/*.json",
+    "readable/**/*.pdf",
+    "raw_data/YYYY-MM-DD/*"
+  ]
+}
