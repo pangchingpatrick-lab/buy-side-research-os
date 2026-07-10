@@ -1,6 +1,6 @@
 # Buy-Side Research OS Skill Hub
 
-This repository is the GitHub Skill Hub for the buy-side research system.
+This repository is the GitHub Skill Hub and operating layer for the buy-side research system.
 
 It serves only:
 
@@ -9,7 +9,7 @@ It serves only:
 - reusable industry frameworks and analysis methods
 - report templates and generation logic
 
-It does not store the primary external data layer.
+It does not store the primary external data layer. It connects to the local runtime data layer through `data_layer/data_layer_config.json`.
 
 ## System Boundary
 
@@ -23,7 +23,44 @@ External data comes from Step 1 outside GitHub:
 - news and reputable media
 - Wind / Choice / iFinD / Bloomberg / Refinitiv / other databases
 
-GitHub is only the Skill Hub. AI reads relevant thinking skills, methodologies, frameworks, validation methods, and templates from this repository after classifying incoming data.
+GitHub is the stable OS layer. AI reads the runtime data index from `/Users/pangpatrick/Desktop/research_data/system_index`, then reads relevant thinking skills, methodologies, frameworks, validation methods, and templates from this repository.
+
+## Runtime Data Layer
+
+The canonical data layer is local:
+
+```text
+/Users/pangpatrick/Desktop/research_data/
+├── raw_data/          # daily raw archive
+├── readable/          # human-readable PDFs only
+└── system_index/      # machine-readable JSON and indexes
+```
+
+Machine workflows should start from:
+
+```text
+/Users/pangpatrick/Desktop/research_data/system_index/index.jsonl
+```
+
+Category-specific workflows can start from:
+
+```text
+/Users/pangpatrick/Desktop/research_data/system_index/category_index/[category].jsonl
+```
+
+Full canonical records live in:
+
+```text
+/Users/pangpatrick/Desktop/research_data/system_index/documents/
+```
+
+Human reading happens in:
+
+```text
+/Users/pangpatrick/Desktop/research_data/readable/
+```
+
+The historical `data/` directory in this repository is legacy/sample material and is no longer the primary data source.
 
 ## Core Flow
 
@@ -42,14 +79,16 @@ Information Collection
 
 The workflow is:
 
-1. Collect information outside GitHub.
-2. Classify the information by source type, industry, related company, signal/evidence type, credibility, and verification status.
-3. If the input is a strong research case, run `skill_hub/core_skills/skill_001_baimaonv_distillation.md` to distill reusable thinking patterns.
-4. Select the relevant thinking skills or research methodologies before selecting the industry framework.
-5. Select the industry framework to define what to inspect.
-6. Select analysis methods to validate the reasoning.
-7. Select the report template to communicate the output.
-8. Generate validation questions for the next research loop.
+1. Collect information outside GitHub into the runtime data layer.
+2. Read `system_index/index.jsonl` or `system_index/category_index/*.jsonl`.
+3. Load canonical records from `system_index/documents/*.json`.
+4. Classify or route the records by source type, industry, related company, signal/evidence type, credibility, and verification status.
+5. If the input is a strong research case, run `skill_hub/core_skills/skill_001_baimaonv_distillation.md` to distill reusable thinking patterns.
+6. Select the relevant thinking skills or research methodologies before selecting the industry framework.
+7. Select the industry framework to define what to inspect.
+8. Select analysis methods to validate the reasoning.
+9. Select the report template to communicate the output.
+10. Generate validation questions for the next research loop.
 
 GitHub should be treated as the stable framework and template library, not as the raw data store.
 
@@ -61,6 +100,7 @@ GitHub should be treated as the stable framework and template library, not as th
 - reusable analysis methods
 - report templates
 - routing rules for matching classified data to frameworks
+- data layer contract and runtime data readers
 
 ## What Does Not Belong In This Repo
 
@@ -70,6 +110,21 @@ GitHub should be treated as the stable framework and template library, not as th
 - raw financial database exports
 - unclassified data dumps
 - fabricated data or unsourced claims
+- local runtime `research_data/` dumps
+
+## Useful Commands
+
+Validate that the runtime data layer is connected:
+
+```bash
+ruby scripts/inspect_data_layer.rb
+```
+
+Build a category context packet for downstream research:
+
+```bash
+ruby scripts/build_data_context.rb semiconductor 10
+```
 
 ## Guardrails
 
