@@ -2,7 +2,7 @@
 
 This router is the decision engine of the Skill Hub.
 
-After Step 1 produces classified external data, use this file to decide which Skill Hub files the AI should read and combine.
+After Step 1 produces classified external data in the local runtime data layer, use this file to decide which Skill Hub files the AI should read and combine.
 
 The router does not generate analysis. It only selects:
 
@@ -24,7 +24,19 @@ Data / Case
 -> Buy-side Report
 ```
 
-The router should only receive classified packets. It should not read raw X posts, raw filings, raw PDFs, or unstructured notes directly.
+The router should only receive classified packets or context packets built from `system_index`. It should not read raw X posts, raw filings, raw PDFs, or unstructured notes directly.
+
+Default packet source:
+
+```bash
+ruby scripts/build_data_context.rb [category|all] [limit]
+```
+
+Canonical records should come from:
+
+```text
+/Users/pangpatrick/Desktop/research_data/system_index/documents/*.json
+```
 
 If the input is a high-quality research case rather than a normal data packet, route it first to:
 
