@@ -16,7 +16,7 @@ The router does not generate analysis. It only selects:
 
 ```text
 Data / Case
--> Skill 001 白毛女蒸馏
+-> Skill 001 白毛女蒸馏 or Skill 002 SemiAnalysis 蒸馏
 -> Thinking Skills / Research Methodologies
 -> Industry Frameworks
 -> Analysis Methods
@@ -29,6 +29,7 @@ The router should only receive classified packets. It should not read raw X post
 If the input is a high-quality research case rather than a normal data packet, route it first to:
 
 - `skill_hub/core_skills/skill_001_baimaonv_distillation.md`
+- `skill_hub/core_skills/skill_002_semianalysis_distillation.md`
 
 This extracts reusable thinking patterns before selecting an industry framework.
 
@@ -76,7 +77,20 @@ Use `skill_hub/core_skills/skill_001_baimaonv_distillation.md` when the input is
 - a chart / case summary
 - a prior research case that should improve the Skill Hub
 
-Do not use this core skill to generate a report. Use it to decide which thinking skills, research methodologies, industry frameworks, and validation methods should be used later.
+Use `skill_hub/core_skills/skill_002_semianalysis_distillation.md` as the preferred core skill when the topic involves:
+
+- AI infrastructure
+- semiconductors
+- GPU clusters
+- HBM
+- networking
+- ASICs
+- foundry
+- advanced packaging
+- datacenter capex
+- optical interconnect
+
+Do not use these core skills to generate a report. Use them to decide which thinking skills, research methodologies, industry frameworks, and validation methods should be used later.
 
 ### 2. Select Thinking Skills Or Research Methodologies
 
@@ -171,6 +185,7 @@ Input cues:
 
 Files to read:
 
+- `skill_hub/core_skills/skill_002_semianalysis_distillation.md`
 - `skill_hub/thinking_skills/skill_001_find_blind_spot.md`
 - `skill_hub/thinking_skills/skill_002_industry_causal_chain.md`
 - `skill_hub/thinking_skills/skill_003_reverse_value_chain_mapping.md`
@@ -196,6 +211,7 @@ Input cues:
 
 Files to read:
 
+- `skill_hub/core_skills/skill_002_semianalysis_distillation.md`
 - `skill_hub/thinking_skills/skill_003_reverse_value_chain_mapping.md`
 - `skill_hub/thinking_skills/skill_004_constraint_discovery.md`
 - `skill_hub/thinking_skills/skill_006_alpha_migration.md`
