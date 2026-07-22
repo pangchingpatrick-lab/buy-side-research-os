@@ -3,7 +3,7 @@
 - report: `outputs/full_system_runs/ai_local_full_skillhub_2026-07-22/full_system_report.md`
 - route: `outputs/full_system_runs/ai_local_full_skillhub_2026-07-22/route.md`
 - evaluator_version: v4
-- total_score: 90 / 100
+- total_score: 91 / 100
 - decision_quality: Strong
 
 ## Scorecard
@@ -18,7 +18,7 @@
 | PM-grade core conclusion | 8 | 8 | Opens with marginal change, action state, thesis, ticker candidates, priorities, uncertainty, and next validation. |
 | Signal-to-Alpha investment logic | 8 | 8 | Uses explicit Signal Cluster A/B/C/D with signal, mechanism, investment interpretation, mapping, financial transmission, price-in, and PM trigger. |
 | Ticker candidate / feedback loop | 8 | 8 | Separates primary basket (`MU`, `MRVL`, `AEHR`) from risk/context watchlist (`SMCI`, `ORCL`), with direction, conviction, report-time price snapshot, benchmark price, review date, and `performance_tracking.jsonl`. |
-| Mapping quality | 6 | 5 | Company and risk-object mapping are concentrated in one validation priority table rather than repeated across sections. |
+| Mapping quality | 6 | 6 | Restores a distinct company map that separates value-chain position, report role, expression quality, and inclusion / exclusion logic without duplicating the validation table. |
 | Financial validation | 6 | 4 | Converts claims into line items and source-checkable questions, but still lacks primary earnings data, consensus estimates, and price tables. |
 | Consensus / variant view | 4 | 3 | Separates consensus AI beta from variant bottleneck migration, but price-in evidence is incomplete. |
 | Investment judgment | 4 | 4 | Correctly chooses `Watchlist / Needs More Evidence` rather than forcing a trade. |

@@ -123,18 +123,37 @@
 
 本报告故意不在主文重复完整 event field。详细的 claim、evidence、ticker role、validation task 放在 `validation_tasks.jsonl` 和后续机器可读层处理。
 
-## 6. 公司与财务验证优先级
+## 6. 公司映射（Company Map）
 
-| Priority | Company / Node | Role | Financial Transmission | One Critical Validation Question | PM Implication |
-| --- | --- | --- | --- | --- | --- |
-| 1 | MU / HBM / DRAM | 内存瓶颈直接候选 | HBM mix、ASP、GM、inventory、allocation | HBM 是否真的带动 FY revenue mix 和 margin 上修？ | 通过则升级为 candidate；不通过则保留主题不买股票 |
-| 2 | MRVL | AI data movement / optical DSP / custom silicon | data center revenue、shipment、design win、estimate revision | AI networking 贡献是否可在 call/filing 中被量化？ | 通过则作为核心 watchlist |
-| 3 | AEHR | AI-linked test / burn-in | bookings、backlog、GM、revenue conversion | backlog 是否明确来自 AI processor / photonics / power semi？ | 高弹性但需更强证据 |
-| 4 | SMCI | rack-scale deployment / liquid cooling | order quality、GM、inventory、receivables、cash conversion | AI rack 增长是否伴随可持续利润和回款？ | 通过才可研究，失败则作为风险案例 |
-| 5 | CRWV / NBIS / ORCL | AI cloud financing / backlog quality | utilization、lease/debt、RPO、customer concentration、FCF | AI backlog 是高质量合同还是融资风险包装？ | 主要用于风控和 price-in 判断 |
-| 6 | Power / cooling / grid suppliers | AI 物理约束第二层 | equipment backlog、utility capex、interconnection queue | 电力约束是否传导到上市公司订单？ | 数据不足，暂不转为交易线索 |
+公司映射这一层的作用不是再讲一遍验证清单，而是把产业链节点和股票表达拆开。一个节点可能重要，但对应股票可能不是好表达；一个股票可能相关，但只是 risk/context，不应该进入 primary basket。
 
-## 7. 具体股票候选与 30 日验证池
+| Company / Node | Ticker(s) | Thesis Cluster | Value-Chain Position | Report Role | Expression Quality | Why It Maps Here |
+| --- | --- | --- | --- | --- | --- | --- |
+| Micron / HBM / DRAM | MU | A 内存/HBM | Memory capacity、HBM、DRAM supply | Primary candidate | Clean but consensus-aware | 最直接表达 memory bandwidth 和 HBM mix。财务传导路径相对清晰：ASP、mix、gross margin、inventory。缺点是 HBM 已经是高共识主题。 |
+| Marvell | MRVL | B 数据移动/optical/test | AI networking、optical DSP、custom silicon、SerDes | Primary candidate | Fairly clean, needs revenue proof | 表达 AI cluster 从 compute 转向 data movement 的逻辑。比泛 AI beta 更具体，但必须证明 data center / optical / custom silicon 进入收入线。 |
+| Aehr Test Systems | AEHR | B 数据移动/optical/test | Burn-in、wafer/package-level test、reliability validation | Primary candidate / speculative | High-beta, evidence-thin | 高弹性表达 AI-linked test 需求。公司小、证据弱，但如果 backlog/bookings 直接连接 AI processor 或 silicon photonics，弹性可能高。 |
+| Super Micro Computer | SMCI | C 物理部署/电力 | AI rack integration、liquid cooling、server deployment | Risk / context watch | Messy expression | 节点正确，但公司质量变量太多：margin、inventory、receivables、cash conversion、governance。不能把 AI rack 需求直接等同于股东回报。 |
+| Oracle / AI backlog | ORCL | D AI cloud 融资风险 | Cloud capacity、RPO/backlog、AI customer exposure | Risk / context watch | Risk expression, not positive expression | 用来测试 AI backlog 是否被市场过度信任。它不是本报告正向 AI bottleneck pick，而是 financing、customer concentration、capex funding 的风险观察对象。 |
+| Neocloud / GPU rental | CRWV / NBIS | D AI cloud 融资风险 | GPU cloud capacity、utilization、financing | Risk watch | Data needed | 需求看似强，但商业质量取决于 utilization、financing cost、customer contract 和 depreciation。更适合作为风险框架，不直接进入主候选池。 |
+| Optical / CPO supply chain | 待补 ticker | B 数据移动/optical/test | CPO、transceiver、laser、silicon photonics | Research queue | Potentially clean, ticker mapping incomplete | 产业节点可能比 MRVL 更纯，但当前本地数据不足以指定更干净的上市公司表达。进入下一轮数据补充。 |
+| Power / cooling / grid suppliers | 待补 ticker | C 物理部署/电力 | Power equipment、cooling、grid interconnection | Research queue | Potentially strong, not mapped | AI 物理部署约束可能向电力设备和冷却传导，但本地数据还没有足够公司级映射，不应硬推票。 |
+
+这张表的结论是：A/B cluster 已经有可追踪的股票表达，C/D cluster 主要还是研究和风险观察。公司映射避免了一个关键误判：产业链位置正确，不等于股票表达质量好。
+
+## 7. 财务验证优先级
+
+财务验证不再重复公司映射，只保留会改变 PM 动作的关键指标。
+
+| Priority | Company / Node | Financial Transmission | One Critical Validation Question | PM Implication |
+| --- | --- | --- | --- | --- |
+| 1 | MU / HBM / DRAM | HBM mix、DRAM ASP、gross margin、inventory、allocation | HBM 是否真的带动 FY revenue mix 和 margin 上修？ | 通过则从 long watch 升级；不通过则保留主题、不升级股票 |
+| 2 | MRVL | data center revenue、optical DSP shipment、custom silicon design win、estimate revision | AI networking 贡献是否可在 call/filing 中被量化？ | 通过则作为核心 long candidate 候选 |
+| 3 | AEHR | bookings、backlog、gross margin、revenue conversion | backlog 是否明确来自 AI processor / silicon photonics / power semi？ | 通过则保留高弹性位置；不通过则剔除 |
+| 4 | SMCI | order quality、gross margin、inventory、receivables、cash conversion | AI rack 增长是否伴随可持续利润和回款？ | 通过才可重新考虑；失败则继续排除 primary basket |
+| 5 | CRWV / NBIS / ORCL | utilization、lease/debt、RPO、customer concentration、FCF | AI backlog 是高质量合同还是融资风险包装？ | 主要用于风控和 price-in 判断 |
+| 6 | Optical / power / cooling 待补公司 | shipment、backlog、customer proof、capex linkage | 是否有更干净的上市公司表达？ | 找到后再进入下一版公司映射 |
+
+## 8. 具体股票候选与 30 日验证池
 
 本报告给出的不是“立即买入指令”，而是可追踪的研究候选池。一个月后用价格和基准表现检验报告是否产生了有用的方向性判断。
 
@@ -179,7 +198,7 @@ Risk / context watchlist:
 
 Risk/context 的 SMCI 和 ORCL 不参与 primary basket 的正向评分。它们的作用是观察反证：如果 SMCI 继续显示 margin / cash conversion 问题，说明物理部署 thesis 不能随便映射到公司；如果 ORCL 的 backlog 质量被质疑，说明 AI cloud 叙事需要更强折现。
 
-## 8. Bear Case / Invalidation
+## 9. Bear Case / Invalidation
 
 - 推理优化降低单位硬件需求，AI workload 增长不足以抵消效率提升。
 - HBM/DRAM 供应扩张快于需求，价格和 margin 没有持续改善。
@@ -189,7 +208,7 @@ Risk/context 的 SMCI 和 ORCL 不参与 primary basket 的正向评分。它们
 - neocloud 的利用率、融资成本、折旧和客户集中风险压过收入成长。
 - 股票价格已经完全反映瓶颈叙事，后续即使基本面兑现也没有超额收益。
 
-## 9. PM Next Action
+## 10. PM Next Action
 
 1. 不做泛 AI basket 加仓。
 2. 建立 AI bottleneck primary basket：`MU`、`MRVL`、`AEHR`。
@@ -199,7 +218,7 @@ Risk/context 的 SMCI 和 ORCL 不参与 primary basket 的正向评分。它们
 6. 若某一节点同时满足“稀缺层清晰、财务传导清晰、市场预期未完全反映、验证证据可得”，再升级为单名报告。
 7. 若验证显示只是市场热度、泛 AI 转述或股价已充分 price in，则保留在 context，不进入投资候选。
 
-## 10. 数据来源与待验证事项
+## 11. 数据来源与待验证事项
 
 - Route：`outputs/full_system_runs/ai_local_full_skillhub_2026-07-22/route.md`
 - Validation tasks：`outputs/full_system_runs/ai_local_full_skillhub_2026-07-22/validation_tasks.jsonl`

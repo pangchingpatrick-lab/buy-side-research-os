@@ -95,14 +95,31 @@ Required interpretation:
 - 是否存在重复 thesis cluster：
 - 是否存在 ticker role 误判风险：
 
-## 6. 公司与财务验证优先级
+## 6. 公司映射（Company Map）
 
-Combine company mapping and financial validation into one compressed priority table.
+Company mapping is mandatory for buy-side reports. It should explain where each
+company sits in the value chain and whether it is a good expression of the
+thesis.
 
-| Priority | Company / Node | Role | Financial Transmission | One Critical Validation Question | PM Implication |
-| --- | --- | --- | --- | --- | --- |
+Do not use this section as another validation checklist. It answers:
 
-## 7. 具体股票候选与 30 日验证池
+- which company / ticker maps to which constrained layer
+- whether it is primary candidate, secondary watch, risk/context, or excluded
+- whether the stock is a clean or messy expression of the thesis
+- why similar names are included or excluded
+
+| Company / Node | Ticker(s) | Thesis Cluster | Value-Chain Position | Report Role | Expression Quality | Why It Maps Here |
+| --- | --- | --- | --- | --- | --- | --- |
+
+## 7. 财务验证优先级
+
+This section should be shorter than company mapping. It should translate the
+company map into specific financial checks.
+
+| Priority | Company / Node | Financial Transmission | One Critical Validation Question | PM Implication |
+| --- | --- | --- | --- | --- |
+
+## 8. 具体股票候选与 30 日验证池
 
 Every public-equity report must name concrete tickers unless the topic has no
 publicly traded exposure. Do not leave the report at the industry-node level.
@@ -136,11 +153,11 @@ Also emit a machine-readable `performance_tracking.jsonl` file for the same
 candidates so the system can review price performance after one month. Include
 `candidate_bucket` to separate `primary_candidate` from `risk_context`.
 
-## 8. Bear Case / Invalidation
+## 9. Bear Case / Invalidation
 
-## 9. PM Next Action
+## 10. PM Next Action
 
-## 10. 数据来源与待验证事项
+## 11. 数据来源与待验证事项
 ```
 
 ## Writing Rules
@@ -160,8 +177,9 @@ candidates so the system can review price performance after one month. Include
 - Do not mix low-quality risk/context names into the primary candidate basket.
 - Risk watch names can be tracked separately, but they should not count as the report's investable picks.
 - Candidate direction is a research action state, not a personal investment instruction.
-- One fact should serve one role in the main body. Do not repeat the same evidence, validation need, or ticker mapping across Event Audit, Signal Cluster, Company Mapping, and Financial Validation sections.
-- Do not create separate `数据基础`, `公司映射`, and `财务验证` tables if they contain the same rows. Merge them into `Event Admission Summary` and `公司与财务验证优先级`.
+- One fact should serve one role in the main body. Do not repeat the same evidence or validation need across Event Audit, Signal Cluster, Company Mapping, and Financial Validation sections.
+- Company mapping is required, but it must have a distinct job: value-chain position, report role, expression quality, and inclusion / exclusion logic.
+- Financial validation must not repeat the full company map. It should only state the critical metric, source, and decision implication.
 - Detailed event fields belong in machine-readable files, validation tasks, or appendix material. The PM-facing report should show compressed judgment, not repeated audit rows.
-- Target main-body length: 8-11 decision sections, 3-5 signal clusters, and no more than three tables before the appendix.
+- Target main-body length: 9-12 decision sections, 3-5 signal clusters, and no more than five tables before the appendix.
 - Do not make the report short by deleting reasoning. Make it dense by replacing repeated tables with distinct analysis, candidate rationale, price-in discussion, and validation logic.

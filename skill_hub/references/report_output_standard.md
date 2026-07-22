@@ -32,6 +32,7 @@ Good added detail includes:
 
 - judgment boundaries
 - why a signal is investment-relevant
+- company mapping that links value-chain position to stock expression quality
 - why a ticker is or is not a good expression
 - price-in interpretation
 - validation design
@@ -179,8 +180,10 @@ The report should avoid section-level duplication:
 - Do not keep separate evidence, event audit, signal cluster, company mapping,
   and financial validation tables if they repeat the same rows.
 - The main body should contain one primary place for each fact.
-- Company mapping and financial validation should usually be merged into one
-  priority table.
+- Company mapping should be preserved when it adds value-chain role, report
+  role, expression quality, and inclusion / exclusion logic.
+- Financial validation should be separate when it translates the company map
+  into specific metrics and source-checkable questions.
 - If a sentence such as `待验证：IR/call/filing、shipment、customer proof`
   would appear more than once, move it into the validation table and reference
   the relevant cluster.

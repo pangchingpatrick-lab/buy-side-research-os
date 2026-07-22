@@ -62,6 +62,8 @@ investment reasoning is not.
 Prefer added paragraphs that explain:
 
 - why the signal matters
+- where each company sits in the value chain
+- whether the stock is a clean or messy expression of the thesis
 - why the ticker expresses the signal
 - why similar tickers were excluded
 - what is already priced in
