@@ -54,19 +54,21 @@ This is the section where the report becomes a buy-side report rather than a res
 
 ## Concrete Ticker Candidate Loop
 
-Every public-equity report must name 3-7 concrete ticker candidates unless the
-topic has no listed-equity expression.
+Every public-equity report must name 3-7 concrete primary ticker candidates
+unless the topic has no listed-equity expression.
 
 Each candidate should include:
 
 - ticker
-- direction: `Long candidate`, `Long watch`, `Short / risk watch`, `Avoid`, or
-  `Needs evidence`
+- direction: `Long candidate`, `Long watch`, `Short candidate`, or `Short watch`
 - conviction
 - thesis cluster
 - benchmark
 - one-month review date
 - success / failure test
+
+Keep risk / context names in a separate watchlist. Do not mix weak, low-quality,
+or risk-only tickers into the primary candidate basket.
 
 The run should also emit `performance_tracking.jsonl`. One month later, the
 system should compare each candidate's return with its benchmark and use the

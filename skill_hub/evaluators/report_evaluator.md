@@ -23,7 +23,7 @@ The evaluator grades whether the output actually used the Research OS rather tha
 | Industry framework use | 6 | Frameworks support inspection without becoming the main argument. |
 | PM-grade core conclusion | 8 | Opens with marginal change, PM action state, core thesis, ticker candidates, research priority, and validation points; does not start with process summary. |
 | Signal-to-Alpha investment logic | 8 | Includes explicit Signal Cluster A/B/C sections with Signal, Mechanism, Beneficiary / Risk Mapping, Financial Transmission, Market Expectation / Price-In, and Evidence Gap / PM Trigger. Table-only summaries do not receive full credit. |
-| Ticker candidate / feedback loop | 8 | Names concrete tickers, direction, conviction, benchmark, one-month review date, and emits `performance_tracking.jsonl`. |
+| Ticker candidate / feedback loop | 8 | Names concrete primary ticker candidates, separates risk/context names, defines direction, conviction, benchmark, one-month review date, and emits `performance_tracking.jsonl`. |
 | Mapping quality | 6 | Includes value-chain, company, beneficiary/loser, and mechanism-to-financial mapping without duplicating the same rows elsewhere. |
 | Financial validation | 6 | Converts claims into line items, metrics, and source-checkable questions in a compressed priority table. |
 | Consensus / variant view | 4 | Separates consensus from the non-consensus view and identifies what would change minds. |
@@ -93,6 +93,7 @@ Any of these should force `Invalid` regardless of numeric score:
 - final report's core conclusion is a process summary instead of a PM-grade thesis
 - public-equity report does not name concrete ticker candidates or explain why no listed-equity candidate is investable
 - public-equity report does not define a one-month review date and benchmark for each candidate
+- public-equity report mixes weak risk/context names into the primary candidate basket without labeling them separately
 - full industry report or investment memo lacks a Signal-to-Alpha investment logic section
 - full system report, full industry report, or investment memo uses only a table for Signal-to-Alpha and lacks explicit Signal Cluster A/B/C style buy-side logic
 - signal clusters do not connect signal to mechanism, company mapping, financial impact, and PM action

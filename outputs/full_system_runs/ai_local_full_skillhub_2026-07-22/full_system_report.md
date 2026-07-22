@@ -6,7 +6,7 @@
 - PM 行动状态：`Watchlist / Needs More Evidence`。可以建立验证型观察篮子，但还不能升级为正式 long candidate。
 - 核心 thesis：如果 AI workload 继续向大模型推理、长上下文、agent、多模态和云端部署扩散，稀缺层可能从单纯算力转向 memory bandwidth、interconnect、optical / networking、test、rack-scale deployment 和 power availability。
 - 研究优先级：先验证 `MU/HBM`、`MRVL/AI networking / optical DSP`、`AEHR/test`、`SMCI/rack-scale deployment`、`CRWV/NBIS/ORCL cloud financing risk`。
-- 具体股票候选：`MU`、`MRVL`、`AEHR`、`SMCI`、`ORCL`。前四个是 long-watch 候选，`ORCL` 是 backlog / financing risk watch。
+- 具体股票候选：Primary basket 只保留 `MU`、`MRVL`、`AEHR`。`SMCI` 和 `ORCL` 改为 risk / context watch，不计入正向推票池。
 - 最大不确定性：这些信号目前多来自 X、专家文章、市场讨论和二级研究线索，缺少一手 earnings call、filing、IR、consensus revision 和 benchmark-relative price-in 数据。
 - 下一步验证：先补 primary evidence 和 market reaction，再决定是否把某个节点从 watchlist 升级为 candidate。
 
@@ -110,13 +110,20 @@
 
 本报告给出的不是“立即买入指令”，而是可追踪的研究候选池。一个月后用价格和基准表现检验报告是否产生了有用的方向性判断。
 
+Primary basket 只放真正能表达本报告正向 thesis 的票；risk / context watchlist 只用于检验风险，不和推票池混在一起。
+
 | Ticker | Direction | Conviction | Thesis Cluster | Why This Stock | Benchmark | Review Date | Success / Failure Test |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | MU | Long watch | Medium | A 内存/HBM | 最直接表达 HBM / DRAM 稀缺和内存带宽 thesis | SOXX | 2026-08-24 | 成功：30 日正收益且跑赢 SOXX，或 primary evidence 支撑 HBM mix / margin 上修；失败：跑输 SOXX且 HBM 证据弱化 |
 | MRVL | Long watch | Medium | B 数据移动/optical/test | 表达 AI networking、optical DSP、custom silicon 和数据移动瓶颈 | SOXX | 2026-08-24 | 成功：跑赢 SOXX 且 data-center / optical / custom silicon 证据增强；失败：收入贡献无法量化或股价只跟随半导体 beta |
 | AEHR | Long watch / Speculative | Low-Medium | B 数据移动/optical/test | 高弹性表达 AI-linked test / burn-in，但证据仍薄 | SOXX | 2026-08-24 | 成功：订单/backlog 证明 AI-linked 且跑赢 SOXX；失败：backlog 不能转收入或跑输小盘/半导体基准 |
-| SMCI | Conditional long watch | Low-Medium | C 物理部署/电力 | 表达 rack-scale deployment 和 liquid cooling，但执行风险高 | SOXX | 2026-08-24 | 成功：跑赢 SOXX 且 margin / cash conversion 未恶化；失败：收入增长被毛利、库存或回款问题抵消 |
-| ORCL | Short / risk watch | Medium | D AI cloud 融资风险 | 用来检验 AI backlog 质量、客户集中和 capex funding 风险 | QQQ | 2026-08-24 | 成功：若风险 thesis 正确，应跑输 QQQ或披露显示 backlog / financing risk 上升；失败：RPO质量和资金能力被验证且跑赢 QQQ |
+
+Risk / context watchlist:
+
+| Ticker | Classification | Why Not Primary | What It Tests | Benchmark | Review Date |
+| --- | --- | --- | --- | --- | --- |
+| SMCI | Needs evidence / risk context | AI rack 和液冷是好节点，但公司层面有执行、毛利、库存、回款和治理风险，不适合放进正向候选池 | 物理部署 thesis 是否能转化成高质量利润，而不是低质量收入增长 | SOXX | 2026-08-24 |
+| ORCL | Short / risk context | 上榜原因是 AI backlog 质量和融资风险，不是 AI 受益票；把它放进 long/watch 候选会误导 | AI cloud backlog 是否被市场过度信任，OpenAI/客户集中/capex funding 是否构成反证 | QQQ | 2026-08-24 |
 
 对应机器文件：`outputs/full_system_runs/ai_local_full_skillhub_2026-07-22/performance_tracking.jsonl`。
 
@@ -133,11 +140,12 @@
 ## 9. PM Next Action
 
 1. 不做泛 AI basket 加仓。
-2. 建立 AI bottleneck watchlist：`MU`、`MRVL`、`AEHR`、`SMCI`、`CRWV/NBIS/ORCL risk lens`、power/cooling/grid suppliers。
-3. 下一轮只做三件事：补 primary evidence、补 market reaction / price-in、补 consensus revision。
-4. 2026-08-24 对候选票池做 30 日复盘：绝对收益、相对基准收益、证据是否增强、是否该进入/退出候选池。
-5. 若某一节点同时满足“稀缺层清晰、财务传导清晰、市场预期未完全反映、验证证据可得”，再升级为单名报告。
-6. 若验证显示只是市场热度、泛 AI 转述或股价已充分 price in，则保留在 context，不进入投资候选。
+2. 建立 AI bottleneck primary basket：`MU`、`MRVL`、`AEHR`。
+3. 单独跟踪 risk / context watchlist：`SMCI`、`ORCL`、`CRWV/NBIS risk lens`、power/cooling/grid suppliers。
+4. 下一轮只做三件事：补 primary evidence、补 market reaction / price-in、补 consensus revision。
+5. 2026-08-24 对 primary basket 做 30 日复盘：绝对收益、相对基准收益、证据是否增强、是否该进入/退出候选池。
+6. 若某一节点同时满足“稀缺层清晰、财务传导清晰、市场预期未完全反映、验证证据可得”，再升级为单名报告。
+7. 若验证显示只是市场热度、泛 AI 转述或股价已充分 price in，则保留在 context，不进入投资候选。
 
 ## 10. 数据来源与待验证事项
 

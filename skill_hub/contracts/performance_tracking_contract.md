@@ -25,6 +25,8 @@ Each line represents one ticker candidate from the report.
   "topic": "AI infrastructure",
   "ticker": "MU",
   "company": "Micron Technology",
+  "candidate_bucket": "primary_candidate",
+  "score_in_primary_basket": true,
   "direction": "long_watch",
   "conviction": "medium",
   "thesis_cluster": "Signal Cluster A",
@@ -53,6 +55,15 @@ Each line represents one ticker candidate from the report.
 - `avoid`: the report explicitly says not to use this ticker as an expression.
 - `needs_evidence`: relevant ticker, but not enough evidence for direction.
 
+## Candidate Buckets
+
+- `primary_candidate`: the ticker is part of the report's scored candidate basket.
+- `risk_context`: the ticker is used to track risk, context, or a possible
+  invalidation path, but is not counted as a positive recommendation.
+
+Use `score_in_primary_basket: false` for risk/context names. This prevents low
+quality or risk-only names from contaminating the report's investable pick score.
+
 ## Review Rule
 
 At the one-month review date:
@@ -63,7 +74,8 @@ At the one-month review date:
 4. Calculate absolute return, benchmark return, and relative return.
 5. Score whether the report's direction was right:
    - long direction succeeds when the ticker is positive and/or outperforms benchmark according to the stated test.
-   - short / risk direction succeeds when the ticker underperforms benchmark or the risk evidence materializes.
+   - short direction succeeds when the ticker underperforms benchmark or the downside thesis materializes.
+   - risk/context names should be reviewed separately and should not change the primary candidate basket score unless the report explicitly made them scored shorts.
    - avoid succeeds when excluded/noise candidates underperform or fail to produce useful evidence.
 6. Write what worked or failed into report evaluation and memory only after review.
 

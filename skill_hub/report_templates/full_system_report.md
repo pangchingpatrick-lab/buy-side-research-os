@@ -94,15 +94,25 @@ Combine company mapping and financial validation into one compressed priority ta
 Every public-equity report must name concrete tickers unless the topic has no
 publicly traded exposure. Do not leave the report at the industry-node level.
 
-The candidates can be `Long candidate`, `Long watch`, `Short / risk watch`,
-`Avoid`, or `Needs evidence`; do not label weak evidence as a strong
-recommendation.
+Separate true report candidates from risk / context names. The primary basket is
+what will be used to judge whether the report generated useful investable ideas.
+Risk names can be tracked, but they must not be mixed into the same table as
+positive candidates.
+
+Primary candidates can be `Long candidate`, `Long watch`, `Short candidate`, or
+`Short watch`.
 
 | Ticker | Direction | Conviction | Thesis Cluster | Why This Stock | Benchmark | Review Date | Success / Failure Test |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
+Risk / context watchlist:
+
+| Ticker | Classification | Why Not Primary | What It Tests | Benchmark | Review Date |
+| --- | --- | --- | --- | --- | --- |
+
 Also emit a machine-readable `performance_tracking.jsonl` file for the same
-candidates so the system can review price performance after one month.
+candidates so the system can review price performance after one month. Include
+`candidate_bucket` to separate `primary_candidate` from `risk_context`.
 
 ## 8. Bear Case / Invalidation
 
@@ -124,6 +134,8 @@ candidates so the system can review price performance after one month.
 - The `买方投资逻辑（Signal-to-Alpha）` section must use explicit `Signal Cluster A/B/C...` subsections. A table alone is not acceptable for a buy-side report.
 - For public-equity reports, include 3-7 concrete ticker candidates or explicitly explain why no listed-equity candidate is investable.
 - Each candidate must have direction, conviction, benchmark, one-month review date, and a success / failure test.
+- Do not mix low-quality risk/context names into the primary candidate basket.
+- Risk watch names can be tracked separately, but they should not count as the report's investable picks.
 - Candidate direction is a research action state, not a personal investment instruction.
 - One fact should serve one role in the main body. Do not repeat the same evidence, validation need, or ticker mapping across Event Audit, Signal Cluster, Company Mapping, and Financial Validation sections.
 - Do not create separate `数据基础`, `公司映射`, and `财务验证` tables if they contain the same rows. Merge them into `Event Admission Summary` and `公司与财务验证优先级`.

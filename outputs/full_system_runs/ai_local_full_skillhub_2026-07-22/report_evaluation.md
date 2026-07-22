@@ -17,7 +17,7 @@
 | Industry framework use | 6 | 5 | AI, semiconductor, and energy frameworks support inspection without becoming the report skeleton. |
 | PM-grade core conclusion | 8 | 8 | Opens with marginal change, action state, thesis, ticker candidates, priorities, uncertainty, and next validation. |
 | Signal-to-Alpha investment logic | 8 | 8 | Uses explicit Signal Cluster A/B/C/D with signal, mechanism, mapping, financial transmission, price-in, and PM trigger. |
-| Ticker candidate / feedback loop | 8 | 7 | Names MU, MRVL, AEHR, SMCI, and ORCL with direction, conviction, benchmark, review date, and `performance_tracking.jsonl`; start prices still need market data. |
+| Ticker candidate / feedback loop | 8 | 7 | Separates primary basket (`MU`, `MRVL`, `AEHR`) from risk/context watchlist (`SMCI`, `ORCL`), with direction, conviction, benchmark, review date, and `performance_tracking.jsonl`; start prices still need market data. |
 | Mapping quality | 6 | 5 | Company and risk-object mapping are concentrated in one validation priority table rather than repeated across sections. |
 | Financial validation | 6 | 4 | Converts claims into line items and source-checkable questions, but still lacks primary earnings data, consensus estimates, and price tables. |
 | Consensus / variant view | 4 | 3 | Separates consensus AI beta from variant bottleneck migration, but price-in evidence is incomplete. |
@@ -32,6 +32,7 @@
 - Add benchmark-relative and peer-relative price-in tables, especially SOXX-relative returns and prior run-up / drawdown windows.
 - Add consensus estimates, valuation multiples, and line-item revision evidence for key tickers.
 - Fill `performance_tracking.jsonl` with start prices and benchmark prices before the one-month review.
+- Keep `SMCI` and `ORCL` out of the primary candidate basket unless future evidence materially improves their quality or confirms a scored short thesis.
 - Improve automated event clustering so repeated memory / HBM / MRVL posts count as one thesis cluster before report generation.
 
 ## Optional Improvements

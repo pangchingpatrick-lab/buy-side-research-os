@@ -75,11 +75,17 @@ For public-equity research, the report must name specific ticker candidates.
 The system is not useful if it only explains an industry and never produces
 observable picks that can be evaluated later.
 
-Use a compact table with:
+Use two separate buckets:
+
+1. `Primary Candidate Basket`: the names that actually express the report's
+   investable thesis and will be scored as picks.
+2. `Risk / Context Watchlist`: names that help test risks, failure modes, or
+   industry context, but are not positive candidates.
+
+For the primary basket, use a compact table with:
 
 - ticker
-- direction: `Long candidate`, `Long watch`, `Short / risk watch`, `Avoid`, or
-  `Needs evidence`
+- direction: `Long candidate`, `Long watch`, `Short candidate`, or `Short watch`
 - conviction
 - linked thesis cluster
 - why this stock expresses the thesis
@@ -90,6 +96,10 @@ Use a compact table with:
 If evidence is incomplete, use `Long watch` or `Needs evidence` rather than
 forcing `Long candidate`. The goal is to create an auditable candidate set, not
 to overstate conviction.
+
+Risk/context names should be explicitly labeled as such. They can be tracked in
+`performance_tracking.jsonl` with `candidate_bucket: risk_context`, but they do
+not count as the report's primary picks.
 
 Also create `performance_tracking.jsonl` for every full report so the same
 tickers can be reviewed after one month.
