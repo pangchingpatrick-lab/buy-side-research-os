@@ -12,6 +12,7 @@ Score each dimension from 1 to 5.
 | --- | --- |
 | Thesis clarity | The report states a clear investment-relevant thesis early, not a generic industry summary. |
 | Evidence strength | Claims are traceable to credible sources, with verified facts separated from unverified signals. |
+| Event audit discipline | Public claims are converted into event rows with claim type, evidence type, ticker role, discovery stage, and report use before becoming thesis evidence. |
 | Financial translation | The report explains how signals affect revenue, margin, orders, capex, EPS, FCF, or valuation. |
 | Company mapping | The report maps direct, indirect, and negative listed-company exposure with economic mechanisms. |
 | Variant view | The report explains what consensus likely believes and where the non-consensus view may be different. |
@@ -71,8 +72,8 @@ When comparing methodologies, produce:
 - Key tradeoff:
 
 ## Scores
-| Methodology | Thesis clarity | Evidence strength | Financial translation | Company mapping | Variant view | Actionability | Risk / invalidation | Industry fit | Total |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Methodology | Thesis clarity | Evidence strength | Event audit discipline | Financial translation | Company mapping | Variant view | Actionability | Risk / invalidation | Industry fit | Total |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 
 ## Best Use Case
 - Methodology:
@@ -105,6 +106,7 @@ If the methodology does not fit the industry, the evaluator should say so direct
 ## Guardrails
 
 - Do not reward confident writing if evidence is weak.
+- Do not reward public-signal-heavy reports that skip event audit.
 - Do not reward broad company lists without exposure logic.
 - Do not reward upside claims without financial translation.
 - Do not reward actionability if invalidation is missing.

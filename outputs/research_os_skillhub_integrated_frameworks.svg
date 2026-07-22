@@ -1,0 +1,236 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="1620" viewBox="0 0 2500 1620">
+  <defs>
+    <style>
+      .bg { fill: #f6f8fb; }
+      .frame { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2.4; rx: 26; }
+      .lane { fill: #f8fafc; stroke: #dbe3ef; stroke-width: 1.5; rx: 18; }
+      .node { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 10; }
+      .entry { fill: #eff6ff; stroke: #2563eb; stroke-width: 2.5; rx: 12; }
+      .oldskill { fill: #fefce8; stroke: #ca8a04; stroke-width: 2; rx: 12; }
+      .newskill { fill: #fff7ed; stroke: #ea580c; stroke-width: 2.8; rx: 13; }
+      .thinking { fill: #ecfdf5; stroke: #059669; stroke-width: 2.4; rx: 12; }
+      .framework { fill: #f0f9ff; stroke: #0284c7; stroke-width: 2; rx: 12; }
+      .ref { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 1.8; rx: 10; }
+      .analysis { fill: #eef2ff; stroke: #4f46e5; stroke-width: 1.8; rx: 10; }
+      .report { fill: #f0fdf4; stroke: #16a34a; stroke-width: 2.2; rx: 12; }
+      .memory { fill: #fff1f2; stroke: #e11d48; stroke-width: 1.9; rx: 10; }
+      .weight { fill: #ecfdf5; stroke: #059669; stroke-width: 2.8; rx: 14; }
+      .support { fill: #f0f9ff; stroke: #0284c7; stroke-width: 1.9; rx: 14; }
+      .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #0f172a; font-size: 18px; }
+      .title { font-size: 32px; font-weight: 600; fill: #0f172a; }
+      .subtitle { font-size: 17px; fill: #64748b; }
+      .lane-title { font-size: 21px; font-weight: 600; fill: #0f172a; }
+      .label { font-size: 17px; font-weight: 600; fill: #0f172a; }
+      .small { font-size: 15px; fill: #334155; }
+      .tiny { font-size: 13px; fill: #475569; }
+      .muted { fill: #64748b; }
+      .arrow { fill: none; stroke: #64748b; stroke-width: 1.7; marker-end: url(#arrow); }
+      .arrow-orange { fill: none; stroke: #ea580c; stroke-width: 2.4; marker-end: url(#arrow-orange); }
+      .arrow-green { fill: none; stroke: #059669; stroke-width: 2.5; marker-end: url(#arrow-green); }
+      .arrow-blue { fill: none; stroke: #0284c7; stroke-width: 2; marker-end: url(#arrow-blue); }
+      .arrow-purple { fill: none; stroke: #7c3aed; stroke-width: 1.9; marker-end: url(#arrow-purple); }
+      .dash { fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-dasharray: 7 7; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="9" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L9,3.5 z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,8 L10,4 z" fill="#ea580c"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,8 L10,4 z" fill="#059669"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,8 L10,4 z" fill="#0284c7"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,8 L10,4 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="2500" height="1620"/>
+  <rect class="frame" x="30" y="28" width="2440" height="1564"/>
+
+  <text class="title" x="1250" y="76" text-anchor="middle">Research OS SkillHub：Skill005 融入 + 行业框架完整结构图</text>
+  <text class="subtitle" x="1250" y="108" text-anchor="middle">正确顺序：思考模式/方法论主导论证；行业研究框架作为支持性 checklist；Skill005 的两个 framework 融入 Skill001-004</text>
+
+  <rect class="entry" x="870" y="138" width="760" height="82"/>
+  <text class="label" x="1250" y="169" text-anchor="middle">skills/research-os-skillhub/SKILL.md</text>
+  <text class="small" x="1250" y="194" text-anchor="middle">成熟 Skill 总入口 / 只读取本地 system_index / 先 route 再 report</text>
+
+  <rect class="lane" x="70" y="262" width="342" height="272"/>
+  <text class="lane-title" x="96" y="300">1. 本地数据与路由</text>
+  <rect class="node" x="104" y="328" width="274" height="62"/>
+  <text class="label" x="241" y="353" text-anchor="middle">system_index</text>
+  <text class="tiny" x="241" y="374" text-anchor="middle">本地机器可读数据源</text>
+  <rect class="node" x="104" y="422" width="124" height="64"/>
+  <text class="label" x="166" y="447" text-anchor="middle">registry</text>
+  <text class="tiny" x="166" y="468" text-anchor="middle">模块清单</text>
+  <rect class="node" x="254" y="422" width="124" height="64"/>
+  <text class="label" x="316" y="447" text-anchor="middle">router</text>
+  <text class="tiny" x="316" y="468" text-anchor="middle">生成 route</text>
+  <path class="arrow" d="M1250 220 C1190 252 430 266 241 328"/>
+  <path class="arrow" d="M241 390 C241 408 166 408 166 422"/>
+  <path class="arrow" d="M241 390 C241 408 316 408 316 422"/>
+
+  <rect class="lane" x="454" y="262" width="846" height="456"/>
+  <text class="lane-title" x="480" y="300">2. Skill001-004：原主干保留</text>
+  <text class="tiny muted" x="480" y="323">案例 / 技术 / 股票 / 卡点四条主干仍然存在，只是吸收 Skill005 reference 后变强</text>
+
+  <rect class="oldskill" x="494" y="356" width="352" height="106"/>
+  <text class="label" x="670" y="386" text-anchor="middle">Skill001: 强案例蒸馏</text>
+  <text class="tiny" x="670" y="410" text-anchor="middle">沉淀优秀案例里的可复用思考动作</text>
+  <text class="tiny" x="670" y="432" text-anchor="middle">吸收：event reasoning / bottleneck framework</text>
+
+  <rect class="oldskill" x="902" y="356" width="352" height="106"/>
+  <text class="label" x="1078" y="386" text-anchor="middle">Skill002: 技术/供应链蒸馏</text>
+  <text class="tiny" x="1078" y="410" text-anchor="middle">workload -> hardware -> physical constraint</text>
+  <text class="tiny" x="1078" y="432" text-anchor="middle">吸收：AI infrastructure bottleneck</text>
+
+  <rect class="oldskill" x="494" y="538" width="352" height="106"/>
+  <text class="label" x="670" y="568" text-anchor="middle">Skill003: Equity Research</text>
+  <text class="tiny" x="670" y="592" text-anchor="middle">证据 -> 机制 -> 财务影响 -> price-in</text>
+  <text class="tiny" x="670" y="614" text-anchor="middle">吸收：ticker role / evidence stack / event stage</text>
+
+  <rect class="oldskill" x="902" y="538" width="352" height="106"/>
+  <text class="label" x="1078" y="568" text-anchor="middle">Skill004: 产业链卡点</text>
+  <text class="tiny" x="1078" y="592" text-anchor="middle">先排稀缺层，再排公司</text>
+  <text class="tiny" x="1078" y="614" text-anchor="middle">吸收：cross-industry bottleneck backbone</text>
+
+  <path class="arrow" d="M412 454 C430 454 440 454 454 454"/>
+
+  <rect class="lane" x="1342" y="262" width="1090" height="456"/>
+  <text class="lane-title" x="1368" y="300">3. Skill005：新增事件化层 + 共享 reference，不替代 1-4</text>
+  <text class="tiny muted" x="1368" y="323">把公开观点变成可审计 research event，并把高价值 framework / reference 输入到全系统</text>
+
+  <rect class="newskill" x="1382" y="356" width="360" height="118"/>
+  <text class="label" x="1562" y="386" text-anchor="middle">Skill005: Event Distillation</text>
+  <text class="tiny" x="1562" y="411" text-anchor="middle">公开观点 -> timestamped research event</text>
+  <text class="tiny" x="1562" y="432" text-anchor="middle">claim / evidence / ticker role / stage / price-in</text>
+  <text class="tiny" x="1562" y="453" text-anchor="middle">lead / evidence / context / validation / noise</text>
+
+  <rect class="thinking" x="1788" y="344" width="292" height="86"/>
+  <text class="label" x="1934" y="374" text-anchor="middle">Skill009</text>
+  <text class="tiny" x="1934" y="399" text-anchor="middle">event-level reasoning</text>
+  <text class="tiny" x="1934" y="419" text-anchor="middle">叙事 / 信号 / 风险</text>
+
+  <rect class="thinking" x="2110" y="344" width="282" height="86"/>
+  <text class="label" x="2251" y="374" text-anchor="middle">Skill010</text>
+  <text class="tiny" x="2251" y="399" text-anchor="middle">bottleneck event mapping</text>
+  <text class="tiny" x="2251" y="419" text-anchor="middle">demand shock -> beneficiary</text>
+
+  <rect class="ref" x="1788" y="482" width="604" height="110"/>
+  <text class="label" x="2090" y="512" text-anchor="middle">Skill005 下方文件进入系统</text>
+  <text class="tiny" x="2090" y="537" text-anchor="middle">event-schema / ticker-taxonomy / example-analysis</text>
+  <text class="tiny" x="2090" y="558" text-anchor="middle">validated-patterns / failure-modes</text>
+  <text class="tiny" x="2090" y="579" text-anchor="middle">分别进入 references / memory / output shape</text>
+
+  <path class="arrow-orange" d="M1254 410 C1300 410 1340 410 1382 410"/>
+  <path class="arrow-orange" d="M1742 398 L1788 398"/>
+  <path class="arrow-orange" d="M2080 387 L2110 387"/>
+  <path class="arrow-purple" d="M1562 474 C1600 520 1700 537 1788 537"/>
+
+  <rect class="lane" x="70" y="760" width="678" height="336"/>
+  <text class="lane-title" x="96" y="798">4. 两个重要 framework：融进 1-4</text>
+  <rect class="thinking" x="104" y="842" width="282" height="92"/>
+  <text class="label" x="245" y="872" text-anchor="middle">AI Infrastructure Bottleneck</text>
+  <text class="tiny" x="245" y="897" text-anchor="middle">workload -> stressed layer</text>
+  <text class="tiny" x="245" y="918" text-anchor="middle">scarce capability -> supplier</text>
+  <rect class="thinking" x="430" y="842" width="282" height="92"/>
+  <text class="label" x="571" y="872" text-anchor="middle">Cross-Industry Bottleneck</text>
+  <text class="tiny" x="571" y="897" text-anchor="middle">demand shock -> constrained layer</text>
+  <text class="tiny" x="571" y="918" text-anchor="middle">underpriced beneficiary -> audit</text>
+
+  <text class="tiny" x="409" y="986" text-anchor="middle">融入方式</text>
+  <text class="tiny" x="409" y="1010" text-anchor="middle">Skill001 学成 reusable thinking</text>
+  <text class="tiny" x="409" y="1030" text-anchor="middle">Skill002 做技术瓶颈与供应链验证</text>
+  <text class="tiny" x="409" y="1050" text-anchor="middle">Skill003 做权益受益者与 price-in</text>
+  <text class="tiny" x="409" y="1070" text-anchor="middle">Skill004 做卡点层级和公司 proximity</text>
+
+  <path class="arrow-green" d="M386 888 L430 888"/>
+  <path class="arrow-green" d="M245 842 C340 720 610 674 670 644"/>
+  <path class="arrow-green" d="M571 842 C750 735 1030 690 1078 644"/>
+  <path class="arrow-green" d="M571 842 C910 720 1070 462 1078 462"/>
+  <path class="arrow-green" d="M245 842 C310 710 650 490 670 462"/>
+
+  <rect class="lane" x="790" y="760" width="720" height="336"/>
+  <text class="lane-title" x="816" y="798">5. 思考模式 / 方法论：权重大于行业框架</text>
+
+  <rect class="weight" x="824" y="842" width="298" height="88"/>
+  <text class="label" x="973" y="872" text-anchor="middle">Thinking Skills</text>
+  <text class="tiny" x="973" y="897" text-anchor="middle">决定怎么看问题</text>
+  <text class="tiny" x="973" y="918" text-anchor="middle">盲点 / 因果链 / 卡点 / price-in</text>
+
+  <rect class="weight" x="1180" y="842" width="298" height="88"/>
+  <text class="label" x="1329" y="872" text-anchor="middle">Research Methodologies</text>
+  <text class="tiny" x="1329" y="897" text-anchor="middle">决定论证主线</text>
+  <text class="tiny" x="1329" y="918" text-anchor="middle">serenity / event distillation</text>
+
+  <rect class="node" x="924" y="974" width="452" height="74"/>
+  <text class="label" x="1150" y="1002" text-anchor="middle">Dominance Rule</text>
+  <text class="tiny" x="1150" y="1027" text-anchor="middle">思考模式先定 thesis、结构、证据解释、PM action</text>
+
+  <path class="arrow-green" d="M1122 886 L1180 886"/>
+  <path class="arrow-green" d="M973 930 C973 956 1030 974 1080 974"/>
+  <path class="arrow-green" d="M1329 930 C1329 956 1270 974 1220 974"/>
+
+  <rect class="lane" x="1552" y="760" width="880" height="336"/>
+  <text class="lane-title" x="1578" y="798">6. 行业研究框架：必须有，但只能做支持性 checklist</text>
+
+  <rect class="framework" x="1588" y="842" width="392" height="92"/>
+  <text class="label" x="1784" y="872" text-anchor="middle">industry_frameworks/</text>
+  <text class="tiny" x="1784" y="897" text-anchor="middle">AI / semiconductor / software / energy / space</text>
+  <text class="tiny" x="1784" y="918" text-anchor="middle">consumer electronics / healthcare / financials...</text>
+
+  <rect class="support" x="2022" y="842" width="368" height="92"/>
+  <text class="label" x="2206" y="872" text-anchor="middle">Support Role</text>
+  <text class="tiny" x="2206" y="897" text-anchor="middle">价值链 / KPI / 风险 / 行业变量 checklist</text>
+  <text class="tiny" x="2206" y="918" text-anchor="middle">不主导报告，不替代思考模式</text>
+
+  <rect class="node" x="1694" y="974" width="590" height="74"/>
+  <text class="label" x="1989" y="1002" text-anchor="middle">权重关系</text>
+  <text class="tiny" x="1989" y="1027" text-anchor="middle">Thinking / Methodology &gt; Industry Framework &gt; Analysis checklist</text>
+
+  <path class="arrow-blue" d="M1510 1011 C1542 1011 1580 1011 1694 1011"/>
+  <path class="arrow-blue" d="M1980 888 L2022 888"/>
+  <path class="arrow-blue" d="M2206 934 C2206 956 2130 974 2070 974"/>
+
+  <rect class="lane" x="70" y="1140" width="1060" height="218"/>
+  <text class="lane-title" x="96" y="1178">7. 验证与报告</text>
+  <rect class="analysis" x="108" y="1222" width="190" height="78"/>
+  <text class="label" x="203" y="1252" text-anchor="middle">event_audit</text>
+  <text class="tiny" x="203" y="1276" text-anchor="middle">报告准入</text>
+  <rect class="analysis" x="342" y="1222" width="220" height="78"/>
+  <text class="label" x="452" y="1252" text-anchor="middle">analysis methods</text>
+  <text class="tiny" x="452" y="1276" text-anchor="middle">company / financial / consensus</text>
+  <rect class="report" x="606" y="1222" width="196" height="78"/>
+  <text class="label" x="704" y="1252" text-anchor="middle">report</text>
+  <text class="tiny" x="704" y="1276" text-anchor="middle">买方输出</text>
+  <rect class="memory" x="846" y="1222" width="246" height="78"/>
+  <text class="label" x="969" y="1252" text-anchor="middle">memory candidate</text>
+  <text class="tiny" x="969" y="1276" text-anchor="middle">评估后才沉淀</text>
+  <path class="arrow" d="M2284 1011 C2320 1110 260 1118 203 1222"/>
+  <path class="arrow" d="M298 1261 L342 1261"/>
+  <path class="arrow" d="M562 1261 L606 1261"/>
+  <path class="arrow" d="M802 1261 L846 1261"/>
+
+  <rect class="lane" x="1172" y="1140" width="1260" height="218"/>
+  <text class="lane-title" x="1198" y="1178">8. 最终一句话结构</text>
+  <rect class="oldskill" x="1210" y="1224" width="222" height="72"/>
+  <text class="label" x="1321" y="1252" text-anchor="middle">Skill001-004</text>
+  <text class="tiny" x="1321" y="1274" text-anchor="middle">主干保留</text>
+  <rect class="newskill" x="1486" y="1224" width="210" height="72"/>
+  <text class="label" x="1591" y="1252" text-anchor="middle">Skill005</text>
+  <text class="tiny" x="1591" y="1274" text-anchor="middle">新增事件化层</text>
+  <rect class="thinking" x="1750" y="1224" width="250" height="72"/>
+  <text class="label" x="1875" y="1252" text-anchor="middle">思考模式主导</text>
+  <text class="tiny" x="1875" y="1274" text-anchor="middle">决定报告主线</text>
+  <rect class="framework" x="2054" y="1224" width="240" height="72"/>
+  <text class="label" x="2174" y="1252" text-anchor="middle">行业框架支撑</text>
+  <text class="tiny" x="2174" y="1274" text-anchor="middle">做 checklist</text>
+  <path class="arrow-orange" d="M1432 1260 L1486 1260"/>
+  <path class="arrow-green" d="M1696 1260 L1750 1260"/>
+  <path class="arrow-blue" d="M2000 1260 L2054 1260"/>
+
+  <text class="subtitle" x="1250" y="1445" text-anchor="middle">这版图的关键：行业框架没有被漏掉，但它被明确放在思考模式之后；报告由思考模式驱动，行业框架负责检查行业结构、变量和验证点。</text>
+</svg>

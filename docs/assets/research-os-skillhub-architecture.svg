@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1180" viewBox="0 0 1900 1180">
+  <defs>
+    <style>
+      .bg { fill: #f7f8fa; }
+      .frame { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; rx: 22; }
+      .node { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.4; rx: 8; }
+      .entry { fill: #eff6ff; stroke: #2563eb; stroke-width: 2.4; rx: 12; }
+      .final { fill: #ecfdf5; stroke: #059669; stroke-width: 2.2; rx: 12; }
+      .memory { fill: #fff7ed; stroke: #ea580c; stroke-width: 1.8; rx: 10; }
+      .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #111827; font-size: 17px; }
+      .small { font-size: 14px; fill: #374151; }
+      .tiny { font-size: 12px; fill: #4b5563; }
+      .title { font-size: 22px; font-weight: 600; fill: #111827; }
+      .label { font-size: 15px; font-weight: 600; fill: #0f172a; }
+      .muted { fill: #6b7280; }
+      .arrow { fill: none; stroke: #64748b; stroke-width: 1.5; marker-end: url(#arrow); }
+      .arrow2 { fill: none; stroke: #0f766e; stroke-width: 1.8; marker-end: url(#arrow); }
+      .lane { fill: none; stroke: #e2e8f0; stroke-width: 1; stroke-dasharray: 5 5; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1900" height="1180"/>
+  <rect class="frame" x="24" y="24" width="1852" height="1132"/>
+
+  <text class="title" x="950" y="70" text-anchor="middle">Research OS SkillHub 成熟 Skill 结构图</text>
+  <text class="small muted" x="950" y="96" text-anchor="middle">入口是 skills/research-os-skillhub/SKILL.md；skill_hub/ 是底层规则库，不负责采集数据</text>
+
+  <!-- Top entry -->
+  <rect class="node" x="795" y="124" width="310" height="64"/>
+  <text class="text" x="950" y="150" text-anchor="middle">用户提问</text>
+  <text class="small" x="950" y="174" text-anchor="middle">写报告 / 审计信号 / 跑完整 OS</text>
+
+  <rect class="entry" x="735" y="230" width="430" height="86"/>
+  <text class="label" x="950" y="260" text-anchor="middle">skills/research-os-skillhub/SKILL.md</text>
+  <text class="small" x="950" y="284" text-anchor="middle">成熟 skill 总入口 / 调度器</text>
+  <text class="tiny" x="950" y="304" text-anchor="middle">规定：不采集数据，只路由本地 system_index</text>
+  <path class="arrow" d="M950 188 C950 200 950 214 950 229"/>
+
+  <!-- Columns -->
+  <!-- 1 Data -->
+  <rect class="node" x="56" y="382" width="180" height="78"/>
+  <text class="label" x="146" y="410" text-anchor="middle">本地数据层</text>
+  <text class="tiny" x="146" y="432" text-anchor="middle">/Desktop/research_data</text>
+  <text class="tiny" x="146" y="450" text-anchor="middle">system_index 为入口</text>
+
+  <rect class="node" x="56" y="520" width="180" height="78"/>
+  <text class="label" x="146" y="548" text-anchor="middle">scripts/</text>
+  <text class="tiny" x="146" y="570" text-anchor="middle">inspect-runtime</text>
+  <text class="tiny" x="146" y="588" text-anchor="middle">build-context-packet</text>
+
+  <rect class="node" x="56" y="660" width="180" height="78"/>
+  <text class="label" x="146" y="688" text-anchor="middle">context packet</text>
+  <text class="tiny" x="146" y="710" text-anchor="middle">证据摘要 / tickers</text>
+  <text class="tiny" x="146" y="728" text-anchor="middle">source / score / gaps</text>
+
+  <!-- 2 routing -->
+  <rect class="node" x="268" y="382" width="180" height="78"/>
+  <text class="label" x="358" y="410" text-anchor="middle">registry.md</text>
+  <text class="tiny" x="358" y="432" text-anchor="middle">模块清单</text>
+  <text class="tiny" x="358" y="450" text-anchor="middle">默认数据源</text>
+
+  <rect class="node" x="268" y="520" width="180" height="78"/>
+  <text class="label" x="358" y="548" text-anchor="middle">router.md</text>
+  <text class="tiny" x="358" y="570" text-anchor="middle">选择 primary skill</text>
+  <text class="tiny" x="358" y="588" text-anchor="middle">最多 2 个辅助 skill</text>
+
+  <rect class="node" x="268" y="660" width="180" height="78"/>
+  <text class="label" x="358" y="688" text-anchor="middle">route.md / route.json</text>
+  <text class="tiny" x="358" y="710" text-anchor="middle">完整运行审计轨迹</text>
+  <text class="tiny" x="358" y="728" text-anchor="middle">先 route 后 report</text>
+
+  <!-- 3 references -->
+  <rect class="node" x="480" y="360" width="200" height="100"/>
+  <text class="label" x="580" y="386" text-anchor="middle">references/</text>
+  <text class="tiny" x="580" y="410" text-anchor="middle">calling-sequence</text>
+  <text class="tiny" x="580" y="428" text-anchor="middle">routing-and-contracts</text>
+  <text class="tiny" x="580" y="446" text-anchor="middle">example-route</text>
+
+  <rect class="node" x="480" y="520" width="200" height="96"/>
+  <text class="label" x="580" y="548" text-anchor="middle">字段/标签解释</text>
+  <text class="tiny" x="580" y="572" text-anchor="middle">event schema</text>
+  <text class="tiny" x="580" y="590" text-anchor="middle">source evidence</text>
+  <text class="tiny" x="580" y="608" text-anchor="middle">ticker role</text>
+
+  <rect class="node" x="480" y="676" width="200" height="82"/>
+  <text class="label" x="580" y="706" text-anchor="middle">输出/沉淀标准</text>
+  <text class="tiny" x="580" y="728" text-anchor="middle">report output</text>
+  <text class="tiny" x="580" y="746" text-anchor="middle">evaluator + memory</text>
+
+  <!-- 4 event audit -->
+  <rect class="node" x="716" y="382" width="185" height="78"/>
+  <text class="label" x="808" y="410" text-anchor="middle">Skill 005</text>
+  <text class="tiny" x="808" y="432" text-anchor="middle">Research Event</text>
+  <text class="tiny" x="808" y="450" text-anchor="middle">Distillation</text>
+
+  <rect class="node" x="716" y="520" width="185" height="96"/>
+  <text class="label" x="808" y="548" text-anchor="middle">事件化审计</text>
+  <text class="tiny" x="808" y="572" text-anchor="middle">claim / evidence</text>
+  <text class="tiny" x="808" y="590" text-anchor="middle">ticker role</text>
+  <text class="tiny" x="808" y="608" text-anchor="middle">price-in question</text>
+
+  <rect class="node" x="716" y="676" width="185" height="82"/>
+  <text class="label" x="808" y="706" text-anchor="middle">报告准入</text>
+  <text class="tiny" x="808" y="728" text-anchor="middle">lead / evidence</text>
+  <text class="tiny" x="808" y="746" text-anchor="middle">context / validation / exclude</text>
+
+  <!-- 5 core skills -->
+  <rect class="node" x="932" y="358" width="200" height="110"/>
+  <text class="label" x="1032" y="384" text-anchor="middle">core_skills/</text>
+  <text class="tiny" x="1032" y="408" text-anchor="middle">001 白毛女强案例</text>
+  <text class="tiny" x="1032" y="426" text-anchor="middle">002 SemiAnalysis</text>
+  <text class="tiny" x="1032" y="444" text-anchor="middle">003 Equity Research</text>
+  <text class="tiny" x="1032" y="462" text-anchor="middle">004 Serenity 卡点</text>
+
+  <rect class="node" x="932" y="528" width="200" height="88"/>
+  <text class="label" x="1032" y="556" text-anchor="middle">主思考方式</text>
+  <text class="tiny" x="1032" y="580" text-anchor="middle">exactly one primary</text>
+  <text class="tiny" x="1032" y="598" text-anchor="middle">zero to two auxiliary</text>
+
+  <rect class="node" x="932" y="676" width="200" height="82"/>
+  <text class="label" x="1032" y="706" text-anchor="middle">思考先于框架</text>
+  <text class="tiny" x="1032" y="728" text-anchor="middle">how to think</text>
+  <text class="tiny" x="1032" y="746" text-anchor="middle">before what to inspect</text>
+
+  <!-- 6 thinking -->
+  <rect class="node" x="1164" y="360" width="200" height="108"/>
+  <text class="label" x="1264" y="386" text-anchor="middle">thinking_skills/</text>
+  <text class="tiny" x="1264" y="410" text-anchor="middle">blind spot / causal chain</text>
+  <text class="tiny" x="1264" y="428" text-anchor="middle">reverse value chain</text>
+  <text class="tiny" x="1264" y="446" text-anchor="middle">constraint / consensus</text>
+  <text class="tiny" x="1264" y="464" text-anchor="middle">financial bridge</text>
+
+  <rect class="node" x="1164" y="528" width="200" height="88"/>
+  <text class="label" x="1264" y="556" text-anchor="middle">methodology</text>
+  <text class="tiny" x="1264" y="580" text-anchor="middle">serenity.md</text>
+  <text class="tiny" x="1264" y="598" text-anchor="middle">methodology evaluator</text>
+
+  <rect class="node" x="1164" y="676" width="200" height="82"/>
+  <text class="label" x="1264" y="706" text-anchor="middle">推理路径</text>
+  <text class="tiny" x="1264" y="728" text-anchor="middle">Signal -> Mechanism</text>
+  <text class="tiny" x="1264" y="746" text-anchor="middle">-> Financial impact</text>
+
+  <!-- 7 frameworks/methods -->
+  <rect class="node" x="1396" y="360" width="210" height="108"/>
+  <text class="label" x="1501" y="386" text-anchor="middle">industry_frameworks/</text>
+  <text class="tiny" x="1501" y="410" text-anchor="middle">AI / Semiconductor</text>
+  <text class="tiny" x="1501" y="428" text-anchor="middle">Software / Energy</text>
+  <text class="tiny" x="1501" y="446" text-anchor="middle">Space / Healthcare</text>
+  <text class="tiny" x="1501" y="464" text-anchor="middle">行业检查表</text>
+
+  <rect class="node" x="1396" y="528" width="210" height="88"/>
+  <text class="label" x="1501" y="556" text-anchor="middle">analysis_methods/</text>
+  <text class="tiny" x="1501" y="580" text-anchor="middle">event audit / mapping</text>
+  <text class="tiny" x="1501" y="598" text-anchor="middle">financial / valuation</text>
+
+  <rect class="node" x="1396" y="676" width="210" height="82"/>
+  <text class="label" x="1501" y="706" text-anchor="middle">验证层</text>
+  <text class="tiny" x="1501" y="728" text-anchor="middle">consensus gap</text>
+  <text class="tiny" x="1501" y="746" text-anchor="middle">investment decision</text>
+
+  <!-- 8 output -->
+  <rect class="node" x="1638" y="382" width="195" height="78"/>
+  <text class="label" x="1736" y="410" text-anchor="middle">report_templates/</text>
+  <text class="tiny" x="1736" y="432" text-anchor="middle">full report / memo</text>
+  <text class="tiny" x="1736" y="450" text-anchor="middle">PM brief / industry</text>
+
+  <rect class="node" x="1638" y="520" width="195" height="96"/>
+  <text class="label" x="1736" y="548" text-anchor="middle">evaluator</text>
+  <text class="tiny" x="1736" y="572" text-anchor="middle">report score</text>
+  <text class="tiny" x="1736" y="590" text-anchor="middle">hard fail checks</text>
+  <text class="tiny" x="1736" y="608" text-anchor="middle">event audit discipline</text>
+
+  <rect class="memory" x="1638" y="676" width="195" height="82"/>
+  <text class="label" x="1736" y="706" text-anchor="middle">memory/</text>
+  <text class="tiny" x="1736" y="728" text-anchor="middle">validated patterns</text>
+  <text class="tiny" x="1736" y="746" text-anchor="middle">failure modes</text>
+
+  <!-- Arrows from entry to columns -->
+  <path class="arrow" d="M760 300 C530 318 245 325 146 381"/>
+  <path class="arrow" d="M820 316 C650 330 440 335 358 381"/>
+  <path class="arrow" d="M875 316 C760 330 650 338 580 359"/>
+  <path class="arrow" d="M925 316 C882 340 840 360 808 381"/>
+  <path class="arrow" d="M975 316 C995 338 1018 350 1032 357"/>
+  <path class="arrow" d="M1025 316 C1110 336 1200 348 1264 359"/>
+  <path class="arrow" d="M1080 306 C1260 326 1420 342 1501 359"/>
+  <path class="arrow" d="M1138 296 C1370 316 1640 344 1736 381"/>
+
+  <!-- Vertical arrows inside columns -->
+  <path class="arrow" d="M146 460 L146 519"/>
+  <path class="arrow" d="M146 598 L146 659"/>
+  <path class="arrow" d="M358 460 L358 519"/>
+  <path class="arrow" d="M358 598 L358 659"/>
+  <path class="arrow" d="M580 460 L580 519"/>
+  <path class="arrow" d="M580 616 L580 675"/>
+  <path class="arrow" d="M808 460 L808 519"/>
+  <path class="arrow" d="M808 616 L808 675"/>
+  <path class="arrow" d="M1032 468 L1032 527"/>
+  <path class="arrow" d="M1032 616 L1032 675"/>
+  <path class="arrow" d="M1264 468 L1264 527"/>
+  <path class="arrow" d="M1264 616 L1264 675"/>
+  <path class="arrow" d="M1501 468 L1501 527"/>
+  <path class="arrow" d="M1501 616 L1501 675"/>
+  <path class="arrow" d="M1736 460 L1736 519"/>
+  <path class="arrow" d="M1736 616 L1736 675"/>
+
+  <!-- Converge to final -->
+  <rect class="final" x="710" y="850" width="480" height="86"/>
+  <text class="label" x="950" y="882" text-anchor="middle">最终输出</text>
+  <text class="small" x="950" y="906" text-anchor="middle">中文买方报告 + route + evaluation + validation tasks</text>
+  <text class="tiny" x="950" y="926" text-anchor="middle">memory_update_candidate 只在评估后生成</text>
+
+  <path class="arrow2" d="M146 738 C250 805 520 850 709 890"/>
+  <path class="arrow2" d="M358 738 C500 800 620 830 710 872"/>
+  <path class="arrow2" d="M580 758 C660 810 700 830 748 850"/>
+  <path class="arrow2" d="M808 758 C840 805 878 824 900 849"/>
+  <path class="arrow2" d="M1032 758 C1020 798 992 818 970 849"/>
+  <path class="arrow2" d="M1264 758 C1190 805 1138 828 1100 849"/>
+  <path class="arrow2" d="M1501 758 C1390 812 1255 845 1190 890"/>
+  <path class="arrow2" d="M1736 758 C1550 830 1310 870 1191 900"/>
+
+  <!-- Bottom artifacts -->
+  <rect class="node" x="350" y="1010" width="225" height="74"/>
+  <text class="label" x="462" y="1038" text-anchor="middle">route artifacts</text>
+  <text class="tiny" x="462" y="1062" text-anchor="middle">route.md / route.json</text>
+
+  <rect class="node" x="610" y="1010" width="225" height="74"/>
+  <text class="label" x="722" y="1038" text-anchor="middle">PM-facing report</text>
+  <text class="tiny" x="722" y="1062" text-anchor="middle">full report / memo / brief</text>
+
+  <rect class="node" x="870" y="1010" width="225" height="74"/>
+  <text class="label" x="982" y="1038" text-anchor="middle">report evaluation</text>
+  <text class="tiny" x="982" y="1062" text-anchor="middle">score + hard-fail checks</text>
+
+  <rect class="node" x="1130" y="1010" width="225" height="74"/>
+  <text class="label" x="1242" y="1038" text-anchor="middle">validation tasks</text>
+  <text class="tiny" x="1242" y="1062" text-anchor="middle">回流数据层的问题</text>
+
+  <rect class="memory" x="1390" y="1010" width="225" height="74"/>
+  <text class="label" x="1502" y="1038" text-anchor="middle">memory candidate</text>
+  <text class="tiny" x="1502" y="1062" text-anchor="middle">成功模式 / 失败模式</text>
+
+  <path class="arrow" d="M840 936 C720 972 580 990 462 1009"/>
+  <path class="arrow" d="M890 936 C825 972 770 990 722 1009"/>
+  <path class="arrow" d="M950 936 L982 1009"/>
+  <path class="arrow" d="M1015 936 C1085 972 1180 990 1242 1009"/>
+  <path class="arrow" d="M1080 936 C1210 975 1380 990 1502 1009"/>
+
+  <!-- note -->
+  <rect class="node" x="56" y="1030" width="238" height="54"/>
+  <text class="tiny" x="175" y="1052" text-anchor="middle">边界：GitHub 不存 raw 数据</text>
+  <text class="tiny" x="175" y="1072" text-anchor="middle">只读本地 system_index</text>
+</svg>

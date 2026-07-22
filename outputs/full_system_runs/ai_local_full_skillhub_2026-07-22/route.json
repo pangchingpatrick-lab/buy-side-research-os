@@ -1,0 +1,110 @@
+{
+  "topic": "AI 基建本地数据完整 SkillHub 报告",
+  "research_question": "用本地 AI 分类数据判断：AI 基建的新增研究信号是否指向可投资的瓶颈层，哪些公司或价值链节点最值得进入下一轮验证，当前应给 PM 什么行动状态？",
+  "input_packet": "/Users/pangpatrick/Desktop/research_data/system_index/category_index/ai.jsonl; context command: ruby skills/research-os-skillhub/scripts/build-context-packet.rb ai 35",
+  "record_count": "35 context records inspected from AI category; 776 canonical documents available",
+  "primary_core_skill": "skill_hub/core_skills/skill_004_serenity_bottleneck_mapping.md",
+  "auxiliary_core_skills": [
+    "skill_hub/core_skills/skill_002_semianalysis_distillation.md",
+    "skill_hub/core_skills/skill_005_research_event_distillation.md"
+  ],
+  "selected_reference_files": [
+    "skills/research-os-skillhub/references/routing-and-contracts.md",
+    "skills/research-os-skillhub/references/research-event-discipline.md",
+    "skills/research-os-skillhub/references/source-evidence-taxonomy.md",
+    "skills/research-os-skillhub/references/ticker-role-taxonomy.md",
+    "skills/research-os-skillhub/references/thinking-methods-map.md",
+    "skills/research-os-skillhub/references/report-output-standard.md",
+    "skills/research-os-skillhub/references/evaluator-and-memory.md",
+    "skill_hub/references/ai_infrastructure_bottleneck_method.md",
+    "skill_hub/references/cross_industry_bottleneck_framework.md",
+    "skill_hub/references/event_schema.md",
+    "skill_hub/references/event_analysis_output_shape.md",
+    "skill_hub/references/report_output_standard.md"
+  ],
+  "selected_thinking_skills": [
+    "skill_hub/thinking_skills/skill_001_find_blind_spot.md",
+    "skill_hub/thinking_skills/skill_002_industry_causal_chain.md",
+    "skill_hub/thinking_skills/skill_003_reverse_value_chain_mapping.md",
+    "skill_hub/thinking_skills/skill_004_constraint_discovery.md",
+    "skill_hub/thinking_skills/skill_006_alpha_migration.md",
+    "skill_hub/thinking_skills/skill_007_consensus_detection.md",
+    "skill_hub/thinking_skills/skill_008_financial_validation_bridge.md",
+    "skill_hub/thinking_skills/skill_009_research_event_reasoning.md",
+    "skill_hub/thinking_skills/skill_010_cross_industry_bottleneck_event_mapping.md"
+  ],
+  "selected_research_methodologies": [
+    "skill_hub/research_methodologies/serenity.md",
+    "skill_hub/research_methodologies/research_event_distillation.md"
+  ],
+  "dominant_thinking_path": [
+    "market narrative",
+    "demand shock",
+    "constrained layer",
+    "scarce capability",
+    "beneficiary and risk-object mapping",
+    "evidence stack",
+    "price-in and consensus check",
+    "financial validation",
+    "PM action state"
+  ],
+  "event_audit_required": true,
+  "event_audit_reason": "Material evidence comes from X priority accounts, X search, hot earnings search, a16z, and public specialist posts; these must be classified before report use.",
+  "required_mapping": [
+    "value-chain map",
+    "constrained-layer map",
+    "company role map",
+    "direct and indirect beneficiary map",
+    "risk-object and loser map",
+    "Signal-to-Alpha bridge",
+    "price-in and consensus gap map",
+    "validation loop"
+  ],
+  "selected_industry_frameworks": [
+    "skill_hub/industry_frameworks/ai.md",
+    "skill_hub/industry_frameworks/semiconductor.md",
+    "skill_hub/industry_frameworks/energy.md"
+  ],
+  "framework_support_role": "AI, semiconductor, and energy frameworks support inspection of value-chain nodes and KPIs; thinking skills and methodologies control the report argument.",
+  "selected_analysis_methods": [
+    "skill_hub/analysis_methods/event_audit.md",
+    "skill_hub/analysis_methods/company_mapping.md",
+    "skill_hub/analysis_methods/financial_validation.md",
+    "skill_hub/analysis_methods/consensus_gap.md",
+    "skill_hub/analysis_methods/valuation.md",
+    "skill_hub/analysis_methods/investment_decision.md",
+    "skill_hub/analysis_methods/validation_loop.md"
+  ],
+  "selected_report_template": "skill_hub/report_templates/full_system_report.md",
+  "excluded_files": [
+    "skill_hub/core_skills/skill_001_baimaonv_distillation.md: no single strong case is being distilled",
+    "skill_hub/core_skills/skill_003_equity_research_playbook.md: excluded as core skill because this is a scarce-layer theme report, not a single-name memo",
+    "skill_hub/industry_frameworks/software_saas.md: cloud/software items are context; not the dominant bottleneck framework",
+    "skill_hub/industry_frameworks/space.md: space tags appear in noisy records but are not material to AI infrastructure thesis"
+  ],
+  "data_gaps": [
+    "No complete SOXX-relative forward-return table",
+    "No complete consensus estimates or valuation multiples",
+    "Many claims are public-source leads rather than primary evidence",
+    "Several claims need original transcript, filing, IR, or company announcement verification",
+    "Market reaction fields are partial and insufficient for final price-in conclusion"
+  ],
+  "claims_requiring_verification": [
+    "Kimi and large model deployment increase HBM, memory capacity, and interconnect demand",
+    "MRVL 1.6T Ara optical DSP shipping, data-center revenue exposure, NVIDIA partnership, and custom silicon/networking contribution",
+    "AEHR backlog and bookings tied to AI processors, silicon photonics, and power semiconductors",
+    "SMCI FY2026 guidance, liquid cooling adoption, manufacturing capacity, and customer demand",
+    "CRWV/NBIS/Nvidia financing, utilization backstop, and GPU capacity claims",
+    "ORCL/OpenAI backlog, payment capacity, debt, lease, and counterparty-risk claims",
+    "Data center electricity share rising toward the cited 2035 level"
+  ],
+  "expected_output_files": [
+    "route.md",
+    "route.json",
+    "full_system_report.md",
+    "report_evaluation.md",
+    "validation_tasks.jsonl",
+    "memory_update_candidate.md"
+  ],
+  "memory_update_candidate": "Create only after report evaluation; likely candidate is event failure mode around broad AI/semiconductor price-action noise versus bottleneck-specific evidence stacks."
+}

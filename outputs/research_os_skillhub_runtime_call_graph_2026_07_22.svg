@@ -1,0 +1,269 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2600" height="1500" viewBox="0 0 2600 1500">
+  <defs>
+    <style>
+      .bg { fill: #f7f7f7; }
+      .frame { fill: #ffffff; stroke: #d6d6d6; stroke-width: 2.2; rx: 28; }
+      .box { fill: #ffffff; stroke: #d8d8d8; stroke-width: 1.3; rx: 0; }
+      .box-soft { fill: #fbfbfb; stroke: #d8d8d8; stroke-width: 1.3; rx: 0; }
+      .box-strong { fill: #ffffff; stroke: #b8b8b8; stroke-width: 1.8; rx: 0; }
+      .output { fill: #ffffff; stroke: #b8b8b8; stroke-width: 1.8; rx: 0; }
+      .memory { fill: #ffffff; stroke: #cfcfcf; stroke-width: 1.4; rx: 0; }
+      .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #202124; }
+      .title { font-size: 32px; font-weight: 600; }
+      .subtitle { font-size: 18px; fill: #5f6368; }
+      .label { font-size: 16px; font-weight: 600; }
+      .small { font-size: 14px; fill: #303134; }
+      .tiny { font-size: 12px; fill: #4b5563; }
+      .muted { fill: #6b7280; }
+      .arrow { fill: none; stroke: #555; stroke-width: 1.25; marker-end: url(#arrow); }
+      .arrow-soft { fill: none; stroke: #777; stroke-width: 1.05; marker-end: url(#arrow); }
+      .arrow-bold { fill: none; stroke: #333; stroke-width: 1.55; marker-end: url(#arrow); }
+      .dash { fill: none; stroke: #888; stroke-width: 1.1; stroke-dasharray: 6 6; marker-end: url(#arrow); }
+      .lane-title { font-size: 19px; font-weight: 600; fill: #202124; }
+      .note { font-size: 13px; fill: #555; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8.5" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,7 L8.5,3.5 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="2600" height="1500"/>
+  <text class="text title" x="1300" y="58" text-anchor="middle">Research OS / SkillHub 运行时文件调用图</text>
+  <text class="text subtitle" x="1300" y="88" text-anchor="middle">基于本地数据层生成买方报告：先路由，后调用 Skill / Reference / Framework，再输出报告、评分、验证任务和 memory candidate</text>
+  <rect class="frame" x="22" y="112" width="2556" height="1348"/>
+
+  <!-- Top input and entry -->
+  <rect class="box" x="1110" y="158" width="380" height="76"/>
+  <text class="text label" x="1300" y="186" text-anchor="middle">用户提问 / 研究主题</text>
+  <text class="text tiny" x="1300" y="210" text-anchor="middle">例如：用 AI 本地数据跑完整买方报告</text>
+
+  <rect class="box-strong" x="1060" y="286" width="480" height="88"/>
+  <text class="text label" x="1300" y="316" text-anchor="middle">skills/research-os-skillhub/SKILL.md</text>
+  <text class="text tiny" x="1300" y="341" text-anchor="middle">SkillHub 总入口 / 调度器</text>
+  <text class="text tiny" x="1300" y="361" text-anchor="middle">要求：只读本地数据 -> 生成 route -> 再写报告</text>
+  <path class="arrow-bold" d="M1300 234 L1300 286"/>
+
+  <!-- Data layer -->
+  <text class="text lane-title" x="170" y="275">1. 本地数据层</text>
+  <rect class="box" x="62" y="318" width="300" height="78"/>
+  <text class="text label" x="212" y="347" text-anchor="middle">system_index/index.jsonl</text>
+  <text class="text tiny" x="212" y="371" text-anchor="middle">全局机器索引</text>
+
+  <rect class="box" x="62" y="438" width="300" height="78"/>
+  <text class="text label" x="212" y="467" text-anchor="middle">category_index/ai.jsonl</text>
+  <text class="text tiny" x="212" y="491" text-anchor="middle">AI 分类数据包入口</text>
+
+  <rect class="box" x="62" y="558" width="300" height="78"/>
+  <text class="text label" x="212" y="587" text-anchor="middle">documents/*.json</text>
+  <text class="text tiny" x="212" y="611" text-anchor="middle">每条原始资料的结构化元数据</text>
+
+  <rect class="box" x="62" y="678" width="300" height="78"/>
+  <text class="text label" x="212" y="707" text-anchor="middle">readable / pdf</text>
+  <text class="text tiny" x="212" y="731" text-anchor="middle">人可读单条资料，用于追溯</text>
+
+  <path class="arrow-soft" d="M1060 335 C825 340 470 350 362 357"/>
+  <path class="arrow-soft" d="M212 396 L212 438"/>
+  <path class="arrow-soft" d="M212 516 L212 558"/>
+  <path class="arrow-soft" d="M212 636 L212 678"/>
+
+  <rect class="box-soft" x="430" y="426" width="300" height="108"/>
+  <text class="text label" x="580" y="456" text-anchor="middle">build-context-packet</text>
+  <text class="text tiny" x="580" y="481" text-anchor="middle">从本地 AI 数据筛出报告证据包</text>
+  <text class="text tiny" x="580" y="502" text-anchor="middle">不采集新数据，不联网补资料</text>
+  <path class="arrow-soft" d="M362 477 L430 477"/>
+
+  <!-- Route layer -->
+  <text class="text lane-title" x="510" y="275">2. 路由与合同</text>
+  <rect class="box" x="430" y="318" width="300" height="78"/>
+  <text class="text label" x="580" y="347" text-anchor="middle">skill_hub/registry.md</text>
+  <text class="text tiny" x="580" y="371" text-anchor="middle">有哪些 skill / reference / 模板</text>
+
+  <rect class="box" x="780" y="318" width="300" height="78"/>
+  <text class="text label" x="930" y="347" text-anchor="middle">skill_hub/router.md</text>
+  <text class="text tiny" x="930" y="371" text-anchor="middle">选择 primary / auxiliary skills</text>
+
+  <rect class="box-strong" x="780" y="438" width="300" height="78"/>
+  <text class="text label" x="930" y="467" text-anchor="middle">route.md / route.json</text>
+  <text class="text tiny" x="930" y="491" text-anchor="middle">本次运行调用清单和边界</text>
+
+  <rect class="box-soft" x="780" y="558" width="300" height="78"/>
+  <text class="text label" x="930" y="587" text-anchor="middle">contracts/*.md / schema</text>
+  <text class="text tiny" x="930" y="611" text-anchor="middle">route / report / validation 格式约束</text>
+
+  <path class="arrow-soft" d="M1060 330 C995 322 905 318 730 357"/>
+  <path class="arrow-soft" d="M730 357 L780 357"/>
+  <path class="arrow-soft" d="M930 396 L930 438"/>
+  <path class="arrow-soft" d="M930 516 L930 558"/>
+  <path class="arrow-soft" d="M730 480 L780 480"/>
+
+  <!-- Core skills -->
+  <text class="text lane-title" x="1230" y="455">3. Core Skills：选择主导思考入口</text>
+  <rect class="box" x="1135" y="502" width="244" height="82"/>
+  <text class="text label" x="1257" y="532" text-anchor="middle">Skill001</text>
+  <text class="text tiny" x="1257" y="557" text-anchor="middle">强案例蒸馏</text>
+
+  <rect class="box" x="1420" y="502" width="244" height="82"/>
+  <text class="text label" x="1542" y="532" text-anchor="middle">Skill002</text>
+  <text class="text tiny" x="1542" y="557" text-anchor="middle">技术 / 供应链蒸馏</text>
+
+  <rect class="box" x="1135" y="630" width="244" height="82"/>
+  <text class="text label" x="1257" y="660" text-anchor="middle">Skill003</text>
+  <text class="text tiny" x="1257" y="685" text-anchor="middle">Equity Research Playbook</text>
+
+  <rect class="box-strong" x="1420" y="630" width="244" height="82"/>
+  <text class="text label" x="1542" y="660" text-anchor="middle">Skill004</text>
+  <text class="text tiny" x="1542" y="685" text-anchor="middle">Serenity 产业链卡点</text>
+
+  <rect class="box-strong" x="1272" y="758" width="392" height="98"/>
+  <text class="text label" x="1468" y="788" text-anchor="middle">Skill005</text>
+  <text class="text tiny" x="1468" y="813" text-anchor="middle">Research Event Distillation</text>
+  <text class="text tiny" x="1468" y="834" text-anchor="middle">公开观点 -> 可审计 research event</text>
+
+  <path class="arrow-bold" d="M1300 374 C1300 420 1370 454 1542 502"/>
+  <path class="arrow-soft" d="M930 516 C1000 590 1100 628 1135 660"/>
+  <path class="arrow-soft" d="M930 516 C1055 500 1110 502 1135 532"/>
+  <path class="arrow-soft" d="M1542 712 C1542 735 1518 752 1468 758"/>
+
+  <!-- Thinking and methodology -->
+  <text class="text lane-title" x="1932" y="275">4. 思考方式 / 方法论：权重大于行业框架</text>
+  <rect class="box-strong" x="1790" y="318" width="330" height="86"/>
+  <text class="text label" x="1955" y="347" text-anchor="middle">thinking_skills/*.md</text>
+  <text class="text tiny" x="1955" y="371" text-anchor="middle">盲点 / 因果链 / 反向价值链 / 卡点</text>
+  <text class="text tiny" x="1955" y="390" text-anchor="middle">consensus / price-in / financial bridge</text>
+
+  <rect class="box-strong" x="1790" y="446" width="330" height="86"/>
+  <text class="text label" x="1955" y="475" text-anchor="middle">Skill009</text>
+  <text class="text tiny" x="1955" y="499" text-anchor="middle">Research Event Reasoning</text>
+  <text class="text tiny" x="1955" y="518" text-anchor="middle">ticker role / evidence / stage / report use</text>
+
+  <rect class="box-strong" x="1790" y="574" width="330" height="86"/>
+  <text class="text label" x="1955" y="603" text-anchor="middle">Skill010</text>
+  <text class="text tiny" x="1955" y="627" text-anchor="middle">Cross-industry Bottleneck Event</text>
+  <text class="text tiny" x="1955" y="646" text-anchor="middle">demand shock -> constrained layer</text>
+
+  <rect class="box" x="2170" y="382" width="330" height="98"/>
+  <text class="text label" x="2335" y="411" text-anchor="middle">methodologies/serenity.md</text>
+  <text class="text tiny" x="2335" y="436" text-anchor="middle">先找稀缺层，再找公司</text>
+  <text class="text tiny" x="2335" y="457" text-anchor="middle">不从叙事直接跳结论</text>
+
+  <rect class="box" x="2170" y="530" width="330" height="98"/>
+  <text class="text label" x="2335" y="559" text-anchor="middle">research_event_distillation.md</text>
+  <text class="text tiny" x="2335" y="584" text-anchor="middle">claim / evidence / role / price-in</text>
+  <text class="text tiny" x="2335" y="605" text-anchor="middle">把信息变成研究事件</text>
+
+  <path class="arrow-bold" d="M1540 330 C1660 330 1728 344 1790 361"/>
+  <path class="arrow-soft" d="M2120 361 L2170 431"/>
+  <path class="arrow-soft" d="M2120 489 L2170 579"/>
+  <path class="arrow-soft" d="M1664 807 C1725 770 1848 690 1955 660"/>
+
+  <!-- References -->
+  <text class="text lane-title" x="360" y="845">5. References：让 Agent 不误读数据</text>
+  <rect class="box" x="62" y="888" width="260" height="78"/>
+  <text class="text label" x="192" y="917" text-anchor="middle">event_schema.md</text>
+  <text class="text tiny" x="192" y="941" text-anchor="middle">字段解释 / 避免误读</text>
+
+  <rect class="box" x="352" y="888" width="260" height="78"/>
+  <text class="text label" x="482" y="917" text-anchor="middle">source_evidence_taxonomy</text>
+  <text class="text tiny" x="482" y="941" text-anchor="middle">来源等级 / 证据强弱</text>
+
+  <rect class="box" x="642" y="888" width="260" height="78"/>
+  <text class="text label" x="772" y="917" text-anchor="middle">ticker_role_taxonomy</text>
+  <text class="text tiny" x="772" y="941" text-anchor="middle">focal / customer / peer / context</text>
+
+  <rect class="box" x="62" y="1008" width="260" height="78"/>
+  <text class="text label" x="192" y="1037" text-anchor="middle">validated_patterns</text>
+  <text class="text tiny" x="192" y="1061" text-anchor="middle">正向经验库</text>
+
+  <rect class="box" x="352" y="1008" width="260" height="78"/>
+  <text class="text label" x="482" y="1037" text-anchor="middle">failure_modes</text>
+  <text class="text tiny" x="482" y="1061" text-anchor="middle">反向经验库 / 刹车系统</text>
+
+  <rect class="box" x="642" y="1008" width="260" height="78"/>
+  <text class="text label" x="772" y="1037" text-anchor="middle">example_analysis</text>
+  <text class="text tiny" x="772" y="1061" text-anchor="middle">输出形状 / 结构样例</text>
+
+  <path class="arrow-soft" d="M1468 856 C1290 900 1060 910 902 927"/>
+  <path class="arrow-soft" d="M1468 856 C1110 960 780 1010 612 1047"/>
+
+  <!-- Industry frameworks -->
+  <text class="text lane-title" x="1260" y="935">6. 行业框架：支持 checklist，不主导论证</text>
+  <rect class="box" x="990" y="984" width="250" height="78"/>
+  <text class="text label" x="1115" y="1013" text-anchor="middle">ai.md</text>
+  <text class="text tiny" x="1115" y="1037" text-anchor="middle">AI workload / infra / monetization</text>
+
+  <rect class="box" x="1270" y="984" width="250" height="78"/>
+  <text class="text label" x="1395" y="1013" text-anchor="middle">semiconductor.md</text>
+  <text class="text tiny" x="1395" y="1037" text-anchor="middle">HBM / packaging / test / optical</text>
+
+  <rect class="box" x="1550" y="984" width="250" height="78"/>
+  <text class="text label" x="1675" y="1013" text-anchor="middle">energy.md</text>
+  <text class="text tiny" x="1675" y="1037" text-anchor="middle">power / cooling / grid</text>
+
+  <rect class="box" x="1830" y="984" width="250" height="78"/>
+  <text class="text label" x="1955" y="1013" text-anchor="middle">other frameworks</text>
+  <text class="text tiny" x="1955" y="1037" text-anchor="middle">software / space / consumer...</text>
+
+  <path class="arrow-soft" d="M1955 660 C1900 795 1670 930 1675 984"/>
+  <path class="arrow-soft" d="M1542 712 C1520 825 1420 910 1395 984"/>
+
+  <!-- Analysis methods -->
+  <text class="text lane-title" x="1270" y="1125">7. Analysis Methods：把思考落成验证动作</text>
+  <rect class="box" x="990" y="1168" width="220" height="70"/>
+  <text class="text label" x="1100" y="1195" text-anchor="middle">event_audit</text>
+  <text class="text tiny" x="1100" y="1217" text-anchor="middle">报告准入闸门</text>
+
+  <rect class="box" x="1238" y="1168" width="220" height="70"/>
+  <text class="text label" x="1348" y="1195" text-anchor="middle">company_mapping</text>
+  <text class="text tiny" x="1348" y="1217" text-anchor="middle">公司 / 受益者 / 风险</text>
+
+  <rect class="box" x="1486" y="1168" width="220" height="70"/>
+  <text class="text label" x="1596" y="1195" text-anchor="middle">financial_validation</text>
+  <text class="text tiny" x="1596" y="1217" text-anchor="middle">收入 / 毛利 / EPS / FCF</text>
+
+  <rect class="box" x="1734" y="1168" width="220" height="70"/>
+  <text class="text label" x="1844" y="1195" text-anchor="middle">consensus_gap</text>
+  <text class="text tiny" x="1844" y="1217" text-anchor="middle">市场是否已经 price in</text>
+
+  <rect class="box" x="1982" y="1168" width="220" height="70"/>
+  <text class="text label" x="2092" y="1195" text-anchor="middle">validation_loop</text>
+  <text class="text tiny" x="2092" y="1217" text-anchor="middle">输出下一轮验证任务</text>
+
+  <path class="arrow-soft" d="M1675 1062 C1675 1120 1640 1140 1596 1168"/>
+  <path class="arrow-soft" d="M1115 1062 C1115 1120 1110 1140 1100 1168"/>
+  <path class="arrow-soft" d="M1395 1062 C1395 1120 1365 1140 1348 1168"/>
+  <path class="arrow-soft" d="M1955 1062 C1955 1120 1880 1140 1844 1168"/>
+
+  <!-- Final output -->
+  <rect class="output" x="760" y="1300" width="1080" height="86"/>
+  <text class="text label" x="1300" y="1329" text-anchor="middle">最终输出：完整买方报告 + route + evaluation + validation tasks + memory candidate</text>
+  <text class="text tiny" x="1300" y="1354" text-anchor="middle">报告必须包含：核心结论 / Research Event Audit / 买方投资逻辑 A-B-C / price-in / 财务验证 / PM Next Action</text>
+  <path class="arrow-bold" d="M1468 856 C1480 1040 1380 1210 1300 1300"/>
+  <path class="arrow-soft" d="M2092 1238 C1970 1282 1820 1295 1840 1328"/>
+  <path class="arrow-soft" d="M772 1086 C730 1200 735 1268 760 1328"/>
+
+  <!-- Bottom output children -->
+  <rect class="box" x="590" y="1404" width="210" height="44"/>
+  <text class="text tiny" x="695" y="1431" text-anchor="middle">full_system_report.md</text>
+  <rect class="box" x="842" y="1404" width="210" height="44"/>
+  <text class="text tiny" x="947" y="1431" text-anchor="middle">report_evaluation.md</text>
+  <rect class="box" x="1094" y="1404" width="210" height="44"/>
+  <text class="text tiny" x="1199" y="1431" text-anchor="middle">validation_tasks.jsonl</text>
+  <rect class="box" x="1346" y="1404" width="230" height="44"/>
+  <text class="text tiny" x="1461" y="1431" text-anchor="middle">memory_update_candidate.md</text>
+  <rect class="box" x="1618" y="1404" width="210" height="44"/>
+  <text class="text tiny" x="1723" y="1431" text-anchor="middle">route.md / route.json</text>
+
+  <path class="arrow-soft" d="M1300 1386 C1240 1400 740 1390 695 1404"/>
+  <path class="arrow-soft" d="M1300 1386 C1230 1400 980 1390 947 1404"/>
+  <path class="arrow-soft" d="M1300 1386 L1199 1404"/>
+  <path class="arrow-soft" d="M1300 1386 L1461 1404"/>
+  <path class="arrow-soft" d="M1300 1386 C1390 1400 1680 1390 1723 1404"/>
+
+  <!-- Side notes -->
+  <rect class="box-soft" x="2170" y="760" width="330" height="116"/>
+  <text class="text label" x="2335" y="789" text-anchor="middle">核心纪律</text>
+  <text class="text tiny" x="2335" y="814" text-anchor="middle">思考方式 / 方法论 &gt; 行业框架</text>
+  <text class="text tiny" x="2335" y="835" text-anchor="middle">行业框架只是 checklist</text>
+  <text class="text tiny" x="2335" y="856" text-anchor="middle">买方报告必须有 A/B/C 投资逻辑</text>
+  <path class="dash" d="M2120 617 C2220 650 2300 710 2335 760"/>
+</svg>

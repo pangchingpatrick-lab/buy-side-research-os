@@ -1,0 +1,37 @@
+name: SkillHub Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+
+      - name: Validate Ruby syntax
+        run: |
+          ruby -c scripts/inspect_data_layer.rb
+          ruby -c scripts/build_data_context.rb
+          ruby -c skills/research-os-skillhub/scripts/inspect-runtime-data-layer.rb
+          ruby -c skills/research-os-skillhub/scripts/build-context-packet.rb
+          ruby -c skills/research-os-skillhub/scripts/validate-route-schema.rb
+
+      - name: Validate JSON and YAML metadata
+        run: |
+          ruby -rjson -ryaml -e 'JSON.parse(File.read("skill_hub/contracts/route.schema.json")); puts "route schema OK"'
+          ruby -ryaml -e '["skills/research-os-skillhub/SKILL.md","skills/report-writer/SKILL.md","skills/data-collector/SKILL.md","skills/buy-side-industry-research/SKILL.md"].each { |path| text=File.read(path); fm=text[/\A---\n(.*?)\n---/m,1] or abort("missing frontmatter: #{path}"); h=YAML.safe_load(fm); abort("missing name: #{path}") unless h["name"]; abort("missing description: #{path}") unless h["description"]; puts "#{path} OK" }'
+          ruby -ryaml -e 'YAML.safe_load(File.read("skills/research-os-skillhub/agents/openai.yaml")); puts "openai.yaml OK"'
+
+      - name: Validate route schema wrapper
+        run: ruby skills/research-os-skillhub/scripts/validate-route-schema.rb

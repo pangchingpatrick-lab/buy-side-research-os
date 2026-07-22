@@ -173,6 +173,8 @@ Use this combination when the goal is to discover whether an upstream or overloo
 - `skill_006_alpha_migration.md`: track where profit pools or alpha move along the value chain.
 - `skill_007_consensus_detection.md`: infer market consensus and where it may be stale or wrong.
 - `skill_008_financial_validation_bridge.md`: bridge early signals into financial validation questions.
+- `skill_009_research_event_reasoning.md`: turn public claims into auditable event-level reasoning before they enter a report.
+- `skill_010_cross_industry_bottleneck_event_mapping.md`: map event-level signals into demand shock, constrained layer, scarce capability, beneficiary, and validation logic.
 - `thinking_skill_router.md`: select and combine thinking skills for a research task.
 
 ## Guardrails

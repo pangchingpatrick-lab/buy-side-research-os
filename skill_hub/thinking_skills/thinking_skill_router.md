@@ -43,6 +43,8 @@ Select the smallest set of thinking skills that can answer the research question
 | Track where profit pools are moving | `skill_006_alpha_migration.md` |
 | Identify consensus and priced-in assumptions | `skill_007_consensus_detection.md` |
 | Convert thesis into financial validation questions | `skill_008_financial_validation_bridge.md` |
+| Turn public claims into auditable event reasoning | `skill_009_research_event_reasoning.md` |
+| Map an event into constrained-layer / beneficiary logic | `skill_010_cross_industry_bottleneck_event_mapping.md` |
 
 ## Common Skill Combinations
 
@@ -52,6 +54,7 @@ Use when a topic begins with X, HN, Product Hunt, founder commentary, or expert 
 
 - `skill_002_industry_causal_chain.md`
 - `skill_005_narrative_reframing.md`
+- `skill_009_research_event_reasoning.md`
 - `skill_007_consensus_detection.md`
 - `skill_008_financial_validation_bridge.md`
 
@@ -63,6 +66,7 @@ Use when value may sit upstream from the obvious beneficiary.
 - `skill_003_reverse_value_chain_mapping.md`
 - `skill_004_constraint_discovery.md`
 - `skill_006_alpha_migration.md`
+- `skill_010_cross_industry_bottleneck_event_mapping.md`
 - `skill_008_financial_validation_bridge.md`
 
 ### Consensus-gap PM brief
@@ -71,6 +75,7 @@ Use when the PM needs to know whether the market is wrong or whether the idea is
 
 - `skill_001_find_blind_spot.md`
 - `skill_007_consensus_detection.md`
+- `skill_009_research_event_reasoning.md`
 - `skill_002_industry_causal_chain.md`
 - `skill_008_financial_validation_bridge.md`
 
@@ -83,6 +88,8 @@ Use:
 - `skill_003_reverse_value_chain_mapping.md`
 - `skill_004_constraint_discovery.md`
 - `skill_005_narrative_reframing.md`
+- `skill_009_research_event_reasoning.md`
+- `skill_010_cross_industry_bottleneck_event_mapping.md`
 - `skill_007_consensus_detection.md`
 - `skill_008_financial_validation_bridge.md`
 
@@ -93,6 +100,8 @@ Why:
 - `reverse_value_chain_mapping` finds upstream beneficiaries.
 - `constraint_discovery` identifies bottlenecks such as memory, networking, optical, power, or data center capacity.
 - `narrative_reframing` converts broad AI demand into testable mechanisms.
+- `research_event_reasoning` prevents public claims from entering the thesis before role, evidence, stage, and price-in checks.
+- `cross_industry_bottleneck_event_mapping` turns the signal into demand shock, constrained layer, scarce capability, and beneficiary logic.
 - `consensus_detection` asks what is already priced in.
 - `financial_validation_bridge` converts the reasoning path into source-checkable validation questions.
 

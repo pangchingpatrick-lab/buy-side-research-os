@@ -22,7 +22,8 @@ Runtime data layer
 -> classified context packet
 -> skill_hub/router.md
 -> core skill / thinking skills / research methodology
--> industry framework
+-> mapping-led reasoning path
+-> industry framework as support
 -> analysis methods
 -> report template
 -> Chinese buy-side output
@@ -39,6 +40,33 @@ The runtime data layer is the source of truth:
 
 Do not use the repository's legacy `data/` directory as the canonical source.
 
+## Thinking Dominance Rule
+
+The report must be driven by thinking skills, research methodology, and mapping.
+
+Required hierarchy:
+
+1. Thinking skills / research methodology define the reasoning path.
+2. Mapping translates the reasoning path into investable structure.
+3. Industry frameworks provide industry-specific checklists, maps, metrics, and risk reminders.
+4. Analysis methods validate the reasoning.
+5. Report templates communicate the conclusion.
+
+The industry framework must not dominate the report. It answers "what to inspect", not "how to think".
+
+The final output must visibly include:
+
+- selected thinking skills or research methodology
+- why those thinking tools were selected
+- value-chain mapping
+- company / ticker exposure mapping
+- direct, indirect, and negative beneficiary mapping
+- business mechanism mapping
+- financial validation path
+- what the mapping implies for the PM
+
+If the report cannot produce a credible mapping from the available evidence, the output must say `映射证据不足，待补充` instead of forcing a conclusion.
+
 ## Core Rules
 
 - Do not generate generic industry summaries.
@@ -50,6 +78,8 @@ Do not use the repository's legacy `data/` directory as the canonical source.
 - Final output should be in Chinese unless the user requests otherwise.
 - Evidence must come from the runtime data layer, user-provided sources, or explicitly verified sources.
 - Do not bypass `skill_hub/router.md` before selecting thinking skills, frameworks, methods, or templates.
+- Do not write a report whose structure is mainly copied from the industry framework. The industry framework is subordinate to the selected thinking path.
+- Every PM-facing report must include mapping. If mapping is weak, mark it as a core weakness.
 
 ## Workflow
 
@@ -70,12 +100,14 @@ Do not use the repository's legacy `data/` directory as the canonical source.
 5. Preserve source type, URL, source credibility, verification status, categories, tags, tickers, scores, and data gaps.
 6. Route the classified packet through `skill_hub/router.md`.
 7. Read the selected core skill, thinking skills, and research methodology files.
-8. Read the selected industry framework files from `skill_hub/industry_frameworks/`.
-9. Read the selected analysis method files from `skill_hub/analysis_methods/`.
-10. Read the selected report template from `skill_hub/report_templates/`.
-11. Generate the Chinese buy-side output using only traceable evidence.
-12. Generate validation questions for the next data collection loop.
-13. Self-review before final delivery.
+8. Build the reasoning path from the selected thinking skills and research methodology.
+9. Create the required mappings: value chain, company exposure, beneficiary/loser, mechanism, and financial validation path.
+10. Read the selected industry framework files from `skill_hub/industry_frameworks/` as support for what to inspect.
+11. Read the selected analysis method files from `skill_hub/analysis_methods/`.
+12. Read the selected report template from `skill_hub/report_templates/`.
+13. Generate the Chinese buy-side output using only traceable evidence.
+14. Generate validation questions for the next data collection loop.
+15. Self-review before final delivery.
 
 If the runtime data layer is insufficient, mark the gap as `待补充` or `待验证`. Do not silently invent data or fall back to the legacy repo `data/` directory.
 
@@ -85,9 +117,10 @@ If the runtime data layer is insufficient, mark the gap as `待补充` or `待�
 2. 行业变化
 3. 早期信号
 4. 数据验证
-5. 公司映射
-6. 投资逻辑
-7. 估值思考
-8. 催化剂
-9. 风险提示
-10. 数据来源与待验证事项
+5. 思考路径与映射
+6. 公司映射
+7. 投资逻辑
+8. 估值思考
+9. 催化剂
+10. 风险提示
+11. 数据来源与待验证事项

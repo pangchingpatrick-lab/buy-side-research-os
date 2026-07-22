@@ -4,6 +4,20 @@ This file defines a reusable research methodology inspired by high-quality signa
 
 It does not summarize Serenity's opinions and does not copy content from any researcher. It extracts a reusable thinking pattern: start from an early signal, ask what changed, map the signal into an industry mechanism, identify listed-company exposure, translate the mechanism into financial impact, define the variant view, and specify what would invalidate the thesis.
 
+Data boundary:
+
+This methodology does not collect external data. It should operate on classified packets, extracted evidence, and local `system_index` records produced by the data layer. If evidence is missing, send a validation request back to the data layer instead of browsing, scraping, or inventing evidence.
+
+Event boundary:
+
+When this methodology starts from X, a16z, GeoScope, specialist blogs, newsletters, or public posts, first apply:
+
+- `skill_hub/core_skills/skill_005_research_event_distillation.md`
+- `skill_hub/contracts/research_event_contract.md`
+- `skill_hub/analysis_methods/event_audit.md`
+
+The methodology should not move from "public source says X" directly into a thesis. The signal must first become a research event with claim type, evidence type, ticker role, discovery stage, price-in status, duplicate cluster, and report use.
+
 ## 1. Research Trigger
 
 Use this methodology when the research starts from an early signal rather than a completed financial thesis.
@@ -50,6 +64,7 @@ Use a layered evidence path:
 
 ```text
 early signal
+-> research event audit
 -> source credibility check
 -> repeated signal or primary-source support
 -> industry mechanism
@@ -70,6 +85,8 @@ Evidence priority:
 Rules:
 
 - X is an early signal, not final proof.
+- a16z, GeoScope, specialist newsletters, and public posts are early signals unless supported by stronger local evidence.
+- Public-source claims should enter the methodology as event rows, not as prose conclusions.
 - A claim becomes decision-useful only when it is repeated by credible sources or supported by primary evidence.
 - If evidence is missing, mark `待验证` or `待补充`.
 - Do not invent posts, URLs, financial numbers, rankings, market sizes, or company claims.
@@ -226,12 +243,14 @@ Avoid:
 
 1. Define the research question.
 2. Identify the triggering signal.
-3. Check source credibility and whether the signal is repeated.
-4. Apply the methodology to define the reasoning path before choosing the final industry framework.
-5. Select the relevant industry framework to know what to inspect.
-6. Map the signal to a value-chain mechanism.
-7. Map direct, indirect, and negative listed-company exposure.
-8. Translate the mechanism into revenue, margin, orders, capex, inventory, EPS, or valuation impact.
-9. Identify consensus and the possible variant view.
-10. Define risks, missing evidence, and invalidation triggers.
-11. Generate a PM-facing output and next validation questions.
+3. Convert public-source signals into research events when applicable.
+4. Check source credibility, evidence strength, ticker role, and whether the signal is repeated.
+5. Classify discovery stage and ask whether the claim may already be price-in.
+6. Apply the methodology to define the reasoning path before choosing the final industry framework.
+7. Select the relevant industry framework to know what to inspect.
+8. Map the signal to a value-chain mechanism.
+9. Map direct, indirect, and negative listed-company exposure.
+10. Translate the mechanism into revenue, margin, orders, capex, inventory, EPS, or valuation impact.
+11. Identify consensus and the possible variant view.
+12. Define risks, missing evidence, and invalidation triggers.
+13. Generate a PM-facing output and next validation questions.

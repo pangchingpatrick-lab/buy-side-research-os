@@ -1,0 +1,4 @@
+# Optional developer dependencies for skill validation helpers.
+# Core repository scripts use Ruby standard library.
+PyYAML>=6.0
+jsonschema>=4.0

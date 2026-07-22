@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research OS Route",
+  "type": "object",
+  "required": [
+    "topic",
+    "research_question",
+    "input_packet",
+    "record_count",
+    "primary_core_skill",
+    "auxiliary_core_skills",
+    "selected_reference_files",
+    "selected_thinking_skills",
+    "selected_research_methodologies",
+    "dominant_thinking_path",
+    "event_audit_required",
+    "event_audit_reason",
+    "required_mapping",
+    "selected_industry_frameworks",
+    "framework_support_role",
+    "selected_analysis_methods",
+    "selected_report_template",
+    "excluded_files",
+    "data_gaps",
+    "claims_requiring_verification",
+    "expected_output_files"
+  ],
+  "properties": {
+    "topic": { "type": "string" },
+    "research_question": { "type": "string" },
+    "input_packet": { "type": "string" },
+    "record_count": { "type": ["integer", "string"] },
+    "primary_core_skill": { "type": "string" },
+    "auxiliary_core_skills": {
+      "type": "array",
+      "maxItems": 2,
+      "items": { "type": "string" }
+    },
+    "selected_reference_files": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "selected_thinking_skills": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "selected_research_methodologies": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "dominant_thinking_path": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "event_audit_required": { "type": "boolean" },
+    "event_audit_reason": { "type": "string" },
+    "required_mapping": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "selected_industry_frameworks": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "framework_support_role": { "type": "string" },
+    "selected_analysis_methods": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "selected_report_template": { "type": "string" },
+    "excluded_files": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "data_gaps": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "claims_requiring_verification": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "expected_output_files": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "memory_update_candidate": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

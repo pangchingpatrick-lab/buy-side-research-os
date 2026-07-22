@@ -1,0 +1,103 @@
+{
+  "topic": "AI infrastructure / AI 产业链基础设施",
+  "research_question": "AI 产业里真正变紧的层级是什么，哪些公司最靠近这些稀缺层，当前数据是否足以形成投资判断，下一步应该验证什么？",
+  "input_packet": "/Users/pangpatrick/Desktop/research_data/system_index/category_index/ai.jsonl",
+  "record_count": 59,
+  "primary_core_skill": "skill_hub/core_skills/skill_004_serenity_bottleneck_mapping.md",
+  "auxiliary_core_skills": [
+    "skill_hub/core_skills/skill_002_semianalysis_distillation.md",
+    "skill_hub/core_skills/skill_003_equity_research_playbook.md"
+  ],
+  "selected_reference_files": [
+    "skills/research-os-skillhub/references/routing-and-contracts.md",
+    "skills/research-os-skillhub/references/research-event-discipline.md",
+    "skills/research-os-skillhub/references/source-evidence-taxonomy.md",
+    "skills/research-os-skillhub/references/ticker-role-taxonomy.md",
+    "skills/research-os-skillhub/references/thinking-methods-map.md",
+    "skills/research-os-skillhub/references/report-output-standard.md",
+    "skills/research-os-skillhub/references/evaluator-and-memory.md",
+    "skill_hub/references/ai_infrastructure_bottleneck_method.md",
+    "skill_hub/references/cross_industry_bottleneck_framework.md",
+    "skill_hub/references/event_schema.md",
+    "skill_hub/references/report_output_standard.md"
+  ],
+  "selected_thinking_skills": [
+    "skill_hub/thinking_skills/skill_001_find_blind_spot.md",
+    "skill_hub/thinking_skills/skill_002_industry_causal_chain.md",
+    "skill_hub/thinking_skills/skill_003_reverse_value_chain_mapping.md",
+    "skill_hub/thinking_skills/skill_004_constraint_discovery.md",
+    "skill_hub/thinking_skills/skill_006_alpha_migration.md",
+    "skill_hub/thinking_skills/skill_007_consensus_detection.md",
+    "skill_hub/thinking_skills/skill_008_financial_validation_bridge.md"
+  ],
+  "selected_research_methodologies": [
+    "skill_hub/research_methodologies/serenity.md"
+  ],
+  "dominant_thinking_path": [
+    "early signal",
+    "source credibility",
+    "system change",
+    "scarce-layer ranking",
+    "company proximity mapping",
+    "financial validation bridge",
+    "consensus gap",
+    "investment decision",
+    "validation loop"
+  ],
+  "event_audit_required": true,
+  "event_audit_reason": "The AI infrastructure report uses X, public early-signal sources, and social-source claims, so events must be audited by source, evidence type, ticker role, discovery stage, and price-in status before report use.",
+  "required_mapping": [
+    "value-chain mapping",
+    "company exposure mapping",
+    "direct / indirect beneficiary mapping",
+    "possible loser mapping",
+    "business mechanism mapping",
+    "mechanism-to-financial mapping",
+    "validation task mapping"
+  ],
+  "selected_industry_frameworks": [
+    "skill_hub/industry_frameworks/ai.md",
+    "skill_hub/industry_frameworks/semiconductor.md",
+    "skill_hub/industry_frameworks/energy.md"
+  ],
+  "framework_support_role": "AI framework defines model/cloud/datacenter monetization; semiconductor framework defines GPU, HBM, foundry, advanced packaging, and equipment checks; energy framework defines power/grid constraints. These frameworks support the thinking path and do not replace it.",
+  "selected_analysis_methods": [
+    "skill_hub/analysis_methods/company_mapping.md",
+    "skill_hub/analysis_methods/financial_validation.md",
+    "skill_hub/analysis_methods/consensus_gap.md",
+    "skill_hub/analysis_methods/valuation.md",
+    "skill_hub/analysis_methods/investment_decision.md",
+    "skill_hub/analysis_methods/validation_loop.md"
+  ],
+  "selected_report_template": "skill_hub/report_templates/industry_report.md",
+  "excluded_files": [
+    "skill_hub/core_skills/skill_001_baimaonv_distillation.md",
+    "skill_hub/industry_frameworks/healthcare.md",
+    "skill_hub/industry_frameworks/real_estate.md",
+    "skill_hub/industry_frameworks/financials.md",
+    "skill_hub/report_templates/pm_brief.md",
+    "skill_hub/report_templates/investment_memo.md"
+  ],
+  "data_gaps": [
+    "official capex guidance and filings are missing",
+    "earnings-call validation is missing for TSM, MU, SK Hynix, NVDA, AVGO, AMAT, and hyperscalers",
+    "datacenter power contracts and grid connection timelines are missing",
+    "HBM pricing, capacity, and customer allocation evidence is missing",
+    "valuation multiples and consensus estimate data are missing"
+  ],
+  "claims_requiring_verification": [
+    "Meta Louisiana / Hyperion expansion reached 5GW and $50B+ planned investment",
+    "Google 2026 capex guidance is materially higher because of AI",
+    "Amazon and other Big Tech issuers raised debt to fund AI capex",
+    "SK Hynix ADR / Nasdaq listing and AI memory market move claims",
+    "Micron revenue, net income, and guide claims from social sources",
+    "AI investment contribution to US GDP growth"
+  ],
+  "expected_output_files": [
+    "outputs/full_system_runs/ai/route.md",
+    "outputs/full_system_runs/ai/route.json",
+    "outputs/full_system_runs/ai/full_system_report.md",
+    "outputs/full_system_runs/ai/report_evaluation.md",
+    "outputs/full_system_runs/ai/validation_tasks.jsonl"
+  ]
+}

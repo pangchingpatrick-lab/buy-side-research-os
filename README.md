@@ -2,6 +2,39 @@
 
 This repository is the GitHub Skill Hub and operating layer for the buy-side research system.
 
+## Mature Skill Package
+
+The main callable skill package is:
+
+![Research OS SkillHub architecture](docs/assets/research-os-skillhub-architecture.png)
+
+```text
+skills/research-os-skillhub/
+├── SKILL.md
+├── agents/openai.yaml
+├── references/
+└── scripts/
+```
+
+The underlying SkillHub library is:
+
+```text
+skill_hub/
+```
+
+Use `skills/research-os-skillhub/SKILL.md` as the entry point. It routes prepared local data through the deeper `skill_hub/` modules.
+
+## Repository Structure
+
+```text
+.github/workflows/          # validation workflow
+docs/                       # reproduce, architecture, and run guides
+skills/research-os-skillhub/ # mature callable SkillHub package
+skill_hub/                  # underlying routing, skills, frameworks, methods, templates
+data_layer/                 # runtime data contract
+scripts/                    # repo-level data-layer helper scripts
+```
+
 It serves only:
 
 - reusable core skills

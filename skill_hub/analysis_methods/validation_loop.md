@@ -22,8 +22,26 @@ Reports are not the end of research. They create validation questions that go ba
 | --- | --- | --- | --- | --- |
 | | | | High / Medium / Low | |
 
+Also emit `validation_tasks.jsonl` using:
+
+- `skill_hub/contracts/validation_task_contract.md`
+
+Each task must include:
+
+- claim
+- why it matters
+- data needed
+- preferred sources
+- priority
+- expected confirming evidence
+- expected disconfirming evidence
+- owner layer
+- status
+
 ## Guardrails
 
 - Make questions specific enough to drive the next data loop.
 - Do not answer validation questions without sources.
 - Prefer questions that can change the investment decision.
+- Do not leave validation questions only as prose when the run is complete.
+- Convert high and medium priority questions into machine-readable tasks.

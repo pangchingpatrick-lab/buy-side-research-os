@@ -4,6 +4,18 @@ This core skill distills SemiAnalysis / Dylan Patel style research methodology i
 
 It should extract how high-quality technical infrastructure research thinks. It should not copy wording, summarize only conclusions, or treat stock recommendations as truth.
 
+## Data Boundary
+
+Skill 002 is thinking-mode only. It does not collect data, browse websites, fetch filings, parse PDFs, call APIs, or create raw datasets.
+
+Use only:
+
+- local records from `/Users/pangpatrick/Desktop/research_data/system_index/`
+- classified packets built from `system_index`
+- technical research cases explicitly provided by the user
+
+If evidence is missing, mark it as `待补充` or `待验证` and send the need back to the data layer. Do not invent or fetch missing evidence inside this skill.
+
 ## Primary Golden Sample
 
 Use the uploaded report "Scaling the Memory Wall: The Rise and Roadmap of HBM" as a primary golden sample for methodology distillation.
@@ -15,6 +27,7 @@ Rules for this golden sample:
 - Do not copy its investment conclusions.
 - Do not treat any stock recommendation as truth.
 - Extract the reusable reasoning methodology: how the research moves from workload behavior to hardware requirements, process constraints, supply-chain economics, and financial validation.
+- Use the sample only when it is available locally or explicitly provided by the user.
 
 ## Position In The System
 
@@ -27,6 +40,18 @@ External Data / Research Case
 -> Report Templates
 -> Buy-side Report
 ```
+
+## Skill Contract
+
+- use_when: use as primary when the core question depends on technical architecture, AI infrastructure, HBM, GPU clusters, advanced packaging, optical interconnect, foundry, equipment, or datacenter physical constraints.
+- do_not_use_when: do not use as primary when the packet is mainly a general market update, single-name earnings memo without technical bottlenecks, or pure macro/policy question.
+- input_required: local packet or technical case with products, architecture, supply-chain nodes, affected companies, source credibility, and explicit `待验证` claims.
+- output_contract: produce workload-to-hardware translation, subsystem decomposition, physical constraint map, supplier differentiation, and financial validation metrics; do not produce the final PM report alone.
+- default_auxiliary_skills: Skill 004 for scarce-layer ranking, Skill 003 for equity memo conversion.
+- compatible_frameworks: semiconductor, AI, energy, software_saas, consumer_electronics when the technical mechanism crosses industries.
+- shared_references: `references/ai_infrastructure_bottleneck_method.md` is mandatory when AI infrastructure, HBM, GPU clusters, CPO, networking, power, cooling, packaging, or test bottlenecks matter; use `references/cross_industry_bottleneck_framework.md` when transferring the bottleneck logic outside semiconductors.
+- required_analysis_methods: company mapping, financial validation, consensus gap, valuation, validation loop.
+- failure_modes: over-technical explanation without PM implication, missing valuation/expectation context, or treating specialist commentary as verified fact.
 
 ## 1. Objective
 
@@ -49,6 +74,21 @@ Use this skill when a research case involves:
 - advanced packaging, bonding, inspection, and testing
 
 ## 2. What To Extract
+
+Before extracting technical details, read `skill_hub/references/ai_infrastructure_bottleneck_method.md` when the packet involves AI infrastructure.
+
+The technical reasoning should follow:
+
+```text
+workload / architecture transition
+-> stressed layer
+-> physical or technical bottleneck
+-> scarce capability
+-> supplier / equipment / material exposure
+-> financial validation metric
+```
+
+Do not start from a ticker or from generic AI demand.
 
 ### 2.1 Workload-To-Hardware Translation
 
@@ -77,6 +117,8 @@ Questions to ask:
 - Does the workload need more compute, more memory capacity, more memory bandwidth, more networking, or more power efficiency?
 - Does the bottleneck change across training, inference, recommender systems, mixture-of-experts, long-context models, or datacenter-scale deployment?
 - Which hardware subsystem becomes more valuable when the workload changes?
+- Is the event `early_discovery`, `continuation_confirmation`, `late_validation`, `after_fact_commentary`, or `context_only`?
+- Is the signal supported by customer, supply-chain, earnings/order, capacity, pricing, or primary-source evidence?
 
 ### 2.2 System Architecture Decomposition
 
@@ -143,6 +185,7 @@ Questions to ask:
 - Which physical limit prevents the architecture from scaling?
 - Is the bottleneck area, power, thermals, signal integrity, mechanical stress, process throughput, or yield?
 - Does the constraint create pricing power, capex demand, or execution risk?
+- Can the constraint be expressed as a falsifiable event with source, timestamp, expected mechanism, time horizon, and invalidation condition?
 
 ### 2.4 Manufacturing Process Mapping
 
@@ -232,6 +275,7 @@ Questions to ask:
 - Which supplier has an engineering advantage that customers can verify?
 - Is the advantage in design, process, yield, cost, packaging, thermal, power, or qualification?
 - Is technical leadership already in volume production, or still in concept / demonstration stage?
+- Is the company the focal beneficiary, supplier of the scarce capability, customer demand validator, peer, or context ticker?
 
 ### 2.7 Roadmap And Commercialization Readiness
 

@@ -1,0 +1,66 @@
+# Skill Hub Route Example
+
+- topic: AI infrastructure HBM bottleneck
+- research_question: Is memory bandwidth becoming the scarce layer in AI inference, and which companies deserve follow-up work?
+- input_packet: `outputs/full_system_runs/ai/context_packet.md`
+- record_count: 80
+- primary_core_skill: `skill_hub/core_skills/skill_004_serenity_bottleneck_mapping.md`
+- auxiliary_core_skills:
+  - `skill_hub/core_skills/skill_002_semianalysis_distillation.md`
+  - `skill_hub/core_skills/skill_005_research_event_distillation.md`
+- selected_reference_files:
+  - `skill_hub/references/calling_sequence.md`
+  - `skill_hub/references/event_schema.md`
+  - `skill_hub/references/source_evidence_taxonomy.md`
+  - `skill_hub/references/ticker_role_taxonomy.md`
+  - `skill_hub/references/report_output_standard.md`
+- selected_thinking_skills:
+  - `skill_hub/thinking_skills/skill_001_find_blind_spot.md`
+  - `skill_hub/thinking_skills/skill_003_reverse_value_chain_mapping.md`
+  - `skill_hub/thinking_skills/skill_004_constraint_discovery.md`
+  - `skill_hub/thinking_skills/skill_009_research_event_reasoning.md`
+  - `skill_hub/thinking_skills/skill_010_cross_industry_bottleneck_event_mapping.md`
+  - `skill_hub/thinking_skills/skill_007_consensus_detection.md`
+  - `skill_hub/thinking_skills/skill_008_financial_validation_bridge.md`
+- selected_research_methodologies:
+  - `skill_hub/research_methodologies/serenity.md`
+  - `skill_hub/research_methodologies/research_event_distillation.md`
+- dominant_thinking_path:
+  - scarce-layer discovery before company selection
+  - public-source claims must be converted into auditable events before report use
+  - public claims must pass event-level reasoning: role, evidence stack, discovery stage, price-in, and report-use decision
+- event_audit_required: true
+- event_audit_reason: the input packet contains early-signal source clusters, so claims must be tagged by role, evidence type, discovery stage, and report use before entering the report
+- required_mapping:
+  - value-chain mapping
+  - direct / indirect beneficiary mapping
+  - loser mapping
+  - financial validation bridge
+- selected_industry_frameworks:
+  - `skill_hub/industry_frameworks/ai.md`
+  - `skill_hub/industry_frameworks/semiconductor.md`
+- framework_support_role: use frameworks as checklists for AI infrastructure and semiconductor evidence, not as report skeleton
+- selected_analysis_methods:
+  - `skill_hub/analysis_methods/event_audit.md`
+  - `skill_hub/analysis_methods/company_mapping.md`
+  - `skill_hub/analysis_methods/consensus_gap.md`
+  - `skill_hub/analysis_methods/financial_validation.md`
+  - `skill_hub/analysis_methods/valuation.md`
+  - `skill_hub/analysis_methods/validation_loop.md`
+- selected_report_template: `skill_hub/report_templates/full_system_report.md`
+- excluded_files:
+  - `industry_frameworks/consumer_electronics.md`: not relevant to HBM bottleneck
+  - `skill_hub/core_skills/skill_003_equity_research_playbook.md`: not selected as auxiliary in this route because the first pass is scarce-layer and event-audit driven; use later if the output becomes a single-name memo
+- data_gaps:
+  - customer-level HBM allocation data
+  - consensus revenue estimates by supplier
+- claims_requiring_verification:
+  - inference workload memory bandwidth intensity
+  - company-level margin impact
+- expected_output_files:
+  - `route.md`
+  - `route.json`
+  - `report.md`
+  - `report_evaluation.md`
+  - `validation_tasks.jsonl`
+- memory_update_candidate: create only after report evaluation identifies a reusable event pattern or failure mode

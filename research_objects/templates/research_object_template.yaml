@@ -1,0 +1,78 @@
+# Research Object Template
+# This is a schema template only. Do not treat placeholder values as research.
+
+metadata:
+  id: ""
+  name: ""
+  type: "" # topic | company | investment_theme
+  status: "" # draft | active | monitoring | closed
+  priority: "" # high | medium | low
+  owner: ""
+  created_at: ""
+  last_updated: ""
+
+research_question:
+  question: ""
+  why_it_matters: ""
+  investment_horizon: ""
+  market: ""
+  scope: ""
+
+signals:
+  - id: ""
+    source: ""
+    platform: ""
+    date: ""
+    signal_type: ""
+    summary: ""
+    related_companies: []
+    confidence: ""
+    verification_status: ""
+
+evidence:
+  - id: ""
+    source: ""
+    source_type: ""
+    date: ""
+    summary: ""
+    supports_hypothesis: []
+    contradicts_hypothesis: []
+    credibility_score: ""
+    verification_status: ""
+
+hypotheses:
+  - id: ""
+    thesis: ""
+    confidence: ""
+    supporting_evidence: []
+    counter_evidence: []
+    what_would_change_my_mind: ""
+
+companies:
+  - ticker: ""
+    name: ""
+    role: ""
+    exposure: ""
+    expected_impact: ""
+
+catalysts:
+  - event: ""
+    expected_date: ""
+    why_it_matters: ""
+    related_hypothesis: ""
+
+decision:
+  current_decision: "" # long | short | watch | ignore | needs_more_work
+  rationale: ""
+  confidence_level: ""
+  next_action: ""
+
+monitoring:
+  key_metrics_to_watch: []
+  next_review_date: ""
+  invalidation_triggers: []
+
+communication_outputs:
+  pm_brief_path: ""
+  report_path: ""
+  last_output_date: ""
