@@ -19,7 +19,6 @@ route.json
 report.md
 report_evaluation.md
 validation_tasks.jsonl
-performance_tracking.jsonl
 ```
 
 Optional but recommended:
@@ -42,8 +41,7 @@ memory_update_candidate.md
 7. write report from local evidence only
 8. evaluate report
 9. create validation tasks
-10. create performance_tracking.jsonl for report candidates
-11. create memory update candidate
+10. create memory update candidate
 ```
 
 Do not write the report before the route exists.
@@ -68,12 +66,10 @@ Every report must contain:
 - value-chain and company mapping
 - market expectation vs reality / price-in analysis
 - Signal-to-Alpha investment logic
-- concrete ticker candidates for public-equity topics
 - catalysts
 - bear case and invalidation
 - PM next action
 - validation tasks
-- one-month performance review plan
 
 ## Run Manifest Schema
 
@@ -90,7 +86,6 @@ If `run_manifest.json` is produced, include:
   "report_path": "",
   "evaluation_path": "",
   "validation_tasks_path": "",
-  "performance_tracking_path": "",
   "primary_core_skill": "",
   "auxiliary_core_skills": [],
   "reference_files": [],

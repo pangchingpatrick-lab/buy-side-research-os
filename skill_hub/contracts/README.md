@@ -16,8 +16,6 @@ The Research OS should not rely on a vague statement like "used the system." Eve
 - which industry frameworks only supported inspection
 - which analysis methods were applied
 - which report template was used
-- which specific ticker candidates the report produced
-- how those candidates will be reviewed after one month
 - how the final report scored
 - which validation tasks go back to the data layer
 
@@ -28,7 +26,6 @@ The Research OS should not rely on a vague statement like "used the system." Eve
 - `core_skill_contract.md`: shared metadata and output standard for every core skill.
 - `research_event_contract.md`: event-level schema for early signals and public research claims.
 - `validation_task_contract.md`: standard format for next-round data tasks.
-- `performance_tracking_contract.md`: standard format for candidate tickers and one-month price review.
 - `route.schema.json`: compact machine-readable schema for `route.json`.
 
 ## Required Full Run Artifacts
@@ -41,7 +38,6 @@ route.json
 full_report.md or pm_brief.md or investment_memo.md
 report_evaluation.md
 validation_tasks.jsonl
-performance_tracking.jsonl
 memory_update_candidate.md
 ```
 

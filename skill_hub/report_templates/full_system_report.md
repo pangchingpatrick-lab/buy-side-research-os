@@ -6,13 +6,6 @@ The report should be Chinese by default.
 
 ## Required Output Structure
 
-Full system reports should be compact. The main body should compress evidence into
-decision logic instead of repeating the same facts across several tables.
-
-Target depth is a medium-depth buy-side report, not a short memo. The report
-should usually be detailed enough for 9-12 PDF pages when rendered, provided
-that every added paragraph has a distinct analytical role.
-
 ```markdown
 # [主题] 买方研究报告
 
@@ -22,34 +15,47 @@ that every added paragraph has a distinct analytical role.
 - PM 行动状态：Long / Short / Watch / Ignore / Needs More Work
 - 核心 thesis：
 - 研究优先级：
-- 具体股票候选：
 - 最大不确定性：
-- 下一步验证：
 
 ## 2. What Changed / Why Now
 
-Include a short judgment boundary:
+## 3. 数据基础与证据分层
 
-- what the report is claiming
-- what the report is not claiming
-- which ideas are primary candidates
-- which ideas are only risk / context watches
+| 证据 | 来源 | 证据类型 | 验证状态 | 投资含义 |
+| --- | --- | --- | --- | --- |
 
-## 3. 思考路径
+## 4. 思考路径
 
 - primary core skill:
 - selected thinking skills:
 - selected methodology:
 - 为什么这些思考方式主导本报告：
-- 行业框架只负责检查哪些环节，不负责替代投资判断：
 
-## 4. 买方投资逻辑（Signal-to-Alpha）
+## 5. Research Event Audit
+
+Use this section when X, a16z, GeoScope, newsletters, specialist blogs, or other early-signal sources materially support the report.
+
+If no early-signal source is material, write: `本报告不依赖早期信号源，事件审计不适用。`
+
+| Event | Source | Ticker / Node | Target Role | Claim Type | Evidence Type | Strength | Discovery Stage | Price-In Status | Report Use |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
+Required interpretation:
+
+- 哪些事件能进入报告：
+- 哪些只能作为 context：
+- 哪些必须进入 validation task：
+- 哪些应排除：
+- 是否存在重复 thesis cluster：
+- 是否存在 ticker role 误判风险：
+
+## 6. 买方投资逻辑（Signal-to-Alpha）
 
 This section is mandatory for full system reports.
 
-Do not use a table-only summary. Expand the investment logic into 3-5 signal clusters labeled `Signal Cluster A/B/C...`.
+Do not use a table-only summary. Expand the investment logic into 3-6 signal clusters labeled `Signal Cluster A/B/C...`.
 
-Each signal cluster must use this compact buy-side logic chain:
+Each signal cluster must use this exact buy-side logic chain:
 
 ```markdown
 ### Signal Cluster [A/B/C]：[一句话说明投资逻辑]
@@ -58,15 +64,23 @@ Each signal cluster must use this compact buy-side logic chain:
 
 **Mechanism**：为什么这个信号会改变产业链、供需、单位经济、竞争格局或风险定价？
 
-**Investment Interpretation**：为什么这个信号值得进入买方报告？它和普通行业信息的区别在哪里？
+**Beneficiary Mapping**：
 
-**Beneficiary / Risk Mapping**：直接受益、间接受益、潜在受损或风险暴露分别是谁？
+- 直接受益：
+- 间接受益：
+- 潜在受损 / 风险暴露：
 
-**Financial Transmission**：这个逻辑会影响哪些 line items 或经营指标？
+**Earnings Impact**：这个逻辑会如何影响 revenue、orders、backlog、ASP、gross margin、opex、capex、depreciation、EPS、FCF 或 valuation？
 
-**Market Expectation / Price-In**：市场大概率已经相信什么？可能低估、误判或尚未充分 price in 什么？
+**Market Expectation**：市场大概率已经相信什么？可能低估、误判或尚未充分 price in 什么？
 
-**Evidence Gap / PM Trigger**：还缺哪一个最关键证据？什么结果会改变 PM 动作？
+**Evidence Gap**：哪些证据还缺？需要哪些一手来源验证？
+
+**Catalyst**：什么事件会让市场重新定价？
+
+**Invalidation**：什么证据会推翻这个 thesis？
+
+**PM Action**：PM 下一步应该 monitor、research further、build watchlist、avoid，还是升级为 candidate？
 ```
 
 At the end of this section, include a short investment logic summary that ranks the signal clusters by:
@@ -75,89 +89,24 @@ At the end of this section, include a short investment logic summary that ranks 
 scarcity -> financial transmission -> market expectation gap -> validation urgency
 ```
 
-## 5. Event Admission Summary
+## 7. 产业链与价值链映射
 
-Use this section when X, a16z, GeoScope, newsletters, specialist blogs, or other early-signal sources materially support the report.
+## 8. 公司映射
 
-This is not a second argument section. It is a compressed audit that explains why an evidence cluster was admitted, demoted to context, sent to validation, or excluded.
-
-If no early-signal source is material, write: `本报告不依赖早期信号源，事件审计不适用。`
-
-| Thesis Cluster | Representative Source Types | Target Role Discipline | Evidence Strength | Price-In Question | Report Use |
-| --- | --- | --- | --- | --- | --- |
-
-Required interpretation:
-
-- 哪些 thesis cluster 能进入主文：
-- 哪些只能作为 context：
-- 哪些必须进入 validation task：
-- 哪些应排除：
-- 是否存在重复 thesis cluster：
-- 是否存在 ticker role 误判风险：
-
-## 6. 公司映射（Company Map）
-
-Company mapping is mandatory for buy-side reports. It should explain where each
-company sits in the value chain and whether it is a good expression of the
-thesis.
-
-Do not use this section as another validation checklist. It answers:
-
-- which company / ticker maps to which constrained layer
-- whether it is primary candidate, secondary watch, risk/context, or excluded
-- whether the stock is a clean or messy expression of the thesis
-- why similar names are included or excluded
-
-| Company / Node | Ticker(s) | Thesis Cluster | Value-Chain Position | Report Role | Expression Quality | Why It Maps Here |
+| 公司 / ticker | 角色 | 直接/间接受益 | 证据 | 财务传导 | 风险 | 待验证 |
 | --- | --- | --- | --- | --- | --- | --- |
 
-## 7. 财务验证优先级
+## 9. 市场预期与 Price-in 判断
 
-This section should be shorter than company mapping. It should translate the
-company map into specific financial checks.
+## 10. 财务验证路径
 
-| Priority | Company / Node | Financial Transmission | One Critical Validation Question | PM Implication |
-| --- | --- | --- | --- | --- |
+## 11. 催化剂
 
-## 8. 具体股票候选与 30 日验证池
+## 12. Bear Case / Invalidation
 
-Every public-equity report must name concrete tickers unless the topic has no
-publicly traded exposure. Do not leave the report at the industry-node level.
+## 13. PM Next Action
 
-Separate true report candidates from risk / context names. The primary basket is
-what will be used to judge whether the report generated useful investable ideas.
-Risk names can be tracked, but they must not be mixed into the same table as
-positive candidates.
-
-Primary candidates can be `Long candidate`, `Long watch`, `Short candidate`, or
-`Short watch`.
-
-| Ticker | Direction | Conviction | Current / Start Price | Benchmark | Review Date | Success / Failure Test |
-| --- | --- | --- | --- | --- | --- | --- |
-
-Price snapshot rule:
-
-- If the market is open, use the latest visible traded price as `start_price`.
-- If the market is closed, use the latest regular-session close as `start_price`
-  and show extended-hours price separately.
-- Always show `price_source`, `price_as_of`, `currency`, and benchmark price.
-- If live price cannot be fetched, write `price_source_unavailable` and do not
-  fabricate a price.
-
-Risk / context watchlist:
-
-| Ticker | Classification | Why Not Primary | What It Tests | Benchmark | Review Date |
-| --- | --- | --- | --- | --- | --- |
-
-Also emit a machine-readable `performance_tracking.jsonl` file for the same
-candidates so the system can review price performance after one month. Include
-`candidate_bucket` to separate `primary_candidate` from `risk_context`.
-
-## 9. Bear Case / Invalidation
-
-## 10. PM Next Action
-
-## 11. 数据来源与待验证事项
+## 14. 数据来源与待验证事项
 ```
 
 ## Writing Rules
@@ -171,15 +120,3 @@ candidates so the system can review price performance after one month. Include
 - If early-signal sources are material, do not use them before assigning claim type, evidence type, ticker role, discovery stage, price-in status, and report use.
 - Every report must include a serious invalidation path.
 - The `买方投资逻辑（Signal-to-Alpha）` section must use explicit `Signal Cluster A/B/C...` subsections. A table alone is not acceptable for a buy-side report.
-- For public-equity reports, include 3-7 concrete ticker candidates or explicitly explain why no listed-equity candidate is investable.
-- Each candidate must have direction, conviction, benchmark, one-month review date, and a success / failure test.
-- Each candidate must include a report-time price snapshot unless the price source is unavailable.
-- Do not mix low-quality risk/context names into the primary candidate basket.
-- Risk watch names can be tracked separately, but they should not count as the report's investable picks.
-- Candidate direction is a research action state, not a personal investment instruction.
-- One fact should serve one role in the main body. Do not repeat the same evidence or validation need across Event Audit, Signal Cluster, Company Mapping, and Financial Validation sections.
-- Company mapping is required, but it must have a distinct job: value-chain position, report role, expression quality, and inclusion / exclusion logic.
-- Financial validation must not repeat the full company map. It should only state the critical metric, source, and decision implication.
-- Detailed event fields belong in machine-readable files, validation tasks, or appendix material. The PM-facing report should show compressed judgment, not repeated audit rows.
-- Target main-body length: 9-12 decision sections, 3-5 signal clusters, and no more than five tables before the appendix.
-- Do not make the report short by deleting reasoning. Make it dense by replacing repeated tables with distinct analysis, candidate rationale, price-in discussion, and validation logic.

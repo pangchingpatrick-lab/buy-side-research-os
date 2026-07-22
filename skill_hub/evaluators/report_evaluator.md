@@ -17,20 +17,18 @@ The evaluator grades whether the output actually used the Research OS rather tha
 | Dimension | Weight | What Good Looks Like |
 | --- | ---: | --- |
 | Route discipline | 8 | Exactly one primary skill, at most two auxiliary skills, clear exclusions. |
-| Thinking dominance | 10 | Thinking skills shape the thesis, not just a template section. |
+| Thinking dominance | 12 | Thinking skills shape the thesis, not just a template section. |
 | Local data discipline | 10 | Uses local packet evidence only; marks missing or unverified evidence. |
 | Noise filtering | 6 | Promotional, generic, or low-research-value records are downweighted. |
 | Industry framework use | 6 | Frameworks support inspection without becoming the main argument. |
-| PM-grade core conclusion | 8 | Opens with marginal change, PM action state, core thesis, ticker candidates, research priority, and validation points; does not start with process summary. |
-| Signal-to-Alpha investment logic | 8 | Includes explicit Signal Cluster A/B/C sections with Signal, Mechanism, Beneficiary / Risk Mapping, Financial Transmission, Market Expectation / Price-In, and Evidence Gap / PM Trigger. Table-only summaries do not receive full credit. |
-| Ticker candidate / feedback loop | 8 | Names concrete primary ticker candidates, separates risk/context names, defines direction, conviction, report-time price snapshot, benchmark, one-month review date, and emits `performance_tracking.jsonl`. |
-| Mapping quality | 6 | Includes value-chain, company, beneficiary/loser, and mechanism-to-financial mapping without duplicating the same rows elsewhere. |
-| Financial validation | 6 | Converts claims into line items, metrics, and source-checkable questions in a compressed priority table. |
+| PM-grade core conclusion | 10 | Opens with marginal change, PM action state, core thesis, research priority, and validation points; does not start with process summary. |
+| Signal-to-Alpha investment logic | 12 | Includes explicit Signal Cluster A/B/C sections with Signal, Mechanism, Beneficiary Mapping, Earnings Impact, Market Expectation, Evidence Gap, Catalyst, Invalidation, and PM Action. Table-only summaries do not receive full credit. |
+| Mapping quality | 8 | Includes value-chain, company, beneficiary/loser, and mechanism-to-financial mapping. |
+| Financial validation | 8 | Converts claims into line items, metrics, and source-checkable questions. |
 | Consensus / variant view | 4 | Separates consensus from the non-consensus view and identifies what would change minds. |
 | Investment judgment | 4 | Chooses a defensible action state instead of forcing a trade. |
 | Validation loop | 4 | Produces specific next-round data tasks. |
-| Event audit discipline | 6 | Early-signal sources are converted into admitted / context / validation / excluded thesis clusters with claim/evidence type, ticker role, discovery stage, price-in question, duplicate clustering, and report use. |
-| Information compression | 6 | Avoids repeating the same evidence, validation task, or company mapping across sections; one thesis cluster is argued once and referenced thereafter. |
+| Event audit discipline | 8 | Early-signal sources are converted into event rows with claim/evidence type, ticker role, discovery stage, price-in question, duplicate clustering, and report use. |
 | Total | 100 | |
 
 ## Output Format
@@ -49,20 +47,18 @@ The evaluator grades whether the output actually used the Research OS rather tha
 | Dimension | Weight | Score | Notes |
 | --- | ---: | ---: | --- |
 | Route discipline | 8 | | |
-| Thinking dominance | 10 | | |
+| Thinking dominance | 12 | | |
 | Local data discipline | 10 | | |
 | Noise filtering | 6 | | |
 | Industry framework use | 6 | | |
-| PM-grade core conclusion | 8 | | |
-| Signal-to-Alpha investment logic | 8 | | |
-| Ticker candidate / feedback loop | 8 | | |
-| Mapping quality | 6 | | |
-| Financial validation | 6 | | |
+| PM-grade core conclusion | 10 | | |
+| Signal-to-Alpha investment logic | 12 | | |
+| Mapping quality | 8 | | |
+| Financial validation | 8 | | |
 | Consensus / variant view | 4 | | |
 | Investment judgment | 4 | | |
 | Validation loop | 4 | | |
-| Event audit discipline | 6 | | |
-| Information compression | 6 | | |
+| Event audit discipline | 8 | | |
 
 ## Required Fixes
 
@@ -91,14 +87,9 @@ Any of these should force `Invalid` regardless of numeric score:
 - final report presents an investment action without evidence support
 - industry framework replaces the thinking path
 - final report's core conclusion is a process summary instead of a PM-grade thesis
-- public-equity report does not name concrete ticker candidates or explain why no listed-equity candidate is investable
-- public-equity report does not define a one-month review date and benchmark for each candidate
-- public-equity report lacks report-time candidate prices and does not state `price_source_unavailable`
-- public-equity report mixes weak risk/context names into the primary candidate basket without labeling them separately
 - full industry report or investment memo lacks a Signal-to-Alpha investment logic section
 - full system report, full industry report, or investment memo uses only a table for Signal-to-Alpha and lacks explicit Signal Cluster A/B/C style buy-side logic
 - signal clusters do not connect signal to mechanism, company mapping, financial impact, and PM action
 - report materially relies on X, a16z, GeoScope, newsletter, or public specialist signals but has no event audit
 - report treats a context/customer/peer ticker as the focal beneficiary without explaining target role
 - report counts duplicate thread/source repetitions as independent evidence
-- report repeats the same evidence, validation need, or company mapping across three or more main-body sections instead of compressing it into one thesis cluster and one validation priority table

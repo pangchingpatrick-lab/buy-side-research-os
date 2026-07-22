@@ -124,7 +124,7 @@ Thinking skills must dominate report logic. Industry frameworks are supporting c
 
 Use `evaluators/report_evaluator.md` after every full report, PM brief, or investment memo.
 
-The evaluator should check route discipline, thinking dominance, local-data discipline, mapping quality, Signal-to-Alpha logic, concrete ticker candidates, one-month performance tracking, price-in analysis, and validation loop quality.
+The evaluator should check route discipline, thinking dominance, local-data discipline, mapping quality, Signal-to-Alpha logic, price-in analysis, and validation loop quality.
 
 ## Memory
 
@@ -138,6 +138,5 @@ Memory is not raw data. It stores lessons learned from reports.
 | `memory/event_failure_modes.md` | Event-level interpretation mistakes to avoid. |
 | `memory/playbook_updates.md` | Candidate updates to skills, frameworks, templates, and routing rules. |
 | `memory/score_history.jsonl` | Machine-readable report scores over time. |
-| `memory/performance_reviews.jsonl` | One-month ticker candidate outcomes after price and benchmark review. |
 
 Only update memory after a report has been evaluated.
