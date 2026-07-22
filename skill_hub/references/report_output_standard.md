@@ -89,7 +89,9 @@ For the primary basket, use a compact table with:
 - conviction
 - linked thesis cluster
 - why this stock expresses the thesis
+- current / start price
 - benchmark
+- benchmark price
 - one-month review date
 - success / failure test
 
@@ -103,6 +105,31 @@ not count as the report's primary picks.
 
 Also create `performance_tracking.jsonl` for every full report so the same
 tickers can be reviewed after one month.
+
+## Price Snapshot Standard
+
+Every ticker candidate should include a report-time price snapshot.
+
+Required fields:
+
+- `price_source`
+- `price_source_url`
+- `price_snapshot_at`
+- `currency`
+- `regular_close_price`
+- `latest_visible_price`
+- `latest_visible_session`: `regular`, `after_hours`, `pre_market`, or `unknown`
+- `start_price`
+- `start_price_type`
+- `benchmark_price`
+
+Use the latest regular close as `start_price` when the report is generated
+outside regular market hours. Show after-hours or pre-market prices as current
+context, but do not use them as the default return baseline unless the report is
+explicitly generated during regular trading hours.
+
+If the price source fails, write `price_source_unavailable` and keep
+`start_price: null`.
 
 ## Event Audit Standard
 

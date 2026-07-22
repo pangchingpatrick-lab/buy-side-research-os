@@ -112,18 +112,20 @@
 
 Primary basket 只放真正能表达本报告正向 thesis 的票；risk / context watchlist 只用于检验风险，不和推票池混在一起。
 
-| Ticker | Direction | Conviction | Thesis Cluster | Why This Stock | Benchmark | Review Date | Success / Failure Test |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| MU | Long watch | Medium | A 内存/HBM | 最直接表达 HBM / DRAM 稀缺和内存带宽 thesis | SOXX | 2026-08-24 | 成功：30 日正收益且跑赢 SOXX，或 primary evidence 支撑 HBM mix / margin 上修；失败：跑输 SOXX且 HBM 证据弱化 |
-| MRVL | Long watch | Medium | B 数据移动/optical/test | 表达 AI networking、optical DSP、custom silicon 和数据移动瓶颈 | SOXX | 2026-08-24 | 成功：跑赢 SOXX 且 data-center / optical / custom silicon 证据增强；失败：收入贡献无法量化或股价只跟随半导体 beta |
-| AEHR | Long watch / Speculative | Low-Medium | B 数据移动/optical/test | 高弹性表达 AI-linked test / burn-in，但证据仍薄 | SOXX | 2026-08-24 | 成功：订单/backlog 证明 AI-linked 且跑赢 SOXX；失败：backlog 不能转收入或跑输小盘/半导体基准 |
+价格快照：2026-07-22 15:19 HKT，来源为 Google Finance 可见行情。美股常规交易未开时，30 日收益起点优先使用最近常规收盘价；盘前/盘后价只作当前情绪参考。
+
+| Ticker | Direction | Conviction | Current / Start Price | Benchmark | Review Date | Success / Failure Test |
+| --- | --- | --- | --- | --- | --- | --- |
+| MU | Long watch | Medium | Start: $970.82 close; latest: $986.70 after-hours | SOXX start: $552.69 | 2026-08-24 | 成功：30 日正收益且跑赢 SOXX，或 primary evidence 支撑 HBM mix / margin 上修；失败：跑输 SOXX且 HBM 证据弱化 |
+| MRVL | Long watch | Medium | Start: $207.96 close; latest: $211.75 after-hours | SOXX start: $552.69 | 2026-08-24 | 成功：跑赢 SOXX 且 data-center / optical / custom silicon 证据增强；失败：收入贡献无法量化或股价只跟随半导体 beta |
+| AEHR | Long watch / Speculative | Low-Medium | Start/latest: $98.91 visible quote | SOXX start: $552.69 | 2026-08-24 | 成功：订单/backlog 证明 AI-linked 且跑赢 SOXX；失败：backlog 不能转收入或跑输半导体基准 |
 
 Risk / context watchlist:
 
-| Ticker | Classification | Why Not Primary | What It Tests | Benchmark | Review Date |
-| --- | --- | --- | --- | --- | --- |
-| SMCI | Needs evidence / risk context | AI rack 和液冷是好节点，但公司层面有执行、毛利、库存、回款和治理风险，不适合放进正向候选池 | 物理部署 thesis 是否能转化成高质量利润，而不是低质量收入增长 | SOXX | 2026-08-24 |
-| ORCL | Short / risk context | 上榜原因是 AI backlog 质量和融资风险，不是 AI 受益票；把它放进 long/watch 候选会误导 | AI cloud backlog 是否被市场过度信任，OpenAI/客户集中/capex funding 是否构成反证 | QQQ | 2026-08-24 |
+| Ticker | Classification | Current / Start Price | Why Not Primary | What It Tests | Benchmark | Review Date |
+| --- | --- | --- | --- | --- | --- | --- |
+| SMCI | Needs evidence / risk context | Start: $25.50 close; latest: $30.75 after-hours | AI rack 和液冷是好节点，但公司层面有执行、毛利、库存、回款和治理风险，不适合放进正向候选池 | 物理部署 thesis 是否能转化成高质量利润，而不是低质量收入增长 | SOXX start: $552.69 | 2026-08-24 |
+| ORCL | Short / risk context | Start: $121.38 close; latest: $122.40 pre-market | 上榜原因是 AI backlog 质量和融资风险，不是 AI 受益票；把它放进 long/watch 候选会误导 | AI cloud backlog 是否被市场过度信任，OpenAI/客户集中/capex funding 是否构成反证 | QQQ start: $708.97 | 2026-08-24 |
 
 对应机器文件：`outputs/full_system_runs/ai_local_full_skillhub_2026-07-22/performance_tracking.jsonl`。
 
@@ -152,5 +154,13 @@ Risk / context watchlist:
 - Route：`outputs/full_system_runs/ai_local_full_skillhub_2026-07-22/route.md`
 - Validation tasks：`outputs/full_system_runs/ai_local_full_skillhub_2026-07-22/validation_tasks.jsonl`
 - Performance tracking：`outputs/full_system_runs/ai_local_full_skillhub_2026-07-22/performance_tracking.jsonl`
+- Price source：Google Finance visible quotes, retrieved at 2026-07-22 15:19 HKT.
+  - MU: `https://www.google.com/finance/quote/MU:NASDAQ`
+  - MRVL: `https://www.google.com/finance/quote/MRVL:NASDAQ`
+  - AEHR: `https://www.google.com/finance/quote/AEHR:NASDAQ`
+  - SMCI: `https://www.google.com/finance/quote/SMCI:NASDAQ`
+  - ORCL: `https://www.google.com/finance/quote/ORCL:NYSE`
+  - SOXX: `https://www.google.com/finance/quote/SOXX:NASDAQ`
+  - QQQ: `https://www.google.com/finance/quote/QQQ:NASDAQ`
 - 本地数据根目录：`/Users/pangpatrick/Desktop/research_data/system_index`
 - 本报告不新增数据层处理，不更改 raw/readable/system_index。当前结论仅基于已有本地 AI packet 和已生成的验证任务。

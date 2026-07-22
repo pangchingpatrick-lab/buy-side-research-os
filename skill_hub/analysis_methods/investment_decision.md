@@ -41,13 +41,17 @@ Choose one:
 For public-equity reports, also produce a concrete candidate basket:
 
 ```markdown
-| Ticker | Direction | Conviction | Thesis Cluster | Benchmark | Review Date | Success / Failure Test |
+| Ticker | Direction | Conviction | Current / Start Price | Benchmark | Review Date | Success / Failure Test |
 | --- | --- | --- | --- | --- | --- | --- |
 ```
 
 The candidate basket is the report's testable output. It should be specific
 enough that a one-month review can check absolute return, benchmark-relative
 return, and whether the thesis evidence improved or failed.
+
+Include a report-time price snapshot. If the report is generated outside regular
+market hours, use regular close as the return baseline and show extended-hours
+price as context.
 
 Keep risk-only or context-only tickers outside the primary basket:
 

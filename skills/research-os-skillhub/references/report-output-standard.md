@@ -63,7 +63,9 @@ Each candidate should include:
 - direction: `Long candidate`, `Long watch`, `Short candidate`, or `Short watch`
 - conviction
 - thesis cluster
+- report-time price snapshot
 - benchmark
+- benchmark price
 - one-month review date
 - success / failure test
 
@@ -73,6 +75,9 @@ or risk-only tickers into the primary candidate basket.
 The run should also emit `performance_tracking.jsonl`. One month later, the
 system should compare each candidate's return with its benchmark and use the
 result to evaluate whether the report's logic created useful alpha.
+
+When the report is generated outside regular market hours, use regular close as
+the return baseline and show pre-market / after-hours prices only as context.
 
 ## Compression Discipline
 

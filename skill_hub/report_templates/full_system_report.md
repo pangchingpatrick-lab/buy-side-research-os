@@ -102,8 +102,17 @@ positive candidates.
 Primary candidates can be `Long candidate`, `Long watch`, `Short candidate`, or
 `Short watch`.
 
-| Ticker | Direction | Conviction | Thesis Cluster | Why This Stock | Benchmark | Review Date | Success / Failure Test |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+| Ticker | Direction | Conviction | Current / Start Price | Benchmark | Review Date | Success / Failure Test |
+| --- | --- | --- | --- | --- | --- | --- |
+
+Price snapshot rule:
+
+- If the market is open, use the latest visible traded price as `start_price`.
+- If the market is closed, use the latest regular-session close as `start_price`
+  and show extended-hours price separately.
+- Always show `price_source`, `price_as_of`, `currency`, and benchmark price.
+- If live price cannot be fetched, write `price_source_unavailable` and do not
+  fabricate a price.
 
 Risk / context watchlist:
 
@@ -134,6 +143,7 @@ candidates so the system can review price performance after one month. Include
 - The `买方投资逻辑（Signal-to-Alpha）` section must use explicit `Signal Cluster A/B/C...` subsections. A table alone is not acceptable for a buy-side report.
 - For public-equity reports, include 3-7 concrete ticker candidates or explicitly explain why no listed-equity candidate is investable.
 - Each candidate must have direction, conviction, benchmark, one-month review date, and a success / failure test.
+- Each candidate must include a report-time price snapshot unless the price source is unavailable.
 - Do not mix low-quality risk/context names into the primary candidate basket.
 - Risk watch names can be tracked separately, but they should not count as the report's investable picks.
 - Candidate direction is a research action state, not a personal investment instruction.

@@ -63,8 +63,8 @@ Use the same compact structure.
 
 ## 7. 具体股票候选与 30 日验证池
 
-| Ticker | Direction | Conviction | Thesis Cluster | Why This Stock | Benchmark | Review Date | Success / Failure Test |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+| Ticker | Direction | Conviction | Current / Start Price | Benchmark | Review Date | Success / Failure Test |
+| --- | --- | --- | --- | --- | --- | --- |
 
 Also emit `performance_tracking.jsonl`.
 
