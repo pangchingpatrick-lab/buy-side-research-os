@@ -17,6 +17,11 @@ What is still missing?
 What should the PM do next?
 ```
 
+The report should compress repeated evidence into thesis clusters. A good report
+does not prove completeness by showing the same event in five formats. It uses
+one section to argue the investment logic, one section to audit source admission,
+and one section to assign validation priority.
+
 ## Required Logic Chain
 
 Full reports and investment memos should preserve:
@@ -42,9 +47,13 @@ Signal Cluster C
 ...
 ```
 
-Each cluster must include Signal, Mechanism, Beneficiary Mapping, Earnings Impact, Market Expectation, Evidence Gap, Catalyst, Invalidation, and PM Action.
+Each cluster must include Signal, Mechanism, Beneficiary / Risk Mapping, Financial Transmission, Market Expectation / Price-In, and Evidence Gap / PM Trigger.
 
 A table-only Signal-to-Alpha section is insufficient for a buy-side report because it hides the investment logic rather than forcing the reasoning to be written out.
+
+Avoid repeating the same validation phrase inside multiple clusters. If one
+source or validation task supports several ideas, name the shared validation once
+and refer back to the thesis cluster.
 
 ## Core Conclusion Standard
 
@@ -61,18 +70,34 @@ Do not start with process summary or broad industry background.
 
 ## Event Audit Standard
 
-If early-signal sources are material, the report should show:
+If early-signal sources are material, the report should include a compressed
+Event Admission Summary. This is not a full second report. It should show:
 
-- event
-- source
-- ticker / industry node
-- target role
-- claim type
-- evidence type
+- thesis cluster
+- representative source types
+- target role discipline
 - evidence strength
-- discovery stage
-- price-in status
+- price-in question
 - report use
+
+Detailed fields such as `claim_type`, `evidence_type`, `target_role`,
+`research_signal`, `discovery_stage`, `price_in_status`, and source URLs should
+remain in machine-readable artifacts or validation appendices unless one field
+directly changes the PM conclusion.
+
+## Information Compression Standard
+
+The report should avoid section-level duplication:
+
+- Do not keep separate evidence, event audit, signal cluster, company mapping,
+  and financial validation tables if they repeat the same rows.
+- The main body should contain one primary place for each fact.
+- Company mapping and financial validation should usually be merged into one
+  priority table.
+- If a sentence such as `待验证：IR/call/filing、shipment、customer proof`
+  would appear more than once, move it into the validation table and reference
+  the relevant cluster.
+- Repetition across three or more sections is a report-quality failure.
 
 ## Price-In Standard
 

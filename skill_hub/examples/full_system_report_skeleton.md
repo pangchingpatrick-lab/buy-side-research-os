@@ -15,13 +15,13 @@ This is a structural example only. Do not copy its claims.
 
 ## 2. What Changed / Why Now
 
-## 3. 数据基础与证据分层
-
-## 4. 思考路径
+## 3. 思考路径
 
 本报告由 [primary skill] 主导，因为 [reason]。
 
-## 5. 买方投资逻辑（Signal-to-Alpha）
+行业框架只用于检查 [industry nodes]，不替代主线判断。
+
+## 4. 买方投资逻辑（Signal-to-Alpha）
 
 ### Signal Cluster A：[一句话投资逻辑]
 
@@ -29,45 +29,39 @@ This is a structural example only. Do not copy its claims.
 
 **Mechanism**：
 
-**Beneficiary Mapping**：
+**Beneficiary / Risk Mapping**：
 
 - 直接受益：
 - 间接受益：
 - 潜在受损 / 风险暴露：
 
-**Earnings Impact**：
+**Financial Transmission**：
 
-**Market Expectation**：
+**Market Expectation / Price-In**：
 
-**Evidence Gap**：
-
-**Catalyst**：
-
-**Invalidation**：
-
-**PM Action**：
+**Evidence Gap / PM Trigger**：
 
 ### Signal Cluster B：[一句话投资逻辑]
 
-Use the same structure.
+Use the same compact structure.
 
 ### Signal Cluster C：[一句话投资逻辑]
 
-Use the same structure.
+Use the same compact structure.
 
-## 6. 产业链与价值链映射
+## 5. Event Admission Summary
 
-## 7. 公司映射
+| Thesis Cluster | Representative Source Types | Target Role Discipline | Evidence Strength | Price-In Question | Report Use |
+| --- | --- | --- | --- | --- | --- |
 
-## 8. 市场预期与 Price-in 判断
+## 6. 公司与财务验证优先级
 
-## 9. 财务验证路径
+| Priority | Company / Node | Role | Financial Transmission | One Critical Validation Question | PM Implication |
+| --- | --- | --- | --- | --- | --- |
 
-## 10. 催化剂
+## 7. Bear Case / Invalidation
 
-## 11. Bear Case / Invalidation
+## 8. PM Next Action
 
-## 12. PM Next Action
-
-## 13. 数据来源与待验证事项
+## 9. 数据来源与待验证事项
 ```

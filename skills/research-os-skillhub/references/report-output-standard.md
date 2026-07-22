@@ -52,16 +52,27 @@ Each cluster must walk through Signal, Mechanism, Beneficiary Mapping, Earnings 
 
 This is the section where the report becomes a buy-side report rather than a research event audit.
 
+## Compression Discipline
+
+The canonical report should be concise enough for PM use.
+
+- Do not repeat the same source cluster in `data foundation`, `event audit`,
+  `signal cluster`, `company mapping`, and `financial validation`.
+- Use one argument section for the thesis, one compressed admission section for
+  source discipline, and one priority table for company / financial validation.
+- If the same validation wording would appear multiple times, keep it only in
+  the validation priority table or validation task file.
+- Detailed field-level audits belong in machine-readable artifacts, not in the
+  main report body.
+
 ## Required Sections
 
 - core conclusion
 - what changed / why now
-- data foundation and evidence hierarchy
-- research event audit when early signals matter
 - thinking path
-- company mapping
-- market expectation and price-in
-- financial validation path
+- buy-side signal clusters
+- compressed event admission summary when early signals matter
+- company and financial validation priority
 - catalyst
 - bear case / invalidation
 - PM next action

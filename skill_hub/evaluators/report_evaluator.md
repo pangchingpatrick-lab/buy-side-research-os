@@ -22,13 +22,14 @@ The evaluator grades whether the output actually used the Research OS rather tha
 | Noise filtering | 6 | Promotional, generic, or low-research-value records are downweighted. |
 | Industry framework use | 6 | Frameworks support inspection without becoming the main argument. |
 | PM-grade core conclusion | 10 | Opens with marginal change, PM action state, core thesis, research priority, and validation points; does not start with process summary. |
-| Signal-to-Alpha investment logic | 12 | Includes explicit Signal Cluster A/B/C sections with Signal, Mechanism, Beneficiary Mapping, Earnings Impact, Market Expectation, Evidence Gap, Catalyst, Invalidation, and PM Action. Table-only summaries do not receive full credit. |
-| Mapping quality | 8 | Includes value-chain, company, beneficiary/loser, and mechanism-to-financial mapping. |
-| Financial validation | 8 | Converts claims into line items, metrics, and source-checkable questions. |
+| Signal-to-Alpha investment logic | 10 | Includes explicit Signal Cluster A/B/C sections with Signal, Mechanism, Beneficiary / Risk Mapping, Financial Transmission, Market Expectation / Price-In, and Evidence Gap / PM Trigger. Table-only summaries do not receive full credit. |
+| Mapping quality | 6 | Includes value-chain, company, beneficiary/loser, and mechanism-to-financial mapping without duplicating the same rows elsewhere. |
+| Financial validation | 6 | Converts claims into line items, metrics, and source-checkable questions in a compressed priority table. |
 | Consensus / variant view | 4 | Separates consensus from the non-consensus view and identifies what would change minds. |
 | Investment judgment | 4 | Chooses a defensible action state instead of forcing a trade. |
 | Validation loop | 4 | Produces specific next-round data tasks. |
-| Event audit discipline | 8 | Early-signal sources are converted into event rows with claim/evidence type, ticker role, discovery stage, price-in question, duplicate clustering, and report use. |
+| Event audit discipline | 6 | Early-signal sources are converted into admitted / context / validation / excluded thesis clusters with claim/evidence type, ticker role, discovery stage, price-in question, duplicate clustering, and report use. |
+| Information compression | 8 | Avoids repeating the same evidence, validation task, or company mapping across sections; one thesis cluster is argued once and referenced thereafter. |
 | Total | 100 | |
 
 ## Output Format
@@ -52,13 +53,14 @@ The evaluator grades whether the output actually used the Research OS rather tha
 | Noise filtering | 6 | | |
 | Industry framework use | 6 | | |
 | PM-grade core conclusion | 10 | | |
-| Signal-to-Alpha investment logic | 12 | | |
-| Mapping quality | 8 | | |
-| Financial validation | 8 | | |
+| Signal-to-Alpha investment logic | 10 | | |
+| Mapping quality | 6 | | |
+| Financial validation | 6 | | |
 | Consensus / variant view | 4 | | |
 | Investment judgment | 4 | | |
 | Validation loop | 4 | | |
-| Event audit discipline | 8 | | |
+| Event audit discipline | 6 | | |
+| Information compression | 8 | | |
 
 ## Required Fixes
 
@@ -93,3 +95,4 @@ Any of these should force `Invalid` regardless of numeric score:
 - report materially relies on X, a16z, GeoScope, newsletter, or public specialist signals but has no event audit
 - report treats a context/customer/peer ticker as the focal beneficiary without explaining target role
 - report counts duplicate thread/source repetitions as independent evidence
+- report repeats the same evidence, validation need, or company mapping across three or more main-body sections instead of compressing it into one thesis cluster and one validation priority table

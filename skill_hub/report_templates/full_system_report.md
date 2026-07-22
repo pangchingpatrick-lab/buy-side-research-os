@@ -6,6 +6,9 @@ The report should be Chinese by default.
 
 ## Required Output Structure
 
+Full system reports should be compact. The main body should compress evidence into
+decision logic instead of repeating the same facts across several tables.
+
 ```markdown
 # [主题] 买方研究报告
 
@@ -16,46 +19,25 @@ The report should be Chinese by default.
 - 核心 thesis：
 - 研究优先级：
 - 最大不确定性：
+- 下一步验证：
 
 ## 2. What Changed / Why Now
 
-## 3. 数据基础与证据分层
-
-| 证据 | 来源 | 证据类型 | 验证状态 | 投资含义 |
-| --- | --- | --- | --- | --- |
-
-## 4. 思考路径
+## 3. 思考路径
 
 - primary core skill:
 - selected thinking skills:
 - selected methodology:
 - 为什么这些思考方式主导本报告：
+- 行业框架只负责检查哪些环节，不负责替代投资判断：
 
-## 5. Research Event Audit
-
-Use this section when X, a16z, GeoScope, newsletters, specialist blogs, or other early-signal sources materially support the report.
-
-If no early-signal source is material, write: `本报告不依赖早期信号源，事件审计不适用。`
-
-| Event | Source | Ticker / Node | Target Role | Claim Type | Evidence Type | Strength | Discovery Stage | Price-In Status | Report Use |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-
-Required interpretation:
-
-- 哪些事件能进入报告：
-- 哪些只能作为 context：
-- 哪些必须进入 validation task：
-- 哪些应排除：
-- 是否存在重复 thesis cluster：
-- 是否存在 ticker role 误判风险：
-
-## 6. 买方投资逻辑（Signal-to-Alpha）
+## 4. 买方投资逻辑（Signal-to-Alpha）
 
 This section is mandatory for full system reports.
 
-Do not use a table-only summary. Expand the investment logic into 3-6 signal clusters labeled `Signal Cluster A/B/C...`.
+Do not use a table-only summary. Expand the investment logic into 3-5 signal clusters labeled `Signal Cluster A/B/C...`.
 
-Each signal cluster must use this exact buy-side logic chain:
+Each signal cluster must use this compact buy-side logic chain:
 
 ```markdown
 ### Signal Cluster [A/B/C]：[一句话说明投资逻辑]
@@ -64,23 +46,13 @@ Each signal cluster must use this exact buy-side logic chain:
 
 **Mechanism**：为什么这个信号会改变产业链、供需、单位经济、竞争格局或风险定价？
 
-**Beneficiary Mapping**：
+**Beneficiary / Risk Mapping**：直接受益、间接受益、潜在受损或风险暴露分别是谁？
 
-- 直接受益：
-- 间接受益：
-- 潜在受损 / 风险暴露：
+**Financial Transmission**：这个逻辑会影响哪些 line items 或经营指标？
 
-**Earnings Impact**：这个逻辑会如何影响 revenue、orders、backlog、ASP、gross margin、opex、capex、depreciation、EPS、FCF 或 valuation？
+**Market Expectation / Price-In**：市场大概率已经相信什么？可能低估、误判或尚未充分 price in 什么？
 
-**Market Expectation**：市场大概率已经相信什么？可能低估、误判或尚未充分 price in 什么？
-
-**Evidence Gap**：哪些证据还缺？需要哪些一手来源验证？
-
-**Catalyst**：什么事件会让市场重新定价？
-
-**Invalidation**：什么证据会推翻这个 thesis？
-
-**PM Action**：PM 下一步应该 monitor、research further、build watchlist、avoid，还是升级为 candidate？
+**Evidence Gap / PM Trigger**：还缺哪一个最关键证据？什么结果会改变 PM 动作？
 ```
 
 At the end of this section, include a short investment logic summary that ranks the signal clusters by:
@@ -89,24 +61,38 @@ At the end of this section, include a short investment logic summary that ranks 
 scarcity -> financial transmission -> market expectation gap -> validation urgency
 ```
 
-## 7. 产业链与价值链映射
+## 5. Event Admission Summary
 
-## 8. 公司映射
+Use this section when X, a16z, GeoScope, newsletters, specialist blogs, or other early-signal sources materially support the report.
 
-| 公司 / ticker | 角色 | 直接/间接受益 | 证据 | 财务传导 | 风险 | 待验证 |
-| --- | --- | --- | --- | --- | --- | --- |
+This is not a second argument section. It is a compressed audit that explains why an evidence cluster was admitted, demoted to context, sent to validation, or excluded.
 
-## 9. 市场预期与 Price-in 判断
+If no early-signal source is material, write: `本报告不依赖早期信号源，事件审计不适用。`
 
-## 10. 财务验证路径
+| Thesis Cluster | Representative Source Types | Target Role Discipline | Evidence Strength | Price-In Question | Report Use |
+| --- | --- | --- | --- | --- | --- |
 
-## 11. 催化剂
+Required interpretation:
 
-## 12. Bear Case / Invalidation
+- 哪些 thesis cluster 能进入主文：
+- 哪些只能作为 context：
+- 哪些必须进入 validation task：
+- 哪些应排除：
+- 是否存在重复 thesis cluster：
+- 是否存在 ticker role 误判风险：
 
-## 13. PM Next Action
+## 6. 公司与财务验证优先级
 
-## 14. 数据来源与待验证事项
+Combine company mapping and financial validation into one compressed priority table.
+
+| Priority | Company / Node | Role | Financial Transmission | One Critical Validation Question | PM Implication |
+| --- | --- | --- | --- | --- | --- |
+
+## 7. Bear Case / Invalidation
+
+## 8. PM Next Action
+
+## 9. 数据来源与待验证事项
 ```
 
 ## Writing Rules
@@ -120,3 +106,7 @@ scarcity -> financial transmission -> market expectation gap -> validation urgen
 - If early-signal sources are material, do not use them before assigning claim type, evidence type, ticker role, discovery stage, price-in status, and report use.
 - Every report must include a serious invalidation path.
 - The `买方投资逻辑（Signal-to-Alpha）` section must use explicit `Signal Cluster A/B/C...` subsections. A table alone is not acceptable for a buy-side report.
+- One fact should serve one role in the main body. Do not repeat the same evidence, validation need, or ticker mapping across Event Audit, Signal Cluster, Company Mapping, and Financial Validation sections.
+- Do not create separate `数据基础`, `公司映射`, and `财务验证` tables if they contain the same rows. Merge them into `Event Admission Summary` and `公司与财务验证优先级`.
+- Detailed event fields belong in machine-readable files, validation tasks, or appendix material. The PM-facing report should show compressed judgment, not repeated audit rows.
+- Target main-body length: 6-8 decision sections, 3-5 signal clusters, and no more than two tables before the appendix.
