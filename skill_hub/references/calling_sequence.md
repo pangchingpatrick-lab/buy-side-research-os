@@ -20,6 +20,7 @@ runtime data layer
 -> report
 -> report evaluator
 -> validation tasks
+-> performance tracking candidates
 -> memory update candidate
 ```
 
@@ -89,9 +90,18 @@ Controls final communication format.
 
 Scores whether the report actually followed the Research OS.
 
+### Performance Tracking
+
+Records the concrete ticker candidates, direction, benchmark, one-month review
+date, and success / failure tests in `performance_tracking.jsonl`.
+
+This layer makes the report auditable after one month.
+
 ### Memory
 
 Stores evaluated lessons only after report evaluation.
+One-month candidate outcomes can be promoted into memory only after price and
+benchmark data are reviewed.
 
 ## Anti-Pattern
 
@@ -112,4 +122,5 @@ data
 -> validation
 -> report
 -> evaluation
+-> performance review
 ```

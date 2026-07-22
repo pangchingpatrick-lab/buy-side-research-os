@@ -52,6 +52,26 @@ Each cluster must walk through Signal, Mechanism, Beneficiary Mapping, Earnings 
 
 This is the section where the report becomes a buy-side report rather than a research event audit.
 
+## Concrete Ticker Candidate Loop
+
+Every public-equity report must name 3-7 concrete ticker candidates unless the
+topic has no listed-equity expression.
+
+Each candidate should include:
+
+- ticker
+- direction: `Long candidate`, `Long watch`, `Short / risk watch`, `Avoid`, or
+  `Needs evidence`
+- conviction
+- thesis cluster
+- benchmark
+- one-month review date
+- success / failure test
+
+The run should also emit `performance_tracking.jsonl`. One month later, the
+system should compare each candidate's return with its benchmark and use the
+result to evaluate whether the report's logic created useful alpha.
+
 ## Compression Discipline
 
 The canonical report should be concise enough for PM use.
@@ -73,6 +93,7 @@ The canonical report should be concise enough for PM use.
 - buy-side signal clusters
 - compressed event admission summary when early signals matter
 - company and financial validation priority
+- concrete ticker candidates and one-month review loop
 - catalyst
 - bear case / invalidation
 - PM next action

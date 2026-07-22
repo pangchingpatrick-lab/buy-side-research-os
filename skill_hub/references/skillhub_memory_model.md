@@ -20,6 +20,7 @@ Memory can store:
 - repeated failure modes
 - event-level lessons
 - report scoring history
+- one-month candidate performance reviews
 - candidate playbook updates
 - framework improvements after evaluation
 
@@ -47,6 +48,7 @@ report generated
 | `memory/event_failure_modes.md` | Event-level signal interpretation mistakes. |
 | `memory/playbook_updates.md` | Candidate updates before promotion. |
 | `memory/score_history.jsonl` | Machine-readable report scores. |
+| `memory/performance_reviews.jsonl` | One-month candidate outcome reviews after prices and benchmarks are checked. |
 
 ## Promotion Standard
 
@@ -55,6 +57,7 @@ A memory update should state:
 - source report
 - route used
 - evaluator score
+- candidate performance after the review date
 - what worked or failed
 - whether the lesson is general or industry-specific
 - how future routes should change

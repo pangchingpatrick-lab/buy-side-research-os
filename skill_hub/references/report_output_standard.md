@@ -63,10 +63,36 @@ The first section should include:
 - PM action state
 - core thesis
 - research priority
+- concrete ticker candidates
 - highest uncertainty
 - next validation point
 
 Do not start with process summary or broad industry background.
+
+## Concrete Ticker Candidate Standard
+
+For public-equity research, the report must name specific ticker candidates.
+The system is not useful if it only explains an industry and never produces
+observable picks that can be evaluated later.
+
+Use a compact table with:
+
+- ticker
+- direction: `Long candidate`, `Long watch`, `Short / risk watch`, `Avoid`, or
+  `Needs evidence`
+- conviction
+- linked thesis cluster
+- why this stock expresses the thesis
+- benchmark
+- one-month review date
+- success / failure test
+
+If evidence is incomplete, use `Long watch` or `Needs evidence` rather than
+forcing `Long candidate`. The goal is to create an auditable candidate set, not
+to overstate conviction.
+
+Also create `performance_tracking.jsonl` for every full report so the same
+tickers can be reviewed after one month.
 
 ## Event Audit Standard
 

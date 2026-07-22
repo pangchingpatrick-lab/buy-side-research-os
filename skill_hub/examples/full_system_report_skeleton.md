@@ -11,6 +11,8 @@ This is a structural example only. Do not copy its claims.
 
 核心 thesis：[一句话 thesis]。
 
+具体股票候选：[Ticker A]、[Ticker B]、[Ticker C]。
+
 最大不确定性：[最大缺口]。
 
 ## 2. What Changed / Why Now
@@ -59,9 +61,16 @@ Use the same compact structure.
 | Priority | Company / Node | Role | Financial Transmission | One Critical Validation Question | PM Implication |
 | --- | --- | --- | --- | --- | --- |
 
-## 7. Bear Case / Invalidation
+## 7. 具体股票候选与 30 日验证池
 
-## 8. PM Next Action
+| Ticker | Direction | Conviction | Thesis Cluster | Why This Stock | Benchmark | Review Date | Success / Failure Test |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 
-## 9. 数据来源与待验证事项
+Also emit `performance_tracking.jsonl`.
+
+## 8. Bear Case / Invalidation
+
+## 9. PM Next Action
+
+## 10. 数据来源与待验证事项
 ```

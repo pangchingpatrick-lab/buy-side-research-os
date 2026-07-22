@@ -36,8 +36,23 @@ Choose one:
 - PM next action:
 ```
 
+## Candidate Basket Output
+
+For public-equity reports, also produce a concrete candidate basket:
+
+```markdown
+| Ticker | Direction | Conviction | Thesis Cluster | Benchmark | Review Date | Success / Failure Test |
+| --- | --- | --- | --- | --- | --- | --- |
+```
+
+The candidate basket is the report's testable output. It should be specific
+enough that a one-month review can check absolute return, benchmark-relative
+return, and whether the thesis evidence improved or failed.
+
 ## Guardrails
 
 - Do not force an action when evidence is insufficient.
 - `Watchlist` and `Need more evidence` are valid outcomes.
 - State what would change the decision.
+- Use `long_watch`, `short_risk_watch`, or `needs_evidence` when the report
+  should track a ticker but the evidence is not strong enough for a candidate.

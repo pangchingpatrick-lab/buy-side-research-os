@@ -22,6 +22,7 @@ local data packet
 -> report template
 -> evaluator
 -> validation tasks
+-> performance tracking
 -> memory candidate
 ```
 
@@ -89,7 +90,8 @@ ruby skills/research-os-skillhub/scripts/validate-route-schema.rb
 12. Write the Chinese buy-side output.
 13. Evaluate with `skill_hub/evaluators/report_evaluator.md`.
 14. Create `validation_tasks.jsonl`.
-15. Create `memory_update_candidate.md` when a reusable lesson exists.
+15. Create `performance_tracking.jsonl` for public-equity report candidates.
+16. Create `memory_update_candidate.md` when a reusable lesson exists.
 
 ## Resource Navigation
 
@@ -169,6 +171,7 @@ route.json
 report.md / pm_brief.md / investment_memo.md
 report_evaluation.md
 validation_tasks.jsonl
+performance_tracking.jsonl
 memory_update_candidate.md
 ```
 

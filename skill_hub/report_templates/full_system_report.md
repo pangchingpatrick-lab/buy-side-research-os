@@ -18,6 +18,7 @@ decision logic instead of repeating the same facts across several tables.
 - PM 行动状态：Long / Short / Watch / Ignore / Needs More Work
 - 核心 thesis：
 - 研究优先级：
+- 具体股票候选：
 - 最大不确定性：
 - 下一步验证：
 
@@ -88,11 +89,26 @@ Combine company mapping and financial validation into one compressed priority ta
 | Priority | Company / Node | Role | Financial Transmission | One Critical Validation Question | PM Implication |
 | --- | --- | --- | --- | --- | --- |
 
-## 7. Bear Case / Invalidation
+## 7. 具体股票候选与 30 日验证池
 
-## 8. PM Next Action
+Every public-equity report must name concrete tickers unless the topic has no
+publicly traded exposure. Do not leave the report at the industry-node level.
 
-## 9. 数据来源与待验证事项
+The candidates can be `Long candidate`, `Long watch`, `Short / risk watch`,
+`Avoid`, or `Needs evidence`; do not label weak evidence as a strong
+recommendation.
+
+| Ticker | Direction | Conviction | Thesis Cluster | Why This Stock | Benchmark | Review Date | Success / Failure Test |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+Also emit a machine-readable `performance_tracking.jsonl` file for the same
+candidates so the system can review price performance after one month.
+
+## 8. Bear Case / Invalidation
+
+## 9. PM Next Action
+
+## 10. 数据来源与待验证事项
 ```
 
 ## Writing Rules
@@ -106,6 +122,9 @@ Combine company mapping and financial validation into one compressed priority ta
 - If early-signal sources are material, do not use them before assigning claim type, evidence type, ticker role, discovery stage, price-in status, and report use.
 - Every report must include a serious invalidation path.
 - The `买方投资逻辑（Signal-to-Alpha）` section must use explicit `Signal Cluster A/B/C...` subsections. A table alone is not acceptable for a buy-side report.
+- For public-equity reports, include 3-7 concrete ticker candidates or explicitly explain why no listed-equity candidate is investable.
+- Each candidate must have direction, conviction, benchmark, one-month review date, and a success / failure test.
+- Candidate direction is a research action state, not a personal investment instruction.
 - One fact should serve one role in the main body. Do not repeat the same evidence, validation need, or ticker mapping across Event Audit, Signal Cluster, Company Mapping, and Financial Validation sections.
 - Do not create separate `数据基础`, `公司映射`, and `财务验证` tables if they contain the same rows. Merge them into `Event Admission Summary` and `公司与财务验证优先级`.
 - Detailed event fields belong in machine-readable files, validation tasks, or appendix material. The PM-facing report should show compressed judgment, not repeated audit rows.
