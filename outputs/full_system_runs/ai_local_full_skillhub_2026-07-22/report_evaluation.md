@@ -2,8 +2,8 @@
 
 - report: `outputs/full_system_runs/ai_local_full_skillhub_2026-07-22/full_system_report.md`
 - route: `outputs/full_system_runs/ai_local_full_skillhub_2026-07-22/route.md`
-- evaluator_version: v3
-- total_score: 89 / 100
+- evaluator_version: v4
+- total_score: 90 / 100
 - decision_quality: Strong
 
 ## Scorecard
@@ -16,7 +16,7 @@
 | Noise filtering | 6 | 5 | Generic rally, ETF, options, upgrades, and short context posts are demoted or excluded. |
 | Industry framework use | 6 | 5 | AI, semiconductor, and energy frameworks support inspection without becoming the report skeleton. |
 | PM-grade core conclusion | 8 | 8 | Opens with marginal change, action state, thesis, ticker candidates, priorities, uncertainty, and next validation. |
-| Signal-to-Alpha investment logic | 8 | 8 | Uses explicit Signal Cluster A/B/C/D with signal, mechanism, mapping, financial transmission, price-in, and PM trigger. |
+| Signal-to-Alpha investment logic | 8 | 8 | Uses explicit Signal Cluster A/B/C/D with signal, mechanism, investment interpretation, mapping, financial transmission, price-in, and PM trigger. |
 | Ticker candidate / feedback loop | 8 | 8 | Separates primary basket (`MU`, `MRVL`, `AEHR`) from risk/context watchlist (`SMCI`, `ORCL`), with direction, conviction, report-time price snapshot, benchmark price, review date, and `performance_tracking.jsonl`. |
 | Mapping quality | 6 | 5 | Company and risk-object mapping are concentrated in one validation priority table rather than repeated across sections. |
 | Financial validation | 6 | 4 | Converts claims into line items and source-checkable questions, but still lacks primary earnings data, consensus estimates, and price tables. |
@@ -24,7 +24,7 @@
 | Investment judgment | 4 | 4 | Correctly chooses `Watchlist / Needs More Evidence` rather than forcing a trade. |
 | Validation loop | 4 | 4 | Produces specific next-round validation questions and keeps them tied to PM action. |
 | Event audit discipline | 6 | 4 | Uses a compressed admission summary and avoids treating duplicate events as independent evidence; full automated clustering is still pending. |
-| Information compression | 6 | 5 | Removes repeated evidence, company mapping, and validation phrasing from the main body while adding a compact candidate tracking section. |
+| Information compression | 6 | 6 | Restores medium-depth explanation while avoiding the prior failure mode of repeating the same evidence and validation points across multiple tables. |
 
 ## Required Fixes
 
@@ -40,4 +40,5 @@
 - Build a dedicated price-in module that outputs `consensus_view`, `variant_view`, `what_is_already_reflected`, and `what_can_still_surprise`.
 - Add a stronger loser / displacement map, especially for companies exposed to AI capex but lacking scarce capability.
 - Use this compressed report as a regression sample: future reports should improve evidence quality without expanding duplicated sections.
+- Preserve medium-depth reasoning in future reports; do not over-correct into a thin memo.
 - On 2026-08-24, run the one-month candidate review and append the outcome to SkillHub memory only after price and evidence review are complete.

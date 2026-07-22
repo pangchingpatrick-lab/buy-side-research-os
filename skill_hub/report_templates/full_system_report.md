@@ -9,6 +9,10 @@ The report should be Chinese by default.
 Full system reports should be compact. The main body should compress evidence into
 decision logic instead of repeating the same facts across several tables.
 
+Target depth is a medium-depth buy-side report, not a short memo. The report
+should usually be detailed enough for 9-12 PDF pages when rendered, provided
+that every added paragraph has a distinct analytical role.
+
 ```markdown
 # [主题] 买方研究报告
 
@@ -23,6 +27,13 @@ decision logic instead of repeating the same facts across several tables.
 - 下一步验证：
 
 ## 2. What Changed / Why Now
+
+Include a short judgment boundary:
+
+- what the report is claiming
+- what the report is not claiming
+- which ideas are primary candidates
+- which ideas are only risk / context watches
 
 ## 3. 思考路径
 
@@ -46,6 +57,8 @@ Each signal cluster must use this compact buy-side logic chain:
 **Signal**：本地数据中出现了什么新信号？
 
 **Mechanism**：为什么这个信号会改变产业链、供需、单位经济、竞争格局或风险定价？
+
+**Investment Interpretation**：为什么这个信号值得进入买方报告？它和普通行业信息的区别在哪里？
 
 **Beneficiary / Risk Mapping**：直接受益、间接受益、潜在受损或风险暴露分别是谁？
 
@@ -150,4 +163,5 @@ candidates so the system can review price performance after one month. Include
 - One fact should serve one role in the main body. Do not repeat the same evidence, validation need, or ticker mapping across Event Audit, Signal Cluster, Company Mapping, and Financial Validation sections.
 - Do not create separate `数据基础`, `公司映射`, and `财务验证` tables if they contain the same rows. Merge them into `Event Admission Summary` and `公司与财务验证优先级`.
 - Detailed event fields belong in machine-readable files, validation tasks, or appendix material. The PM-facing report should show compressed judgment, not repeated audit rows.
-- Target main-body length: 6-8 decision sections, 3-5 signal clusters, and no more than two tables before the appendix.
+- Target main-body length: 8-11 decision sections, 3-5 signal clusters, and no more than three tables before the appendix.
+- Do not make the report short by deleting reasoning. Make it dense by replacing repeated tables with distinct analysis, candidate rationale, price-in discussion, and validation logic.

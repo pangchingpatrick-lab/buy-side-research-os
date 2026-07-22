@@ -22,6 +22,30 @@ does not prove completeness by showing the same event in five formats. It uses
 one section to argue the investment logic, one section to audit source admission,
 and one section to assign validation priority.
 
+## Depth Standard
+
+A full system report should be concise, but not thin. The goal is not the
+shortest possible memo. The goal is a medium-depth buy-side report where every
+paragraph earns its place.
+
+Good added detail includes:
+
+- judgment boundaries
+- why a signal is investment-relevant
+- why a ticker is or is not a good expression
+- price-in interpretation
+- validation design
+- one-month review logic
+
+Bad added detail includes:
+
+- the same source row repeated in several tables
+- the same validation phrase repeated across sections
+- generic industry background that does not change PM action
+
+As a default, a complete rendered full-system report should usually land around
+9-12 pages, unless the local data packet is unusually small.
+
 ## Required Logic Chain
 
 Full reports and investment memos should preserve:
@@ -47,7 +71,7 @@ Signal Cluster C
 ...
 ```
 
-Each cluster must include Signal, Mechanism, Beneficiary / Risk Mapping, Financial Transmission, Market Expectation / Price-In, and Evidence Gap / PM Trigger.
+Each cluster must include Signal, Mechanism, Investment Interpretation, Beneficiary / Risk Mapping, Financial Transmission, Market Expectation / Price-In, and Evidence Gap / PM Trigger.
 
 A table-only Signal-to-Alpha section is insufficient for a buy-side report because it hides the investment logic rather than forcing the reasoning to be written out.
 

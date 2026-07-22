@@ -52,6 +52,21 @@ Each cluster must walk through Signal, Mechanism, Beneficiary Mapping, Earnings 
 
 This is the section where the report becomes a buy-side report rather than a research event audit.
 
+## Medium-Depth Standard
+
+The report should not be over-compressed. A full system report should usually be
+long enough to explain the reasoning, candidate selection, price-in setup, and
+review design. Removing duplicated evidence is good; removing the actual
+investment reasoning is not.
+
+Prefer added paragraphs that explain:
+
+- why the signal matters
+- why the ticker expresses the signal
+- why similar tickers were excluded
+- what is already priced in
+- how the one-month review should be interpreted
+
 ## Concrete Ticker Candidate Loop
 
 Every public-equity report must name 3-7 concrete primary ticker candidates
