@@ -61,7 +61,8 @@ Do not write the report before the route exists.
 Every report must contain:
 
 - PM-grade core conclusion
-- What changed / why now
+- five-question answer: consensus, our view, why now, best beneficiaries versus peers, and PM action
+- Consensus / Our View / Why Now / Alpha Candidate Basket when listed-company exposure exists
 - evidence chain
 - value-chain and company mapping
 - market expectation vs reality / price-in analysis
@@ -70,6 +71,8 @@ Every report must contain:
 - bear case and invalidation
 - PM next action
 - validation tasks
+
+Full reports should target about 8-10 PDF pages and should not read like Research OS run logs. Compress by removing repetition and process narration, not by deleting investment-critical content.
 
 ## Run Manifest Schema
 

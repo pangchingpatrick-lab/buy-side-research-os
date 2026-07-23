@@ -183,4 +183,11 @@ If any required artifact is missing, label the run `partial`.
 - Mark missing data as `待补充` or `数据暂缺`.
 - Preserve source traceability.
 - Start reports with a PM-grade conclusion.
+- Full reports should read like 8-10 page internal investment memos, not Research OS run logs.
+- Full reports must answer five questions near the front: market consensus, our non-consensus view, why now, best beneficiaries versus peers, and PM action.
+- Full reports must front-load a Consensus -> Our View -> Why -> 3-5 Alpha Candidate Basket section.
+- Candidate tickers must be the stock expression of the variant view, not generic industry exposure.
+- Candidate tickers and signal clusters must answer Why Now: why this matters now rather than last year or next year.
 - Full reports and investment memos must include Signal-to-Alpha logic.
+- Do not repeat the same thesis, ticker, catalyst, or evidence gap across multiple sections unless the later section adds new investment information.
+- Compression must preserve bottleneck migration logic, market expectation / price-in, primary evidence gap, catalyst, invalidation, company-specific risk, and PM action.

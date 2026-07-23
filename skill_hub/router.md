@@ -343,10 +343,16 @@ If the user does not specify the output type:
 - use `investment_memo.md` for a specific thesis, company, long, short, or portfolio action
 - use `full_system_report.md` when the user asks for a complete system run, route, evaluation, or report suitable for comparing Skill Hub output quality
 
-Every selected PM-facing template must preserve two output requirements:
+Every selected PM-facing template must preserve these output requirements:
 
 - The report starts with a PM-grade core conclusion: marginal change, PM action state, core thesis, research priority, and verification points.
-- Full reports and investment memos include `买方投资逻辑（Signal-to-Alpha）`, using Signal -> Mechanism -> Beneficiary Mapping -> Earnings Impact -> Market Expectation -> Evidence Gap -> Catalyst -> Invalidation -> PM Action.
+- Full reports read like 8-10 page internal investment memos, not Research OS run logs.
+- Full reports answer five questions near the front: market consensus, our non-consensus view, why now, best beneficiaries versus peers, and PM action.
+- Full reports front-load Consensus -> Our View -> Why -> 3-5 Alpha Candidate Basket.
+- Full reports include Why Now / timing catalyst for each signal cluster and named candidate.
+- Full reports and investment memos include `买方投资逻辑（Signal-to-Alpha）`, using Signal -> Mechanism -> Beneficiary Mapping -> Earnings Impact -> Market Expectation -> Evidence Gap -> Why Now -> Catalyst -> Invalidation -> PM Action.
+- Full reports do not repeat the same thesis, ticker, catalyst, or evidence gap across multiple sections unless the later section adds new investment information.
+- Compression must preserve bottleneck migration logic, market expectation / price-in, primary evidence gap, catalyst, invalidation, company-specific risk, and PM action.
 
 ## Routing Examples
 

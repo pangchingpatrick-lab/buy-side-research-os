@@ -127,6 +127,9 @@ Classify companies into:
 For each company, identify:
 
 - exposure mechanism
+- relevant peer / proxy set for this thesis
+- why this ticker is the right expression versus peers/proxies
+- why now / timing catalyst
 - revenue driver
 - margin driver
 - order / backlog sensitivity
@@ -134,7 +137,7 @@ For each company, identify:
 - customer concentration
 - evidence required before making a claim
 
-Company mapping should not stop at naming tickers. It must explain why the company is economically exposed.
+Company mapping should not stop at naming tickers. It must explain why the company is economically exposed, why it is the right stock expression compared with the relevant peer/proxy set, and why the timing matters now rather than last year or next year.
 
 ## 6. Financial Translation Logic
 

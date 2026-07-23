@@ -118,13 +118,13 @@ Thinking skills must dominate report logic. Industry frameworks are supporting c
 | `report_templates/pm_brief.md` | The PM needs a short actionable brief. |
 | `report_templates/industry_report.md` | The PM needs a full industry or theme report. |
 | `report_templates/investment_memo.md` | The PM needs a single-name or basket investment memo. |
-| `report_templates/full_system_report.md` | The user asks for a complete Research OS run with route, report, evaluation, and validation loop. |
+| `report_templates/full_system_report.md` | The user asks for a complete Research OS run with route, evaluation, and validation loop, while the final report itself should still read like an 8-10 page PM investment memo. |
 
 ## Evaluator
 
 Use `evaluators/report_evaluator.md` after every full report, PM brief, or investment memo.
 
-The evaluator should check route discipline, thinking dominance, local-data discipline, mapping quality, Signal-to-Alpha logic, price-in analysis, and validation loop quality.
+The evaluator should check route discipline, thinking dominance, local-data discipline, five-question PM memo quality, memo compression, mapping quality, Signal-to-Alpha logic, price-in analysis, and validation loop quality.
 
 ## Memory
 

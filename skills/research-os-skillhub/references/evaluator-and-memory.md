@@ -22,13 +22,20 @@ Every full report should be scored for:
 - noise filtering
 - industry framework use
 - PM-grade core conclusion
+- five-question investment memo answer
+- variant view / alpha migration
+- alpha candidate basket
+- peer displacement / why this ticker
+- why now / timing catalyst
 - Signal-to-Alpha logic
+- memo compression / information density
 - mapping quality
 - financial validation
-- consensus / variant view
 - investment judgment
 - validation loop
 - event audit discipline
+
+Hard-fail the report if it reads like a Research OS run log, fails to answer the five PM questions, mechanically repeats the same thesis/ticker/catalyst, or compresses by deleting investment-critical content instead of removing repetition.
 
 ## Memory Rule
 

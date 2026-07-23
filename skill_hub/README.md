@@ -139,8 +139,15 @@ If the run only produces skill comparison notes, research bullets, or a report w
 - Thinking skills and research methodologies must dominate the report logic.
 - Industry frameworks are supporting checklists, not the main argument.
 - Every final report must open with a PM-grade core conclusion: marginal change, PM action state, core thesis, research priority, and core verification points. Do not start with a process summary.
+- Full reports should read like 8-10 page internal investment memos, not Research OS run logs.
+- Full reports must answer five questions near the front: market consensus, our non-consensus view, why now, best beneficiaries versus peers, and PM action.
+- Full reports must front-load a Consensus -> Our View -> Why -> 3-5 Alpha Candidate Basket section.
+- Candidate tickers must express the variant view. Do not include a company only because it belongs to a hot industry.
+- Candidate tickers and signal clusters must answer Why Now: why this matters now rather than last year or next year.
 - Full industry reports and investment memos must include `买方投资逻辑（Signal-to-Alpha）`.
-- `Signal-to-Alpha` sections must use signal clusters and close the loop from Signal -> Mechanism -> Beneficiary Mapping -> Earnings Impact -> Market Expectation -> Evidence Gap -> Catalyst -> Invalidation -> PM Action.
+- `Signal-to-Alpha` sections must use signal clusters and close the loop from Signal -> Mechanism -> Beneficiary Mapping -> Earnings Impact -> Market Expectation -> Evidence Gap -> Why Now -> Catalyst -> Invalidation -> PM Action.
 - Reports that rely on X, a16z, GeoScope, newsletters, or specialist public posts must include event audit discipline: claim, evidence type, ticker role, discovery stage, price-in question, and report use.
+- Do not repeat the same thesis, ticker, catalyst, or evidence gap across multiple report sections unless the later section adds new investment information.
+- Preserve bottleneck migration logic, price-in, primary evidence gap, catalyst, invalidation, company-specific risk, and PM action when compressing.
 - Every final report must generate next-round validation tasks.
 - Memory can only be updated after evaluation; unevaluated impressions should remain in `memory/playbook_updates.md` as candidates.
